@@ -157,7 +157,10 @@ const ProductDetailsInteractive = () => {
     {
       label: 'Sizes', value: (() => {
         try {
-          return JSON.parse(product.sizes || '[]').join(', ') || 'N/A';
+          const sizes = Array.isArray(product.sizes)
+            ? product.sizes
+            : JSON.parse(product.sizes || '[]');
+          return sizes.length > 0 ? sizes.join(', ') : 'N/A';
         } catch (e) {
           return 'N/A';
         }
@@ -385,7 +388,7 @@ const ProductDetailsInteractive = () => {
       });
     } catch (error: any) {
       console.error('Add to cart failed:', error);
-      
+
       if (error?.status === 401 || error?.data?.message?.includes('Unauthorized') || error?.status === 403) {
         setShowLoginModal(true);
       } else if (error?.status === 400) {
@@ -450,11 +453,11 @@ const ProductDetailsInteractive = () => {
         quantity,
         variant: variantLabel,
       }));
-      
+
       router.push('/checkout-process');
     } catch (error: any) {
       console.error('Buy Now failed to sync:', error);
-      
+
       if (error?.status === 401 || error?.data?.message?.includes('Unauthorized') || error?.status === 403) {
         setShowLoginModal(true);
         return;
@@ -474,7 +477,7 @@ const ProductDetailsInteractive = () => {
         quantity,
         variant: variantLabel,
       }));
-      
+
       toast.info('Item saved locally. Proceeding to checkout.');
       router.push('/checkout-process');
     } finally {

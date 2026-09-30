@@ -29,6 +29,61 @@ const generateSlug = (name: string) =>
     .replaceAll(" ", "-")
     .replaceAll(/[^\w-]+/g, "");
 
+// Image resizer — keeps images under ImageKit's 25 MP limit
+const resizeImage = (file: File, maxDimension = 4500): Promise<File> => {
+  return new Promise((resolve) => {
+    if (!file.type.startsWith("image/")) {
+      resolve(file);
+      return;
+    }
+
+    const img = new Image();
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+
+    img.onload = () => {
+      try {
+        let { width, height } = img;
+
+        if (width > maxDimension || height > maxDimension) {
+          const ratio = Math.min(maxDimension / width, maxDimension / height);
+          width = Math.round(width * ratio);
+          height = Math.round(height * ratio);
+        }
+
+        canvas.width = width;
+        canvas.height = height;
+        if (ctx) {
+          ctx.drawImage(img, 0, 0, width, height);
+        }
+
+        canvas.toBlob(
+          (blob) => {
+            if (blob) {
+              const newName = file.name.replace(/\.\w+$/, ".jpg");
+              resolve(
+                new File([blob], newName, {
+                  type: "image/jpeg",
+                  lastModified: Date.now(),
+                })
+              );
+            } else {
+              resolve(file);
+            }
+          },
+          "image/jpeg",
+          0.92
+        );
+      } catch {
+        resolve(file);
+      }
+    };
+
+    img.onerror = () => resolve(file);
+    img.src = URL.createObjectURL(file);
+  });
+};
+
 // Interfaces
 interface ProductData {
   name: string;
@@ -54,6 +109,7 @@ interface Specification {
   key: string;
   value: string;
 }
+
 import { uploadImageToImageKit } from '@/lib/utils/imagekit';
 
 const AddProduct = () => {
@@ -115,114 +171,103 @@ const AddProduct = () => {
   }, []);
 
   // Load product data if in edit mode
+  const [hasLoadedEdit, setHasLoadedEdit] = useState(false);
+
   useEffect(() => {
-    if (editId && adminProductsData?.data) {
-      const product = adminProductsData.data.find((p: any) => p.id === editId || p.id.toString() === editId);
+    // Only load once per editId — prevents overwriting user edits on refetch
+    if (!editId || hasLoadedEdit) return;
+    if (!adminProductsData?.data) return;
 
-      if (product) {
+    const product = adminProductsData.data.find(
+      (p: any) => p.id === editId || p.id.toString() === editId
+    );
+    if (!product) return;
 
-        setProductData({
-          name: product.name || "",
-          slug: product.slug || "",
-          description: product.description || "",
-          longDescription: product.long_description || "",
-          materials: product.materials || "",
-          careInstructions: product.care_instructions || "",
-          additionalInfo: product.additional_info || "",
-          weight: Number(product.weight) || 0,
-          warranty: product.warranty || "",
-          adminEmail: product.admin_email || "",
-          price: Number(product.price) || 0,
-          discountPrice: Number(product.discount_price) || 0,
-          stockQuantity: Number(product.stock_quantity) || 0,
-          category: product.category || "",
-          brand: product.brand || "",
-          packingStandard: product.packing_standard || "",
-          type: product.type || "own",
-        });
+    setProductData({
+      name: product.name || "",
+      slug: product.slug || "",
+      description: product.description || "",
+      longDescription: product.long_description || "",
+      materials: product.materials || "",
+      careInstructions: product.care_instructions || "",
+      additionalInfo: product.additional_info || "",
+      weight: Number(product.weight) || 0,
+      warranty: product.warranty || "",
+      adminEmail: product.admin_email || "",
+      price: Number(product.price) || 0,
+      discountPrice: Number(product.discount_price) || 0,
+      stockQuantity: Number(product.stock_quantity) || 0,
+      category: product.category || "",
+      brand: product.brand || "",
+      packingStandard: product.packing_standard || "",
+      type: product.type || "own",
+    });
 
-        try {
-          const parsedSpecs = typeof product.specifications === 'string'
-            ? JSON.parse(product.specifications)
-            : product.specifications || [];
-          setSpecifications(Array.isArray(parsedSpecs) ? parsedSpecs : []);
+    try {
+      const parsedSpecs = typeof product.specifications === 'string'
+        ? JSON.parse(product.specifications)
+        : product.specifications || [];
+      setSpecifications(Array.isArray(parsedSpecs) ? parsedSpecs : []);
 
-          const parseJsonField = (field: any, fallback: any[] = []) => {
-            if (!field) return fallback;
-            if (Array.isArray(field)) return field;
-            if (typeof field === 'string') {
-              if (field.startsWith('[') || field.startsWith('{')) {
-                try {
-                  return JSON.parse(field);
-                } catch {
-                  return fallback;
-                }
-              }
-              return [field];
-            }
-            return fallback;
-          };
-
-          const images = parseJsonField(product.product_images, []);
-          const productColors = parseJsonField(product.colors, []);
-          const productSizes = parseJsonField(product.sizes, []);
-          const productFeatures = parseJsonField(product.features, []);
-          const productVariants = parseJsonField(product.variants, []);
-
-          setProductImages(images);
-          setColors(productColors);
-          setSizes(productSizes);
-          setFeatures(productFeatures);
-
-          const formattedVariants = productVariants
-            .filter((v: any) => v.images && Array.isArray(v.images) && v.images.length > 0)
-            .filter((v: any, index: number, self: any[]) =>
-              index === self.findIndex((t: any) =>
-                (t.variantId === v.variantId || t.id === v.id) &&
-                (t.color?.code || t.color) === (v.color?.code || v.color) &&
-                t.size === v.size
-              )
-            )
-            .map((v: any) => ({
-              id: v.variantId || v.id || Date.now().toString(),
-              color: v.color?.code || v.color || '',
-              size: v.size || '',
-              images: Array.isArray(v.images) ? v.images : []
-            }));
-          setVariantImageSets(formattedVariants);
-        } catch (e) {
-          console.warn('Error parsing product data:', e);
-          setSpecifications([]);
-          setProductImages([]);
-          setColors([]);
-          setSizes([]);
-          setFeatures([]);
-          setVariantImageSets([]);
+      const parseJsonField = (field: any, fallback: any[] = []) => {
+        if (!field) return fallback;
+        if (Array.isArray(field)) return field;
+        if (typeof field === 'string') {
+          if (field.startsWith('[') || field.startsWith('{')) {
+            try { return JSON.parse(field); } catch { return fallback; }
+          }
+          return [field];
         }
+        return fallback;
+      };
 
-        setIsFeatured(!!product.is_featured);
-        setIsNewArrival(!!product.is_new_arrival);
+      setProductImages(parseJsonField(product.product_images, []));
+      setColors(parseJsonField(product.colors, []));
+      setSizes(parseJsonField(product.sizes, []));
+      setFeatures(parseJsonField(product.features, []));
 
-        // Handle categories
-        const fetchedCategories = categoriesData?.categories?.map((c: any) => c.name) || [];
-
-        if (fetchedCategories.includes(product.category)) {
-          setSelectedCategory(product.category);
-        } else {
-          setSelectedCategory("Others");
-          setCustomCategory(product.category);
-        }
-
-        const fetchedBrands = brandsData?.brands?.map((b: any) => b.name) || [];
-        if (fetchedBrands.includes(product.brand)) {
-          setSelectedBrand(product.brand);
-        } else {
-          setSelectedBrand("Others");
-          setCustomBrand(product.brand);
-        }
-      }
+      const productVariants = parseJsonField(product.variants, []);
+      const formattedVariants = productVariants
+        .filter((v: any) => v.images && Array.isArray(v.images) && v.images.length > 0)
+        .filter((v: any, index: number, self: any[]) =>
+          index === self.findIndex((t: any) =>
+            (t.variantId === v.variantId || t.id === v.id) &&
+            (t.color?.code || t.color) === (v.color?.code || v.color) &&
+            t.size === v.size
+          )
+        )
+        .map((v: any) => ({
+          id: v.variantId || v.id || Date.now().toString(),
+          color: v.color?.code || v.color || '',
+          size: v.size || '',
+          images: Array.isArray(v.images) ? v.images : []
+        }));
+      setVariantImageSets(formattedVariants);
+    } catch (e) {
+      console.warn('Error parsing product data:', e);
     }
-  }, [editId, adminProductsData]);
+
+    setIsFeatured(!!product.is_featured);
+    setIsNewArrival(!!product.is_new_arrival);
+
+    const fetchedCategories = categoriesData?.categories?.map((c: any) => c.name) || [];
+    if (fetchedCategories.includes(product.category)) {
+      setSelectedCategory(product.category);
+    } else {
+      setSelectedCategory("Others");
+      setCustomCategory(product.category);
+    }
+
+    const fetchedBrands = brandsData?.brands?.map((b: any) => b.name) || [];
+    if (fetchedBrands.includes(product.brand)) {
+      setSelectedBrand(product.brand);
+    } else {
+      setSelectedBrand("Others");
+      setCustomBrand(product.brand);
+    }
+
+    setHasLoadedEdit(true);
+  }, [editId, adminProductsData, categoriesData, brandsData, hasLoadedEdit]);
 
   const addColor = () => {
     if (currentColor && !colors.includes(currentColor)) {
@@ -279,7 +324,13 @@ const AddProduct = () => {
 
     setLoading(true);
     try {
-      const uploadPromises = files.map((file) => uploadImageToImageKit(file, 'products/variants'));
+      const resizedFiles = await Promise.all(
+        files.map((file) => resizeImage(file, 4500))
+      );
+
+      const uploadPromises = resizedFiles.map((file) =>
+        uploadImageToImageKit(file, 'products/variants')
+      );
       const uploadedUrls = await Promise.all(uploadPromises);
 
       updateVariantImageSet(setId, 'images',
@@ -335,6 +386,7 @@ const AddProduct = () => {
     setCustomCategory("");
     setSelectedBrand("");
     setCustomBrand("");
+    setHasLoadedEdit(false);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -423,7 +475,13 @@ const AddProduct = () => {
     const files = Array.from(e.target.files || []);
     setLoading(true);
     try {
-      const uploadPromises = files.map((file) => uploadImageToImageKit(file, 'products'));
+      const resizedFiles = await Promise.all(
+        files.map((file) => resizeImage(file, 4500))
+      );
+
+      const uploadPromises = resizedFiles.map((file) =>
+        uploadImageToImageKit(file, 'products')
+      );
       const uploadedUrls = await Promise.all(uploadPromises);
       setProductImages((prev) => [...prev, ...uploadedUrls]);
       toast.success("✅ Images uploaded!");
