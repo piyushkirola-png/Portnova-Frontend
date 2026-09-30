@@ -4,9 +4,9 @@ import Image from 'next/image';
 import Icon from '@/components/ui/AppIcon';
 
 export const metadata: Metadata = {
-  title: 'About Us - DecorVault | Premium Home Decor & Gifts',
+  title: 'About Us - Portnova | Premium Home Decor & Gifts',
   description:
-    'Discover DecorVault — your destination for premium home decor, candles, clocks, photo frames, gift items, and curated home accessories. Managed by Weftalix Private Limited.',
+    'Discover Portnova — your destination for premium home decor, candles, clocks, photo frames, gift items, and curated home accessories. Managed by Weftalix Private Limited.',
 };
 
 const stats = [
@@ -30,7 +30,7 @@ const values = [
   {
     icon: 'ShieldCheckIcon',
     title: 'Trusted & Reliable',
-    desc: 'Thousands of customers trust DecorVault for their home decor needs. We stand behind every product we sell.',
+    desc: 'Thousands of customers trust Portnova for their home decor needs. We stand behind every product we sell.',
   },
   {
     icon: 'GiftIcon',
@@ -43,7 +43,7 @@ const timeline = [
   {
     year: '2025',
     title: 'The Beginning',
-    desc: 'DecorVault was founded on 23 December 2025 under Weftalix Private Limited with a simple vision — to make beautiful home decor accessible to everyone.',
+    desc: 'Portnova was founded on 23 December 2025 under Weftalix Private Limited with a simple vision — to make beautiful home decor accessible to everyone.',
   },
   {
     year: '2026',
@@ -78,20 +78,20 @@ export default function AboutPage() {
     <div className="bg-[#FAFAFA]">
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-[#1A1A2E]/5 via-[#D4AF37]/10 to-[#FAFAFA] py-12 sm:py-16">
+      <div className="bg-gradient-to-br from-[#1A1A2E]/5 via-[#F4762D]/10 to-[#FAFAFA] py-12 sm:py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
           <div className="mb-4 flex items-center justify-center gap-3">
             <div className="w-14 h-14 rounded-xl flex items-center justify-center shadow-md overflow-hidden bg-white p-1">
               <Image
                 src="/assets/images/logo.png"
-                alt="DecorVault"
+                alt="Portnova"
                 width={56}
                 height={56}
                 className="w-full h-full object-contain"
               />
             </div>
             <span className="font-heading text-3xl font-bold text-[#1A1A2E]">
-              Decor<span className="text-[#D4AF37]">Vault</span>
+              Portnova<span className="text-[#F4762D]"></span>
             </span>
           </div>
           <h1 className="font-heading text-4xl font-bold text-[#1A1A2E] sm:text-5xl">
@@ -99,10 +99,10 @@ export default function AboutPage() {
           </h1>
           <p className="mt-5 text-lg text-[#7A7A7A] leading-relaxed max-w-2xl mx-auto">
             From a small passion project to thousands of beautiful homes across India —
-            DecorVault is your destination for premium home decor, candles, clocks,
+            Portnova is your destination for premium home decor, candles, clocks,
             photo frames, and curated gift items.
           </p>
-          <p className="mt-3 text-base font-semibold text-[#D4AF37]">
+          <p className="mt-3 text-base font-semibold text-[#F4762D]">
             ✦ Curated with love for your home ✦
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 text-center">
             {stats.map((s) => (
               <div key={s.label}>
-                <p className="font-heading text-4xl font-bold text-[#D4AF37]">{s.value}</p>
+                <p className="font-heading text-4xl font-bold text-[#F4762D]">{s.value}</p>
                 <p className="mt-1 text-sm text-[#7A7A7A]">{s.label}</p>
               </div>
             ))}
@@ -130,13 +130,13 @@ export default function AboutPage() {
               Who We Are
             </h2>
             <p className="mt-4 text-[#7A7A7A] leading-relaxed">
-              DecorVault is a premium home decor brand dedicated to curating the finest
+              Portnova is a premium home decor brand dedicated to curating the finest
               collection of decorative items for your home. From elegant candles and
               stylish clocks to beautiful photo frames and thoughtful gift items —
               we bring you quality products that make your space truly special.
             </p>
             <p className="mt-4 text-[#7A7A7A] leading-relaxed">
-              <strong className="text-[#1A1A2E]">DecorVault is managed and handled by Weftalix Private Limited</strong>,
+              <strong className="text-[#1A1A2E]">Portnova is managed and handled by Weftalix Private Limited</strong>,
               a Private Limited Company incorporated on <strong className="text-[#1A1A2E]">23 December 2025</strong>.
               We believe that every home tells a story, and our carefully curated
               collections help you tell yours — with pieces that reflect your
@@ -144,13 +144,13 @@ export default function AboutPage() {
             </p>
             <p className="mt-4 text-[#7A7A7A] leading-relaxed">
               Whether you're looking to refresh your decor, find the perfect gift, or
-              discover something unique for your home — DecorVault is here to inspire you.
+              discover something unique for your home — Portnova is here to inspire you.
             </p>
           </div>
 
           {/* Company Details Panel */}
           <div className="rounded-xl border border-[#E8E4E0] bg-white p-6 space-y-4 shadow-sm">
-            <h3 className="font-heading text-lg font-semibold text-[#1A1A2E]">About DecorVault</h3>
+            <h3 className="font-heading text-lg font-semibold text-[#1A1A2E]">About Portnova</h3>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
                 <p className="text-[#7A7A7A]">Founded</p>
@@ -193,7 +193,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <p className="text-[#7A7A7A]">Phone</p>
-                <a href="tel:+919582791995" className="font-semibold text-[#D4AF37] hover:underline">
+                <a href="tel:+919582791995" className="font-semibold text-[#F4762D] hover:underline">
                   +91 95827 91995
                 </a>
               </div>
@@ -205,14 +205,14 @@ export default function AboutPage() {
             <div className="pt-2 border-t border-[#E8E4E0] flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-md bg-[#D4AF37] px-4 py-2 text-sm font-medium text-[#1A1A2E] transition-smooth hover:scale-[0.97] hover:bg-[#C5A035]"
+                className="inline-flex items-center gap-2 rounded-md bg-[#F4762D] px-4 py-2 text-sm font-medium text-[#1A1A2E] transition-smooth hover:scale-[0.97] hover:bg-[#D45A15]"
               >
                 <Icon name="PhoneIcon" size={15} />
                 Get in Touch
               </Link>
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 rounded-md border border-[#E8E4E0] bg-white px-4 py-2 text-sm font-medium text-[#1A1A2E] transition-smooth hover:bg-[#F5F0EB]"
+                className="inline-flex items-center gap-2 rounded-md border border-[#E8E4E0] bg-white px-4 py-2 text-sm font-medium text-[#1A1A2E] transition-smooth hover:bg-[#F7F3F0]"
               >
                 <Icon name="ShoppingBagIcon" size={15} />
                 View Products
@@ -223,7 +223,7 @@ export default function AboutPage() {
       </div>
 
       {/* Our Values */}
-      <div className="bg-[#F5F0EB] py-12 sm:py-16">
+      <div className="bg-[#F7F3F0] py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mb-10 text-center">
             <h2 className="font-heading text-2xl font-bold text-[#1A1A2E] sm:text-3xl">
@@ -237,8 +237,8 @@ export default function AboutPage() {
                 key={v.title}
                 className="rounded-xl border border-[#E8E4E0] bg-white p-6 shadow-sm transition-smooth hover:shadow-md"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#D4AF37]/10">
-                  <Icon name={v.icon as any} size={24} className="text-[#D4AF37]" />
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#F4762D]/10">
+                  <Icon name={v.icon as any} size={24} className="text-[#F4762D]" />
                 </div>
                 <h3 className="font-semibold text-[#1A1A2E]">{v.title}</h3>
                 <p className="mt-2 text-sm text-[#7A7A7A] leading-relaxed">{v.desc}</p>
@@ -262,19 +262,19 @@ export default function AboutPage() {
             >
               <div className={`flex-1 pl-14 sm:pl-0 ${i % 2 === 0 ? 'sm:pr-12 sm:text-right' : 'sm:pl-12'}`}>
                 <div className="rounded-lg border border-[#E8E4E0] bg-white p-4 shadow-sm">
-                  <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-wide">{item.year}</span>
+                  <span className="text-xs font-bold text-[#F4762D] uppercase tracking-wide">{item.year}</span>
                   <h3 className="mt-1 font-semibold text-[#1A1A2E]">{item.title}</h3>
                   <p className="mt-1 text-sm text-[#7A7A7A]">{item.desc}</p>
                 </div>
               </div>
-              <div className="absolute left-3.5 top-4 flex h-4 w-4 items-center justify-center rounded-full bg-[#D4AF37] ring-4 ring-[#FAFAFA] sm:left-[calc(50%-8px)]" />
+              <div className="absolute left-3.5 top-4 flex h-4 w-4 items-center justify-center rounded-full bg-[#F4762D] ring-4 ring-[#FAFAFA] sm:left-[calc(50%-8px)]" />
             </div>
           ))}
         </div>
       </div>
 
       {/* Product Range */}
-      <div className="bg-[#F5F0EB] py-12 sm:py-16">
+      <div className="bg-[#F7F3F0] py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mb-8 text-center">
             <h2 className="font-heading text-2xl font-bold text-[#1A1A2E] sm:text-3xl">
@@ -289,7 +289,7 @@ export default function AboutPage() {
               <Link
                 key={cat.name}
                 href={`/products`}
-                className="flex items-center gap-3 rounded-lg border border-[#E8E4E0] bg-white px-4 py-3 text-sm font-medium text-[#1A1A2E] shadow-sm transition-smooth hover:bg-[#D4AF37] hover:text-[#1A1A2E] hover:border-[#D4AF37] hover:shadow-md"
+                className="flex items-center gap-3 rounded-lg border border-[#E8E4E0] bg-white px-4 py-3 text-sm font-medium text-[#1A1A2E] shadow-sm transition-smooth hover:bg-[#F4762D] hover:text-[#1A1A2E] hover:border-[#F4762D] hover:shadow-md"
               >
                 <Icon name={cat.icon as any} size={18} className="flex-shrink-0" />
                 {cat.name}
@@ -299,7 +299,7 @@ export default function AboutPage() {
           <div className="mt-8 text-center">
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 rounded-md bg-[#D4AF37] px-6 py-3 font-medium text-[#1A1A2E] transition-smooth hover:scale-[0.97] hover:bg-[#C5A035]"
+              className="inline-flex items-center gap-2 rounded-md bg-[#F4762D] px-6 py-3 font-medium text-[#1A1A2E] transition-smooth hover:scale-[0.97] hover:bg-[#D45A15]"
             >
               <Icon name="ShoppingBagIcon" size={18} />
               Browse Full Catalogue
@@ -321,7 +321,7 @@ export default function AboutPage() {
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               href="/products"
-              className="rounded-md bg-[#D4AF37] px-6 py-2.5 text-sm font-semibold text-[#1A1A2E] transition-smooth hover:scale-[0.97] hover:bg-[#C5A035]"
+              className="rounded-md bg-[#F4762D] px-6 py-2.5 text-sm font-semibold text-[#1A1A2E] transition-smooth hover:scale-[0.97] hover:bg-[#D45A15]"
             >
               Shop Now
             </Link>

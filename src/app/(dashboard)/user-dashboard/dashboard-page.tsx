@@ -3,9 +3,9 @@ import Breadcrumb from '@/components/common/Breadcrumb';
 import DashboardInteractive from './dashboard-components/DashboardInteractive';
 
 export const metadata: Metadata = {
-  title: 'My Account - Decor Vault',
+  title: 'My Account - Portnova',
   description:
-    'Manage your Decor Vault account, view order history, track deliveries, manage wishlist, update profile information, and access saved addresses in your personalized dashboard.',
+    'Manage your Portnova account, view order history, track deliveries, manage wishlist, update profile information, and access saved addresses in your personalized dashboard.',
 };
 
 export default function UserDashboardPage() {

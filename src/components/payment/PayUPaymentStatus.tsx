@@ -67,7 +67,7 @@ export const PayUPaymentStatus: React.FC<PayUPaymentStatusProps> = ({
         <Icon
           name="ArrowPathIcon"
           size={48}
-          className="animate-spin text-[#D4AF37]"
+          className="animate-spin text-[#F4762D]"
         />
         <p className="mt-4 text-[#6B7280]">Checking payment status...</p>
       </div>
@@ -96,14 +96,14 @@ export const PayUPaymentStatus: React.FC<PayUPaymentStatusProps> = ({
           {config.actionLink && (
             <button
               onClick={() => router.push(config.actionLink)}
-              className="rounded-lg bg-[#D4AF37] px-6 py-2 text-white transition-all hover:scale-[0.98]"
+              className="rounded-lg bg-[#F4762D] px-6 py-2 text-white transition-all hover:scale-[0.98]"
             >
               {config.action}
             </button>
           )}
           <button
             onClick={() => router.push('/products')}
-            className="text-sm text-[#6B7280] transition-colors hover:text-[#D4AF37]"
+            className="text-sm text-[#6B7280] transition-colors hover:text-[#F4762D]"
           >
             Continue Shopping
           </button>

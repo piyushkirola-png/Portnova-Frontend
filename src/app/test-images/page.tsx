@@ -61,7 +61,7 @@ export default function TestImagesPage() {
       </div>
 
       {/* Check Public Folder */}
-      <div className="mt-8 p-4 bg-[#FFF3D6] border border-[#D4AF37] rounded-lg">
+      <div className="mt-8 p-4 bg-[#FFE8C2] border border-[#F4762D] rounded-lg">
         <h2 className="font-semibold text-[#1A1A2E] mb-2">📁 Images Should Be Here:</h2>
         <code className="block bg-white px-3 py-2 rounded text-xs break-all">
           C:\Users\DELL\Desktop\frontend_frontend\public\assets\images\categories\
@@ -74,7 +74,7 @@ export default function TestImagesPage() {
       <div className="mt-6">
         <Link 
           href="/" 
-          className="inline-flex items-center gap-2 text-[#D4AF37] hover:text-[#C5A035] transition-colors"
+          className="inline-flex items-center gap-2 text-[#F4762D] hover:text-[#D45A15] transition-colors"
         >
           ← Back to Home
         </Link>

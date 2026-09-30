@@ -231,7 +231,7 @@ const TrackingTimeline = ({ orderId, stages }: TrackingTimelineProps) => {
         </div>
       )}
 
-      {/* ✅ Show delivery banner at top if order is delivered */}
+      {/* Show delivery banner at top if order is delivered */}
       {isOrderDelivered && !isOrderCancelled && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
           <div className="flex items-start gap-3">
@@ -239,7 +239,7 @@ const TrackingTimeline = ({ orderId, stages }: TrackingTimelineProps) => {
             <div>
               <p className="font-semibold text-green-800">Order Delivered Successfully</p>
               <p className="text-sm text-green-600">
-                Your order has been delivered. Thank you for shopping with Decor Vault!
+                Your order has been delivered. Thank you for shopping with Portnova!
               </p>
             </div>
           </div>

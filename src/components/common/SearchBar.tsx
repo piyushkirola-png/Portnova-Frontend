@@ -82,7 +82,7 @@ const SearchBar = () => {
             onFocus={handleInputFocus}
             onBlur={handleInputBlur}
             placeholder="Search for home decor..."
-            className={`h-10 w-full rounded-md border border-[#E8E4E0] bg-[#FAFAFA] pl-10 pr-4 text-sm text-[#1A1A2E] placeholder:text-[#7A7A7A] transition-smooth focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-2 ${
+            className={`h-10 w-full rounded-md border border-[#E8E4E0] bg-[#FAFAFA] pl-10 pr-4 text-sm text-[#1A1A2E] placeholder:text-[#7A7A7A] transition-smooth focus:outline-none focus:ring-2 focus:ring-[#F4762D] focus:ring-offset-2 ${
               isSearchExpanded ? 'md:w-full' : 'md:w-64'
             }`}
           />

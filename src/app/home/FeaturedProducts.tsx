@@ -80,7 +80,7 @@ const FeaturedProducts = () => {
           </div>
           <Link
             href="/products"
-            className="group flex items-center gap-2 text-sm font-medium text-[#D4AF37] hover:text-[#C5A035] transition-colors"
+            className="group flex items-center gap-2 text-sm font-medium text-[#F4762D] hover:text-[#D45A15] transition-colors"
           >
             <span>View All</span>
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -106,7 +106,7 @@ const FeaturedProducts = () => {
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     {discount > 0 && (
-                      <div className="absolute top-3 left-3 bg-[#D4AF37] text-[#1A1A2E] text-xs font-semibold px-2 py-1 rounded-full">
+                      <div className="absolute top-3 left-3 bg-[#F4762D] text-[#1A1A2E] text-xs font-semibold px-2 py-1 rounded-full">
                         {discount}% OFF
                       </div>
                     )}
@@ -114,7 +114,7 @@ const FeaturedProducts = () => {
                 </Link>
                 <div className="mt-3">
                   <Link href={`/product/${product.slug}`}>
-                    <h3 className="font-medium text-[#1A1A2E] text-sm hover:text-[#D4AF37] transition-colors line-clamp-1">
+                    <h3 className="font-medium text-[#1A1A2E] text-sm hover:text-[#F4762D] transition-colors line-clamp-1">
                       {product.name}
                     </h3>
                   </Link>

@@ -3,7 +3,7 @@ import Breadcrumb from '@/components/common/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Returns - Admin Dashboard',
-  description: 'Manage product returns and refunds for Decor Vault.',
+  description: 'Manage product returns and refunds for Portnova.',
 };
 
 export default function ReturnPage() {

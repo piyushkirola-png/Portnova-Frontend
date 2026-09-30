@@ -33,7 +33,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://api.vmrsolution.in/api/:path*',
+        destination: 'https://portnovaio.com/api/:path*',
       },
       {
         source: '/assets/:path*',

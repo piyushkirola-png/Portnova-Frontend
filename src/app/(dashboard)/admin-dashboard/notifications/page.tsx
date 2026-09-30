@@ -90,10 +90,10 @@ export default function NotificationsPage() {
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-bold text-espresso">Notifications</h1>
           <div className="flex gap-3">
-            <button onClick={handleMarkAllAsRead} className="px-4 py-2 bg-[#D4AF37] text-[#1A1A2E] rounded-lg hover:bg-[#C5A035] flex items-center gap-2">
+            <button onClick={handleMarkAllAsRead} className="px-4 py-2 bg-[#F4762D] text-[#1A1A2E] rounded-lg hover:bg-[#D45A15] flex items-center gap-2">
               <Check size={18} /> Mark All Read
             </button>
-            <button onClick={() => setShowCreateModal(true)} className="px-4 py-2 bg-[#D4AF37] text-[#1A1A2E] rounded-lg hover:bg-[#C5A035] flex items-center gap-2">
+            <button onClick={() => setShowCreateModal(true)} className="px-4 py-2 bg-[#F4762D] text-[#1A1A2E] rounded-lg hover:bg-[#D45A15] flex items-center gap-2">
               <Plus size={18} /> Create
             </button>
           </div>
@@ -300,7 +300,7 @@ export default function NotificationsPage() {
                 <input type="text" value={newNotification.link} onChange={(e) => setNewNotification({ ...newNotification, link: e.target.value })} className="w-full px-3 py-2 border rounded" />
               </div>
               <div className="flex gap-3">
-                <button type="submit" className="flex-1 px-4 py-2 bg-[#D4AF37] text-[#1A1A2E] rounded hover:bg-[#C5A035]">Create</button>
+                <button type="submit" className="flex-1 px-4 py-2 bg-[#F4762D] text-[#1A1A2E] rounded hover:bg-[#D45A15]">Create</button>
                 <button type="button" onClick={() => setShowCreateModal(false)} className="flex-1 px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400">Cancel</button>
               </div>
             </form>

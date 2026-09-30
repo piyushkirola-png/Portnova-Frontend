@@ -56,18 +56,18 @@ const Navbar = () => {
     <header className="sticky top-0 z-[100] w-full bg-card shadow-elevation-2 transition-smooth">
       <div className="mx-auto w-full">
         <div className="flex h-16 items-center justify-between px-4 sm:px-6">
-          {/* Logo - DecorVault */}
+          {/* Logo - Portnova */}
           <Link
             href="/"
             className="flex items-center space-x-2 transition-smooth hover:opacity-80"
             onClick={closeMobileMenu}
           >
             {/* Gold Diamond with DV */}
-            <div className="w-10 h-10 bg-[#D4AF37] rounded-lg flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 bg-[#F4762D] rounded-lg flex items-center justify-center flex-shrink-0">
               <span className="text-[#1A1A2E] font-heading text-sm font-bold">DV</span>
             </div>
             <span className="hidden sm:block font-heading text-xl font-bold text-[#1A1A2E]">
-              Decor<span className="text-[#D4AF37]">Vault</span>
+              Portnova<span className="text-[#F4762D]"></span>
             </span>
           </Link>
 
@@ -150,7 +150,7 @@ const Navbar = () => {
 
           {/* Right Section - User Actions */}
           <div className="flex items-center space-x-3">
-            {/* Login Link for Guests - Only show after hydration */}
+            {/* Login */}
             {isHydrated && !user && (
               <Link
                 href="/auth/login"
@@ -287,7 +287,7 @@ const Navbar = () => {
           <nav className="fixed left-0 top-0 z-[300] h-screen w-56 overflow-y-auto bg-card shadow-elevation-4 md:hidden">
             <div className="flex items-center justify-between p-4 border-b border-border">
               <span className="font-heading text-lg font-bold text-[#1A1A2E]">
-                Decor<span className="text-[#D4AF37]">Vault</span>
+                Portnova<span className="text-[#F4762D]"></span>
               </span>
               <button onClick={closeMobileMenu} className="flex h-8 w-8 items-center justify-center rounded-md text-foreground hover:bg-muted">
                 <Icon name="XMarkIcon" size={24} />

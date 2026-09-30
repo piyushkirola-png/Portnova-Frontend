@@ -27,7 +27,7 @@ export default function ContactPage() {
 
   const fetchInquiries = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'https://api.vmrsolution.in/api'}/contact/all`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'https://portnovaio.com/api'}/contact/all`);
       const data = await response.json();
       if (data.success) {
         setInquiries(data.data);
@@ -42,7 +42,7 @@ export default function ContactPage() {
   if (!isClient) return null;
 
   return (
-    <div className="flex-1 p-6"> {/* Remove the outer div with flex and AdminSidebar */}
+    <div className="flex-1 p-6">
       <Breadcrumb />
       <div className="space-y-6">
         <div className="flex items-center justify-between">

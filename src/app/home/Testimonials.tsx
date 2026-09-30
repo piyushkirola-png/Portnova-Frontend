@@ -68,7 +68,7 @@ const Testimonials = () => {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
         <div className="mb-4 text-center" data-aos="fade-up">
           <div className="mb-2 flex items-center justify-center space-x-2">
-            <Icon name="ChatBubbleLeftRightIcon" size={32} className="text-[#D4AF37]" variant="solid" />
+            <Icon name="ChatBubbleLeftRightIcon" size={32} className="text-[#F4762D]" variant="solid" />
             <h2 className="font-heading text-3xl font-bold text-[#1A1A2E] sm:text-4xl">
               Customer Testimonials
             </h2>
@@ -115,7 +115,7 @@ const Testimonials = () => {
                     name="StarIcon"
                     size={16}
                     variant={i < testimonial.rating ? 'solid' : 'outline'}
-                    className={i < testimonial.rating ? 'text-[#D4AF37]' : 'text-[#E8E4E0]'}
+                    className={i < testimonial.rating ? 'text-[#F4762D]' : 'text-[#E8E4E0]'}
                   />
                 ))}
               </div>

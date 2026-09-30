@@ -22,7 +22,7 @@ const CheckoutProgress: React.FC<CheckoutProgressProps> = ({ currentStep }) => {
               <div
                 className={`flex h-10 w-10 items-center justify-center rounded-full border-2 transition-all duration-300 ${
                   currentStep >= step.id
-                    ? 'border-[#FF6B8A] bg-[#FF6B8A] text-white'
+                    ? 'border-[#317CA2] bg-[#317CA2] text-white'
                     : 'border-gray-300 bg-white text-gray-400'
                 }`}
               >
@@ -34,7 +34,7 @@ const CheckoutProgress: React.FC<CheckoutProgressProps> = ({ currentStep }) => {
               </div>
               <span
                 className={`mt-2 text-xs font-medium ${
-                  currentStep >= step.id ? 'text-[#FF6B8A]' : 'text-gray-400'
+                  currentStep >= step.id ? 'text-[#317CA2]' : 'text-gray-400'
                 }`}
               >
                 {step.label}
@@ -43,7 +43,7 @@ const CheckoutProgress: React.FC<CheckoutProgressProps> = ({ currentStep }) => {
             {index < steps.length - 1 && (
               <div
                 className={`h-0.5 flex-1 transition-all duration-300 ${
-                  currentStep > step.id ? 'bg-[#FF6B8A]' : 'bg-gray-200'
+                  currentStep > step.id ? 'bg-[#317CA2]' : 'bg-gray-200'
                 }`}
               />
             )}

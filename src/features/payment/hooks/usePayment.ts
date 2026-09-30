@@ -3,10 +3,7 @@ import { useRouter } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { RootState } from '@/store/store';
-import {
-  useInitiatePaymentMutation,
-  useVerifyPaymentMutation,
-} from '@/store/api/paymentApi';
+import { useInitiatePaymentMutation, useVerifyPaymentMutation } from '@/store/api/paymentApi';
 import {
   startPayment,
   paymentPending,
@@ -18,7 +15,7 @@ import {
 
 // Simple Razorpay loader
 const loadRazorpayScript = (): Promise<boolean> => {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     if (typeof window !== 'undefined' && (window as any).Razorpay) {
       resolve(true);
       return;
@@ -107,7 +104,7 @@ export const usePayment = (options: UsePaymentOptions = {}) => {
         key: keyId,
         amount: razorpayOrder.amount * 100,
         currency: razorpayOrder.currency,
-        name: 'DecorVault',
+        name: 'Portnova',
         description: `Order #${orderId}`,
         order_id: razorpayOrder.id,
         handler: async (response: any) => {
@@ -132,7 +129,7 @@ export const usePayment = (options: UsePaymentOptions = {}) => {
           contact: '',
         },
         theme: {
-          color: '#FF6B8A',
+          color: '#317CA2',
         },
         method: {
           upi: true,
@@ -142,7 +139,7 @@ export const usePayment = (options: UsePaymentOptions = {}) => {
           paylater: true,
         },
         upi: {
-          flow: 'collect',  // 'collect' or 'intent'
+          flow: 'collect', // 'collect' or 'intent'
         },
       };
 
@@ -175,8 +172,8 @@ export const usePayment = (options: UsePaymentOptions = {}) => {
         setIsLoading(false);
         options.onSuccess?.(data.orderId);
         router.push(
-        `/payment/razorpay-success?orderId=${data.orderId}&razorpay_payment_id=${data.razorpay_payment_id}&razorpay_order_id=${data.razorpay_order_id}&razorpay_signature=${data.razorpay_signature}`
-      );
+          `/payment/razorpay-success?orderId=${data.orderId}&razorpay_payment_id=${data.razorpay_payment_id}&razorpay_order_id=${data.razorpay_order_id}&razorpay_signature=${data.razorpay_signature}`
+        );
       } else {
         throw new Error(result.message || 'Payment verification failed');
       }
@@ -187,7 +184,9 @@ export const usePayment = (options: UsePaymentOptions = {}) => {
       toast.error(errorMessage);
       setIsLoading(false);
       options.onFailure?.(errorMessage);
-      router.push(`/payment/failure?orderId=${data.orderId}&error=${encodeURIComponent(errorMessage)}`);
+      router.push(
+        `/payment/failure?orderId=${data.orderId}&error=${encodeURIComponent(errorMessage)}`
+      );
     }
   };
 

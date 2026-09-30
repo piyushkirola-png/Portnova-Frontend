@@ -71,7 +71,7 @@ export const PaymentStatus: React.FC<PaymentStatusProps> = ({ orderId }) => {
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-8">
-        <Icon name="ArrowPathIcon" size={48} className="animate-spin text-[#FF6B8A]" />
+        <Icon name="ArrowPathIcon" size={48} className="animate-spin text-[#317CA2]" />
         <p className="mt-4 text-[#6B7280]">Checking payment status...</p>
       </div>
     );
@@ -97,14 +97,14 @@ export const PaymentStatus: React.FC<PaymentStatusProps> = ({ orderId }) => {
           {config.actionLink && (
             <button
               onClick={() => router.push(config.actionLink)}
-              className="rounded-lg bg-[#FF6B8A] px-6 py-2 text-white transition-all hover:scale-[0.98]"
+              className="rounded-lg bg-[#317CA2] px-6 py-2 text-white transition-all hover:scale-[0.98]"
             >
               {config.action}
             </button>
           )}
           <button
             onClick={() => router.push('/products')}
-            className="text-sm text-[#6B7280] transition-colors hover:text-[#FF6B8A]"
+            className="text-sm text-[#6B7280] transition-colors hover:text-[#317CA2]"
           >
             Continue Shopping
           </button>

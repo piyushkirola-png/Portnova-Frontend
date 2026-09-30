@@ -59,7 +59,7 @@ function RazorpaySuccessContent() {
   if (status === 'loading') {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-[#FAFAFA]">
-        <div className="w-16 h-16 border-4 border-[#D4AF37] border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-16 h-16 border-4 border-[#F4762D] border-t-transparent rounded-full animate-spin"></div>
         <h2 className="mt-6 text-xl font-semibold text-[#1A2A3A]">Verifying your payment...</h2>
         <p className="mt-2 text-sm text-[#6B7280]">Please wait while we confirm your transaction.</p>
       </div>
@@ -76,7 +76,7 @@ function RazorpaySuccessContent() {
         <h1 className="mt-6 text-3xl font-heading font-bold text-green-600">Payment Successful! 🎉</h1>
         <p className="mt-2 text-[#6B7280] text-center max-w-md">{message}</p>
         <p className="mt-4 text-sm text-[#9CA3AF]">Redirecting to order confirmation...</p>
-        <div className="mt-6 w-12 h-1 bg-[#D4AF37] animate-pulse rounded-full"></div>
+        <div className="mt-6 w-12 h-1 bg-[#F4762D] animate-pulse rounded-full"></div>
       </div>
     );
   }
@@ -92,13 +92,13 @@ function RazorpaySuccessContent() {
       <div className="mt-8 flex gap-4">
         <button
           onClick={() => router.push('/cart')}
-          className="px-6 py-2.5 bg-[#D4AF37] text-[#1A1A2E] rounded-lg font-medium hover:bg-[#C5A035] transition-all hover:scale-[0.97]"
+          className="px-6 py-2.5 bg-[#F4762D] text-[#1A1A2E] rounded-lg font-medium hover:bg-[#D45A15] transition-all hover:scale-[0.97]"
         >
           Try Again
         </button>
         <button
           onClick={() => router.push('/')}
-          className="px-6 py-2.5 border border-[#D4AF37] text-[#D4AF37] rounded-lg font-medium hover:bg-[#FDF8F0] transition-all"
+          className="px-6 py-2.5 border border-[#F4762D] text-[#F4762D] rounded-lg font-medium hover:bg-[#FFF4E5] transition-all"
         >
           Go Home
         </button>
@@ -111,7 +111,7 @@ export default function RazorpaySuccessPage() {
   return (
     <Suspense fallback={
       <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-[#FAFAFA]">
-        <div className="w-16 h-16 border-4 border-[#D4AF37] border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-16 h-16 border-4 border-[#F4762D] border-t-transparent rounded-full animate-spin"></div>
         <p className="mt-4 text-lg font-medium text-[#1A2A3A]">Loading...</p>
       </div>
     }>

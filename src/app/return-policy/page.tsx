@@ -23,7 +23,7 @@ export default function ReturnPolicyPage() {
           <div className="prose prose-lg max-w-none text-[#374151]">
 
             <p className="text-base">
-              At <strong className="text-[#D4AF37]">DecorVault</strong>, we want you to be completely satisfied with your purchase.
+              At <strong className="text-[#F4762D]">Portnova</strong>, we want you to be completely satisfied with your purchase.
               If you are not entirely happy with your order, we are here to help. Please read our return policy carefully
               before initiating a return.
             </p>
@@ -64,7 +64,7 @@ export default function ReturnPolicyPage() {
             <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">4. Return Process</h2>
             <p className="text-base">To initiate a return, please follow these steps:</p>
             <ol className="list-decimal pl-6 space-y-2 text-base text-[#374151]">
-              <li><strong>Contact Us:</strong> Email us at <a href="mailto:contact@decorvault.online" className="text-[#D4AF37] hover:underline">contact@decorvault.online</a> with your order ID and reason for return</li>
+              <li><strong>Contact Us:</strong> Email us at <a href="mailto:contact@portnovaio.com" className="text-[#F4762D] hover:underline">contact@portnovaio.com</a> with your order ID and reason for return</li>
               <li><strong>Return Authorization:</strong> You will receive a Return Authorization (RA) number and instructions</li>
               <li><strong>Packaging:</strong> Securely pack the item in its original packaging</li>
               <li><strong>Shipping:</strong> Ship the item to our return address using a trackable shipping method</li>
@@ -119,7 +119,7 @@ export default function ReturnPolicyPage() {
             {/* Section 10 */}
             <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">10. Return Address</h2>
             <div className="mt-3 p-4 bg-[#F5F5F7] rounded-lg">
-              <p className="text-base font-medium text-[#1A2A3A]">DecorVault Returns</p>
+              <p className="text-base font-medium text-[#1A2A3A]">Portnova Returns</p>
               <p className="text-base text-[#374151]">[Your Return Address]</p>
               <p className="text-base text-[#374151]">[City], [State] - [PIN Code]</p>
               <p className="text-base text-[#374151]">India</p>
@@ -132,7 +132,7 @@ export default function ReturnPolicyPage() {
             </p>
             <div className="mt-3 p-4 bg-[#F5F5F7] rounded-lg">
               <p className="text-base">
-                <strong>Email:</strong> <a href="mailto:contact@decorvault.online" className="text-[#D4AF37] hover:underline">contact@decorvault.online</a>
+                <strong>Email:</strong> <a href="mailto:contact@portnovaio.com" className="text-[#F4762D] hover:underline">contact@portnovaio.com</a>
               </p>
               <p className="text-base">
                 <strong>Phone:</strong> +91 98765 43210
@@ -145,15 +145,15 @@ export default function ReturnPolicyPage() {
             <hr className="my-6 border-gray-200" />
 
             {/* Quick Tip */}
-            <div className="bg-[#FDF8F0] border border-[#D4AF37] rounded-lg p-4">
+            <div className="bg-[#FFF4E5] border border-[#F4762D] rounded-lg p-4">
               <p className="text-sm text-[#1A2A3A]">
-                <strong className="text-[#D4AF37]">💡 Quick Tip:</strong> Please inspect your order immediately upon delivery.
+                <strong className="text-[#F4762D]">💡 Quick Tip:</strong> Please inspect your order immediately upon delivery.
                 Report any issues within 48 hours to ensure faster resolution.
               </p>
             </div>
 
             <p className="text-sm text-[#6B7280] text-center mt-4">
-              By placing an order with DecorVault, you agree to our Return Policy.
+              By placing an order with Portnova, you agree to our Return Policy.
             </p>
           </div>
         </div>

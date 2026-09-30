@@ -26,7 +26,7 @@ export default function ShippingDeliveryPage() {
           <div className="prose prose-lg max-w-none text-[#374151]">
 
             <p className="text-base">
-              At <strong className="text-[#D4AF37]">DecorVault</strong>, we are committed to delivering your orders safely and on time.
+              At <strong className="text-[#F4762D]">Portnova</strong>, we are committed to delivering your orders safely and on time.
               Please read our shipping and delivery policy to understand how we process and deliver your orders.
             </p>
 
@@ -59,9 +59,9 @@ export default function ShippingDeliveryPage() {
                     <td className="border border-gray-200 px-4 py-2 text-sm">₹99 - ₹199</td>
                   </tr>
                   <tr className="bg-[#F5F5F7]">
-                    <td className="border border-gray-200 px-4 py-2 text-sm font-medium text-[#D4AF37]">Free Shipping</td>
+                    <td className="border border-gray-200 px-4 py-2 text-sm font-medium text-[#F4762D]">Free Shipping</td>
                     <td className="border border-gray-200 px-4 py-2 text-sm">5-7 Business Days</td>
-                    <td className="border border-gray-200 px-4 py-2 text-sm font-medium text-[#D4AF37]">FREE on orders ₹999+</td>
+                    <td className="border border-gray-200 px-4 py-2 text-sm font-medium text-[#F4762D]">FREE on orders ₹999+</td>
                   </tr>
                   <tr>
                     <td className="border border-gray-200 px-4 py-2 text-sm">Express Shipping</td>
@@ -86,7 +86,7 @@ export default function ShippingDeliveryPage() {
             <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">4. Order Tracking</h2>
             <ul className="list-disc pl-6 space-y-1 text-base text-[#374151]">
               <li>You will receive a tracking link via email once your order is shipped</li>
-              <li>You can also track your order on our <Link href="/order-tracking" className="text-[#D4AF37] hover:underline">Order Tracking</Link> page</li>
+              <li>You can also track your order on our <Link href="/order-tracking" className="text-[#F4762D] hover:underline">Order Tracking</Link> page</li>
               <li>Tracking information is updated in real-time by our shipping partners</li>
               <li>Please allow 24 hours for tracking information to appear after shipping</li>
             </ul>
@@ -179,7 +179,7 @@ export default function ShippingDeliveryPage() {
             </p>
             <div className="mt-3 p-4 bg-[#F5F5F7] rounded-lg">
               <p className="text-base">
-                <strong>Email:</strong> <a href="mailto:contact@decorvault.online" className="text-[#D4AF37] hover:underline">contact@decorvault.online</a>
+                <strong>Email:</strong> <a href="mailto:contact@portnovaio.com" className="text-[#F4762D] hover:underline">contact@portnovaio.com</a>
               </p>
               <p className="text-base">
                 <strong>Phone:</strong> +91 98765 43210
@@ -192,15 +192,15 @@ export default function ShippingDeliveryPage() {
             <hr className="my-6 border-gray-200" />
 
             {/* Quick Tip */}
-            <div className="bg-[#FDF8F0] border border-[#D4AF37] rounded-lg p-4">
+            <div className="bg-[#FFF4E5] border border-[#F4762D] rounded-lg p-4">
               <p className="text-sm text-[#1A2A3A]">
-                <strong className="text-[#D4AF37]">📦 Quick Tip:</strong> Track your order regularly for real-time updates.
+                <strong className="text-[#F4762D]">📦 Quick Tip:</strong> Track your order regularly for real-time updates.
                 If you notice any delays, please contact our support team for assistance.
               </p>
             </div>
 
             <p className="text-sm text-[#6B7280] text-center mt-4">
-              By placing an order with DecorVault, you agree to our Shipping & Delivery Policy.
+              By placing an order with Portnova, you agree to our Shipping & Delivery Policy.
             </p>
           </div>
         </div>

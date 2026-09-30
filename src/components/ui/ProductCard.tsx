@@ -87,7 +87,7 @@ const ProductCard = ({
         
         {/* Top Left: Discount */}
         {discount > 0 && (
-          <span className="absolute left-3 top-3 z-20 rounded-full bg-[#D4AF37] px-2.5 py-0.5 text-[10px] font-semibold text-[#1A1A2E]">
+          <span className="absolute left-3 top-3 z-20 rounded-full bg-[#F4762D] px-2.5 py-0.5 text-[10px] font-semibold text-[#1A1A2E]">
             {discount}% OFF
           </span>
         )}
@@ -118,13 +118,13 @@ const ProductCard = ({
         <div className="p-3">
           {/* Brand Name */}
           {brand && (
-            <p className="text-[10px] uppercase tracking-wide text-[#D4AF37] font-semibold">
+            <p className="text-[10px] uppercase tracking-wide text-[#F4762D] font-semibold">
               {brand}
             </p>
           )}
 
           {/* Product Name */}
-          <h3 className="mb-1 line-clamp-2 text-sm font-medium text-foreground group-hover:text-[#D4AF37] transition-colors">
+          <h3 className="mb-1 line-clamp-2 text-sm font-medium text-foreground group-hover:text-[#F4762D] transition-colors">
             {name}
           </h3>
 
@@ -143,7 +143,7 @@ const ProductCard = ({
                 name="StarIcon"
                 size={12}
                 variant={i < Math.floor(rating) ? 'solid' : 'outline'}
-                className={i < Math.floor(rating) ? 'text-[#D4AF37]' : 'text-muted-foreground'}
+                className={i < Math.floor(rating) ? 'text-[#F4762D]' : 'text-muted-foreground'}
               />
             ))}
             <span className="text-[11px] text-muted-foreground">
@@ -153,7 +153,7 @@ const ProductCard = ({
 
           {/* Packing Standard */}
           {packingStandard && (
-            <p className="mb-1 text-[10px] font-medium text-[#D4AF37]">
+            <p className="mb-1 text-[10px] font-medium text-[#F4762D]">
               Pack of {packingStandard}
             </p>
           )}

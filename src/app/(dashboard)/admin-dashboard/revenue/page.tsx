@@ -3,7 +3,7 @@ import Breadcrumb from '@/components/common/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Revenue - Admin Dashboard',
-  description: 'View revenue and earnings analytics for Decor Vault.',
+  description: 'View revenue and earnings analytics for Portnova.',
 };
 
 export default function RevenuePage() {

@@ -59,7 +59,7 @@ export default function DownloadInvoiceButton({
         type="button"
         onClick={handleDownload}
         disabled={loading}
-        className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-[#D4AF37] bg-white px-6 py-3 font-medium text-[#1A1A2E] transition-all hover:bg-[#D4AF37] hover:text-[#1A1A2E] disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full inline-flex items-center justify-center gap-2 rounded-xl border border-[#F4762D] bg-white px-6 py-3 font-medium text-[#1A1A2E] transition-all hover:bg-[#F4762D] hover:text-[#1A1A2E] disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

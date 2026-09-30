@@ -28,7 +28,6 @@ const EnhancedHeader = () => {
     { label: 'Checkout', path: '/checkout-process', icon: 'CreditCardIcon' },
   ];
 
-  // Add My Account only if authenticated
   if (user) {
     navigationItems.push({ label: 'My Account', path: '/dashboard', icon: 'UserCircleIcon' });
   }
@@ -59,13 +58,13 @@ const EnhancedHeader = () => {
           >
             <img
               src="/assets/images/logo.png"
-              alt="Decor Vault Logo"
+              alt="Portnova Logo"
               width="40"
               height="40"
               className="transition-smooth"
             />
             <span className="font-heading text-xl font-semibold text-foreground">
-              Decor Vault
+              Portnova
             </span>
           </Link>
 

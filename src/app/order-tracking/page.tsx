@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import OrderTrackingInteractive from './components/OrderTrackingInteractive';
 
 export const metadata: Metadata = {
-  title: 'Order Tracking - DecorVault',
-  description: 'Track your DecorVault orders in real-time. Enter your order ID to check delivery status.',
+  title: 'Order Tracking - Portnova',
+  description: 'Track your Portnova orders in real-time. Enter your order ID to check delivery status.',
 };
 
 export default function OrderTrackingPage() {
@@ -14,7 +14,7 @@ export default function OrderTrackingPage() {
         <Suspense fallback={
           <div className="flex items-center justify-center min-h-[400px]">
             <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#FF6B8A] mx-auto"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#317CA2] mx-auto"></div>
               <p className="mt-4 text-gray-600">Loading tracking details...</p>
             </div>
           </div>

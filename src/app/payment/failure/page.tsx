@@ -27,7 +27,7 @@ function FailureContent() {
           </div>
         )}
         <div className="space-y-3">
-          <Link href={`/payment?orderId=${orderId || ''}`} className="block w-full py-3 bg-[#FF6B8A] text-white font-medium rounded-lg hover:bg-[#e55a7a] transition-colors">
+          <Link href={`/payment?orderId=${orderId || ''}`} className="block w-full py-3 bg-[#317CA2] text-white font-medium rounded-lg hover:bg-[#e55a7a] transition-colors">
             Try Again
           </Link>
           <Link href="/orders" className="block w-full py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors">
@@ -43,7 +43,7 @@ export default function FailurePage() {
   return (
     <Suspense fallback={
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#FF6B8A] mx-auto"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#317CA2] mx-auto"></div>
       </div>
     }>
       <FailureContent />

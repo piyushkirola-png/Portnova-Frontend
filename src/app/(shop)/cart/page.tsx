@@ -3,7 +3,7 @@ import Breadcrumb from '@/components/common/Breadcrumb';
 import ShoppingCartInteractive from '@/features/cart/components/ShoppingCartInteractive';
 
 export const metadata: Metadata = {
-  title: 'Shopping Cart - DecorVault',
+  title: 'Shopping Cart - Portnova',
   description: 'Review your selected home decor items, candles, clocks, photo frames, and gifts. Modify quantities, apply promo codes, and proceed to secure checkout with premium quality products.',
 };
 

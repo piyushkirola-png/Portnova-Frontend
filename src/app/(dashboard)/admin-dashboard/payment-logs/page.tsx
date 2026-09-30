@@ -86,7 +86,7 @@ export default function PaymentLogsPage() {
       {/* Logs Table */}
       {logsLoading ? (
         <div className="flex justify-center py-12">
-          <Icon name="ArrowPathIcon" size={32} className="animate-spin text-[#FF6B8A]" />
+          <Icon name="ArrowPathIcon" size={32} className="animate-spin text-[#317CA2]" />
         </div>
       ) : (
         <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white">

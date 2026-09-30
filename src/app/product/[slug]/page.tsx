@@ -4,7 +4,7 @@ import Breadcrumb from '@/components/common/Breadcrumb';
 import ProductDetailsInteractive from './components/ProductDetailsInteractive';
 
 export const metadata: Metadata = {
-  title: 'Product Details - DecorVault',
+  title: 'Product Details - Portnova',
   description: 'Explore premium home decor products with detailed specifications, pricing, and bulk ordering options. Quality candles, clocks, photo frames, and gifts.',
 };
 

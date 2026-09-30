@@ -14,17 +14,17 @@ interface Deal {
 const deals: Deal[] = [
   {
     id: 1,
-    title: 'Artificial Plants & Flowers',
+    title: "Men's Caps",
     discount: 'Up to 40% OFF',
-    image: '/assets/images/deals/deal-plants.jpg',
-    link: '/products/plants',
+    image: '/assets/images/deals/cap.png',
+    link: '/products/men-caps',
   },
   {
     id: 2,
-    title: 'Home Fragrances',
+    title: "Women's Watches",
     discount: 'Up to 30% OFF',
-    image: '/assets/images/deals/deal-fragrances.jpg',
-    link: '/products/fragrances',
+    image: '/assets/images/deals/watch.png',
+    link: '/products/women-watches',
   },
 ];
 
@@ -41,7 +41,7 @@ const DealsOfTheDay = () => {
             <Link
               key={deal.id}
               href={deal.link}
-              className="group relative overflow-hidden rounded-xl bg-[#F5F0EB] hover:shadow-lg transition-all duration-300"
+              className="group relative overflow-hidden rounded-xl bg-[#F7F3F0] hover:shadow-lg transition-all duration-300"
             >
               <div className="flex items-center p-4 md:p-6 gap-4 md:gap-6">
                 {/* Image */}
@@ -51,23 +51,21 @@ const DealsOfTheDay = () => {
                     alt={deal.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = '/assets/images/placeholder-deal.jpg';
-                    }}
                   />
                 </div>
 
                 {/* Content */}
                 <div className="flex-1">
-                  <p className="text-sm md:text-base font-bold text-[#D4AF37]">
+                  <p className="text-sm md:text-base font-bold text-[#F4762D]">
                     {deal.discount}
                   </p>
+
                   <h3 className="font-medium text-[#1A1A2E] text-sm md:text-base mt-1">
                     {deal.title}
                   </h3>
-                  <p className="text-[#D4AF37] text-sm font-medium mt-2 group-hover:translate-x-1 transition-transform">
-                    Shop Now → →
+
+                  <p className="text-[#F4762D] text-sm font-medium mt-2 group-hover:translate-x-1 transition-transform">
+                    Shop Now →
                   </p>
                 </div>
               </div>

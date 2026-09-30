@@ -4,7 +4,7 @@ import AdminSidebar from '../components/AdminSidebar';
 
 export const metadata: Metadata = {
   title: 'Withdrawal - Admin Dashboard',
-  description: 'Manage withdrawal requests and payments for Decor Vault.',
+  description: 'Manage withdrawal requests and payments for Portnova.',
 };
 
 export default function WithdrawalPage() {

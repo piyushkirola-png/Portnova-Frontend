@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Authentication | Decor Vault',
-  description: 'Secure login and registration for Decor Vault',
+  title: 'Authentication | Portnova',
+  description: 'Secure login and registration for Portnova',
 };
 
 export default function AuthLayout({

@@ -1,45 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ['class'],
-  content: [
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     container: {
       center: true,
-      padding: {
-        DEFAULT: '1rem',
-        sm: '1.5rem',
-        lg: '2rem',
-      },
-      screens: {
-        '2xl': '1536px',
-      },
+      padding: { DEFAULT: '1rem', sm: '1.5rem', lg: '2rem' },
+      screens: { '2xl': '1536px' },
     },
     extend: {
       colors: {
-        // NEW FASHION-FORWARD COLOR PALETTE
-        'navy': '#1A2A3A',
+        'brand-orange': '#F4762D',
+        'brand-orange-light': '#FFD78A',
+        'brand-orange-dark': '#D45A15',
+        'brand-brown': '#8B6957',
+        'brand-brown-light': '#A98B7C',
+        'brand-blue': '#317CA2',
+        'brand-blue-light': '#D6E8F2',
+        'brand-blue-dark': '#245E7A',
+        navy: '#1A2A3A',
         'navy-light': '#2C3E50',
-        'soft-pink': '#FF6B8A',
-        'soft-pink-light': '#FFE0E8',
-        'lavender': '#7C6FAD',
-        'lavender-light': '#E8E4F0',
-        'mint': '#2ECC71',
-        'mint-light': '#E8F8F0',
-        'gold': '#F7C948',
-        'gold-light': '#FFF3D6',
-        'slate': '#6B7280',
+        slate: '#6B7280',
         'slate-light': '#9CA3AF',
-        'charcoal': '#374151',
+        charcoal: '#374151',
         'light-bg': '#F5F5F7',
-
         border: 'var(--color-border)',
         input: 'var(--color-input)',
         ring: 'var(--color-ring)',
         background: 'var(--color-background)',
         foreground: 'var(--color-foreground)',
-        
         primary: {
           DEFAULT: 'var(--color-primary)',
           foreground: 'var(--color-primary-foreground)',
@@ -81,6 +70,10 @@ export default {
           foreground: 'var(--color-popover-foreground)',
         },
       },
+      backgroundImage: {
+        'brand-gradient': 'linear-gradient(90deg, #FFD78A 0%, #F4762D 100%)',
+        'brand-gradient-soft': 'linear-gradient(90deg, #FFE8C2 0%, #FFD78A 100%)',
+      },
       borderRadius: {
         sm: 'var(--radius-sm)',
         md: 'var(--radius-md)',
@@ -93,21 +86,10 @@ export default {
         caption: ['Inter', 'sans-serif'],
         data: ['Inter', 'sans-serif'],
       },
-      spacing: {
-        '18': '4.5rem',
-        '72': '18rem',
-        '96': '24rem',
-        '144': '36rem',
-      },
-      maxWidth: {
-        'measure': '70ch',
-      },
-      transitionTimingFunction: {
-        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
-      },
-      transitionDuration: {
-        'smooth': '250ms',
-      },
+      spacing: { 18: '4.5rem', 72: '18rem', 96: '24rem', 144: '36rem' },
+      maxWidth: { measure: '70ch' },
+      transitionTimingFunction: { smooth: 'cubic-bezier(0.4, 0, 0.2, 1)' },
+      transitionDuration: { smooth: '250ms' },
       keyframes: {
         'pulse-subtle': {
           '0%, 100%': { opacity: '1' },
@@ -120,4 +102,4 @@ export default {
     },
   },
   plugins: [require('@tailwindcss/typography')],
-}
+};

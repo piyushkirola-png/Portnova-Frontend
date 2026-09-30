@@ -111,7 +111,7 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
     if (isLoading) {
         return (
             <div className="flex justify-center py-8">
-                <Icon name="ArrowPathIcon" size={24} className="animate-spin text-[#FF6B8A]" />
+                <Icon name="ArrowPathIcon" size={24} className="animate-spin text-[#317CA2]" />
             </div>
         );
     }
@@ -127,7 +127,7 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
                     <p className="text-[#6B7280]">No saved addresses</p>
                     <button
                         onClick={() => setShowNewAddressForm(true)}
-                        className="mt-3 text-sm font-medium text-[#FF6B8A] transition-colors hover:text-[#e85a7a]"
+                        className="mt-3 text-sm font-medium text-[#317CA2] transition-colors hover:text-[#e85a7a]"
                     >
                         + Add New Address
                     </button>
@@ -138,8 +138,8 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
                         <div
                             key={address.id}
                             className={`rounded-lg border-2 p-4 cursor-pointer transition-all duration-200 ${selectedId === address.id
-                                    ? 'border-[#FF6B8A] bg-[#FFE0E8]'
-                                    : 'border-gray-200 hover:border-[#FF6B8A] hover:bg-[#FFF5F7]'
+                                    ? 'border-[#317CA2] bg-[#D6E8F2]'
+                                    : 'border-gray-200 hover:border-[#317CA2] hover:bg-[#FFF4E5]'
                                 }`}
                             onClick={() => handleAddressSelect(address)}
                         >
@@ -148,7 +148,7 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
                                     <div className="flex items-center gap-2">
                                         <p className="font-medium text-[#1A2A3A]">{address.name}</p>
                                         {address.isDefault && (
-                                            <span className="rounded-full bg-[#FF6B8A] px-2 py-0.5 text-xs text-white">
+                                            <span className="rounded-full bg-[#317CA2] px-2 py-0.5 text-xs text-white">
                                                 Default
                                             </span>
                                         )}
@@ -163,7 +163,7 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
                                     </p>
                                 </div>
                                 {selectedId === address.id && (
-                                    <Icon name="CheckCircleIcon" size={24} className="text-[#FF6B8A]" />
+                                    <Icon name="CheckCircleIcon" size={24} className="text-[#317CA2]" />
                                 )}
                             </div>
                             {!address.isDefault && (
@@ -172,7 +172,7 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
                                         e.stopPropagation();
                                         handleSetDefault(address.id);
                                     }}
-                                    className="mt-2 text-xs text-[#6B7280] transition-colors hover:text-[#FF6B8A]"
+                                    className="mt-2 text-xs text-[#6B7280] transition-colors hover:text-[#317CA2]"
                                 >
                                     Set as Default
                                 </button>
@@ -182,7 +182,7 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
 
                     <button
                         onClick={() => setShowNewAddressForm(true)}
-                        className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed border-gray-300 py-3 text-sm text-[#6B7280] transition-all hover:border-[#FF6B8A] hover:text-[#FF6B8A]"
+                        className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed border-gray-300 py-3 text-sm text-[#6B7280] transition-all hover:border-[#317CA2] hover:text-[#317CA2]"
                     >
                         <Icon name="PlusIcon" size={16} />
                         Add New Address
@@ -201,7 +201,7 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
                                 placeholder="Full Name"
                                 value={newAddress.name}
                                 onChange={(e) => setNewAddress({ ...newAddress, name: e.target.value })}
-                                className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-[#FF6B8A] focus:outline-none focus:ring-1 focus:ring-[#FF6B8A]"
+                                className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-[#317CA2] focus:outline-none focus:ring-1 focus:ring-[#317CA2]"
                                 required
                             />
                             <input
@@ -209,7 +209,7 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
                                 placeholder="Phone Number"
                                 value={newAddress.phone}
                                 onChange={(e) => setNewAddress({ ...newAddress, phone: e.target.value })}
-                                className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-[#FF6B8A] focus:outline-none focus:ring-1 focus:ring-[#FF6B8A]"
+                                className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-[#317CA2] focus:outline-none focus:ring-1 focus:ring-[#317CA2]"
                                 required
                             />
                         </div>
@@ -218,7 +218,7 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
                             placeholder="Address Line 1"
                             value={newAddress.addressLine1}
                             onChange={(e) => setNewAddress({ ...newAddress, addressLine1: e.target.value })}
-                            className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-[#FF6B8A] focus:outline-none focus:ring-1 focus:ring-[#FF6B8A]"
+                            className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-[#317CA2] focus:outline-none focus:ring-1 focus:ring-[#317CA2]"
                             required
                         />
                         <input
@@ -226,7 +226,7 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
                             placeholder="Address Line 2 (Optional)"
                             value={newAddress.addressLine2}
                             onChange={(e) => setNewAddress({ ...newAddress, addressLine2: e.target.value })}
-                            className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-[#FF6B8A] focus:outline-none focus:ring-1 focus:ring-[#FF6B8A]"
+                            className="w-full rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-[#317CA2] focus:outline-none focus:ring-1 focus:ring-[#317CA2]"
                         />
                         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                             <input
@@ -234,7 +234,7 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
                                 placeholder="City"
                                 value={newAddress.city}
                                 onChange={(e) => setNewAddress({ ...newAddress, city: e.target.value })}
-                                className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-[#FF6B8A] focus:outline-none focus:ring-1 focus:ring-[#FF6B8A]"
+                                className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-[#317CA2] focus:outline-none focus:ring-1 focus:ring-[#317CA2]"
                                 required
                             />
                             <input
@@ -242,7 +242,7 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
                                 placeholder="State"
                                 value={newAddress.state}
                                 onChange={(e) => setNewAddress({ ...newAddress, state: e.target.value })}
-                                className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-[#FF6B8A] focus:outline-none focus:ring-1 focus:ring-[#FF6B8A]"
+                                className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-[#317CA2] focus:outline-none focus:ring-1 focus:ring-[#317CA2]"
                                 required
                             />
                             <input
@@ -250,7 +250,7 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
                                 placeholder="Pincode"
                                 value={newAddress.pincode}
                                 onChange={(e) => setNewAddress({ ...newAddress, pincode: e.target.value })}
-                                className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-[#FF6B8A] focus:outline-none focus:ring-1 focus:ring-[#FF6B8A]"
+                                className="rounded-md border border-gray-200 px-3 py-2 text-sm focus:border-[#317CA2] focus:outline-none focus:ring-1 focus:ring-[#317CA2]"
                                 required
                             />
                         </div>
@@ -260,7 +260,7 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
                                 id="isDefault"
                                 checked={newAddress.isDefault}
                                 onChange={(e) => setNewAddress({ ...newAddress, isDefault: e.target.checked })}
-                                className="h-4 w-4 rounded border-gray-300 text-[#FF6B8A] focus:ring-[#FF6B8A]"
+                                className="h-4 w-4 rounded border-gray-300 text-[#317CA2] focus:ring-[#317CA2]"
                             />
                             <label htmlFor="isDefault" className="text-sm text-[#1A2A3A]">
                                 Set as default address
@@ -270,7 +270,7 @@ const DeliveryAddressForm: React.FC<DeliveryAddressFormProps> = ({
                             <button
                                 type="submit"
                                 disabled={isAdding}
-                                className="rounded-md bg-[#FF6B8A] px-4 py-2 text-sm text-white transition-all hover:scale-[0.98] disabled:opacity-50"
+                                className="rounded-md bg-[#317CA2] px-4 py-2 text-sm text-white transition-all hover:scale-[0.98] disabled:opacity-50"
                             >
                                 {isAdding ? 'Adding...' : 'Add Address'}
                             </button>

@@ -59,7 +59,7 @@ export const RazorpayPayment: React.FC<RazorpayPaymentProps> = ({
   if (!isRazorpayAvailable()) {
     return (
       <div className="flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-8">
-        <Icon name="ArrowPathIcon" size={48} className="animate-spin text-[#FF6B8A]" />
+        <Icon name="ArrowPathIcon" size={48} className="animate-spin text-[#317CA2]" />
         <p className="mt-4 text-[#6B7280]">Loading payment gateway...</p>
       </div>
     );
@@ -69,7 +69,7 @@ export const RazorpayPayment: React.FC<RazorpayPaymentProps> = ({
     <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
       <div className="mb-4 flex items-center justify-between">
         <h3 className="text-lg font-semibold text-[#1A2A3A]">Payment Details</h3>
-        <span className="rounded-full bg-[#FFE0E8] px-3 py-1 text-sm font-medium text-[#FF6B8A]">
+        <span className="rounded-full bg-[#D6E8F2] px-3 py-1 text-sm font-medium text-[#317CA2]">
           {currency}
         </span>
       </div>
@@ -97,7 +97,7 @@ export const RazorpayPayment: React.FC<RazorpayPaymentProps> = ({
       <button
         onClick={handlePayNow}
         disabled={isLoading || isProcessing}
-        className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#FF6B8A] px-6 py-3 text-white transition-all duration-200 hover:scale-[0.98] hover:bg-[#e85a7a] disabled:cursor-not-allowed disabled:opacity-50"
+        className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#317CA2] px-6 py-3 text-white transition-all duration-200 hover:scale-[0.98] hover:bg-[#e85a7a] disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isLoading || isProcessing ? (
           <>

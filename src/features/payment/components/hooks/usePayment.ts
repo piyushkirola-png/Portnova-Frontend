@@ -104,7 +104,7 @@ export const usePayment = (options: UsePaymentOptions = {}) => {
         key: keyId,
         amount: razorpayOrder.amount * 100, // Convert to paise
         currency: razorpayOrder.currency,
-        name: 'DecorVault',
+        name: 'Portnova',
         description: `Order #${orderId}`,
         order_id: razorpayOrder.id,
         handler: async (response: any) => {
@@ -133,7 +133,7 @@ export const usePayment = (options: UsePaymentOptions = {}) => {
           contact: '',
         },
         theme: {
-          color: '#FF6B8A',
+          color: '#317CA2',
         },
       };
 

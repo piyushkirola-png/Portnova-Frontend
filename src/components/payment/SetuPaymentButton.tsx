@@ -62,7 +62,7 @@ export const SetuPaymentButton: React.FC<SetuPaymentButtonProps> = ({
     <button
       onClick={handlePay}
       disabled={isLoading}
-      className={`w-full py-3 px-6 bg-[#D4AF37] text-white rounded-lg font-medium hover:bg-[#C5A035] transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 ${className}`}
+      className={`w-full py-3 px-6 bg-[#F4762D] text-white rounded-lg font-medium hover:bg-[#D45A15] transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 ${className}`}
     >
       {isLoading ? (
         <>

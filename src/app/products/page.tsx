@@ -4,7 +4,7 @@ import Breadcrumb from '@/components/common/Breadcrumb';
 import ProductCatalogInteractive from './components/ProductCatalogInteractive';
 
 export const metadata: Metadata = {
-  title: 'Product Catalog - DecorVault',
+  title: 'Product Catalog - Portnova',
   description: 'Explore our premium collection of home decor, candles, clocks, photo frames, gift items, and more. Curated for your beautiful home.',
 };
 
@@ -13,7 +13,7 @@ export default function ProductCatalogPage() {
     <div className="min-h-screen bg-[#FAFAFA]">
       <main className="mx-auto max-w-[1600px] px-4 py-2 sm:px-6">
         <Breadcrumb />
-        
+
         <div className="mb-4" data-aos="fade-up">
           <h1 className="mb-2 font-heading text-3xl font-bold text-[#1A1A2E] sm:text-4xl">
             Product Catalog

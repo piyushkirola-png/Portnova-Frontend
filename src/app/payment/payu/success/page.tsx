@@ -134,7 +134,7 @@ function PayUSuccessContent() {
   if (status === 'loading') {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-[#FAFAFA]">
-        <div className="w-16 h-16 border-4 border-[#D4AF37] border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-16 h-16 border-4 border-[#F4762D] border-t-transparent rounded-full animate-spin"></div>
         <p className="mt-4 text-lg font-medium text-[#1A2A3A]">
           Confirming your payment...
         </p>
@@ -191,13 +191,13 @@ function PayUSuccessContent() {
 
         <p className="text-sm text-[#9CA3AF] mt-6">
           Redirecting to home in{' '}
-          <span className="font-semibold text-[#D4AF37]">{countdown}s</span>...
+          <span className="font-semibold text-[#F4762D]">{countdown}s</span>...
         </p>
 
         <div className="mt-4">
           <button
             onClick={() => router.push('/')}
-            className="px-6 py-2 border border-[#D4AF37] text-[#D4AF37] rounded-lg hover:bg-[#FFF8F0] transition"
+            className="px-6 py-2 border border-[#F4762D] text-[#F4762D] rounded-lg hover:bg-[#FFF4E5] transition"
           >
             Go Home Now
           </button>
@@ -221,13 +221,13 @@ function PayUSuccessContent() {
       <div className="mt-6 flex gap-4">
         <button
           onClick={() => router.push('/checkout-process')}
-          className="px-6 py-2 bg-[#D4AF37] text-white rounded-lg hover:bg-[#C5A035] transition"
+          className="px-6 py-2 bg-[#F4762D] text-white rounded-lg hover:bg-[#D45A15] transition"
         >
           Try Again
         </button>
         <button
           onClick={() => router.push('/')}
-          className="px-6 py-2 border border-[#D4AF37] text-[#D4AF37] rounded-lg hover:bg-[#FFF8F0] transition"
+          className="px-6 py-2 border border-[#F4762D] text-[#F4762D] rounded-lg hover:bg-[#FFF4E5] transition"
         >
           Go Home
         </button>
@@ -241,7 +241,7 @@ export default function PayUSuccessPage() {
     <Suspense
       fallback={
         <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-[#FAFAFA]">
-          <div className="w-16 h-16 border-4 border-[#D4AF37] border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-16 h-16 border-4 border-[#F4762D] border-t-transparent rounded-full animate-spin"></div>
           <p className="mt-4 text-lg font-medium text-[#1A2A3A]">Loading...</p>
         </div>
       }

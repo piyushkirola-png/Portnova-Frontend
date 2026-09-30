@@ -35,13 +35,13 @@ const NewsletterSignup = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] text-sm"
+              className="flex-1 px-4 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-[#F4762D] text-sm"
               required
             />
             <button
               type="submit"
               disabled={isLoading}
-              className="px-6 py-3 bg-[#D4AF37] text-[#1A1A2E] font-semibold rounded-full hover:bg-[#C5A035] transition-all duration-300 disabled:opacity-50 text-sm"
+              className="px-6 py-3 bg-[#F4762D] text-[#1A1A2E] font-semibold rounded-full hover:bg-[#D45A15] transition-all duration-300 disabled:opacity-50 text-sm"
             >
               {isLoading ? 'Subscribing...' : 'Subscribe'}
             </button>

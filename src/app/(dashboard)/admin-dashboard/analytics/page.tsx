@@ -6,7 +6,7 @@ import AnalyticsDashboard from './AnalyticsDashboard';
 
 export const metadata: Metadata = {
   title: 'Analytics - Admin Dashboard',
-  description: 'View analytics and insights for Decor Vault business performance.',
+  description: 'View analytics and insights for Portnova business performance.',
 };
 
 export default function AnalyticsPage() {

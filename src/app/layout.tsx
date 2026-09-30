@@ -26,7 +26,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'DecorVault - Premium Home Decor & Gifts',
+  title: 'Portnova - Premium Home Decor & Gifts',
   description: 'Discover premium home decor, candles, clocks, photo frames, gift items and more. Shop the finest collection for your home.',
   icons: {
     icon: [

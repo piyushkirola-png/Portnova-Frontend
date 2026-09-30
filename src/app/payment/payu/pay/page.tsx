@@ -187,7 +187,7 @@ function PayUMockContent() {
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0a2540] text-white text-xs font-bold">
                   D
                 </div>
-                <span className="text-sm font-semibold">DecorVault</span>
+                <span className="text-sm font-semibold">Portnova</span>
               </div>
               <span className="text-sm font-bold">₹{amountNum.toFixed(2)}</span>
             </div>
@@ -231,10 +231,10 @@ function PayUMockContent() {
                 {showBanks
                   ? 'Netbanking'
                   : showWallets
-                  ? 'Wallet'
-                  : activeMethod === 'card'
-                  ? 'Cards'
-                  : 'UPI'}
+                    ? 'Wallet'
+                    : activeMethod === 'card'
+                      ? 'Cards'
+                      : 'UPI'}
               </h3>
               <p className="text-xs text-[#6B7280]">Choose an option</p>
             </div>

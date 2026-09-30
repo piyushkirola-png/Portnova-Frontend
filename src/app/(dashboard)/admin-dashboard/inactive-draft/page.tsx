@@ -4,7 +4,7 @@ import AdminSidebar from '../components/AdminSidebar';
 
 export const metadata: Metadata = {
   title: 'Inactive Draft - Admin Dashboard',
-  description: 'Manage inactive and draft products for Decor Vault.',
+  description: 'Manage inactive and draft products for Portnova.',
 };
 
 export default function InactiveDraftPage() {

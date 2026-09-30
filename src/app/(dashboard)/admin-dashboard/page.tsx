@@ -10,7 +10,7 @@ import {
 } from 'recharts';
 import Icon from '@/components/ui/AppIcon';
 
-const COLORS = ['#8B5E3C', '#D4AF37', '#E8B4B8', '#9CAF88', '#6A8CAF'];
+const COLORS = ['#8B5E3C', '#F4762D', '#E8B4B8', '#9CAF88', '#6A8CAF'];
 
 export default function RevenuePage() {
   const { data, isLoading, isError, error } = useGetAdminAnalyticsQuery();
@@ -163,9 +163,9 @@ export default function RevenuePage() {
                     <Line
                       type="monotone"
                       dataKey="revenue"
-                      stroke="#D4AF37"
+                      stroke="#F4762D"
                       strokeWidth={3}
-                      dot={{ r: 4, fill: '#D4AF37' }}
+                      dot={{ r: 4, fill: '#F4762D' }}
                       activeDot={{ r: 6 }}
                     />
                   </LineChart>
@@ -252,7 +252,7 @@ export default function RevenuePage() {
                       <YAxis stroke="#6b7280" fontSize={12} />
                       <Tooltip labelStyle={{ color: '#1A1A2E' }} />
                       <Legend />
-                      <Bar dataKey="orders" fill="#D4AF37" radius={[6, 6, 0, 0]} />
+                      <Bar dataKey="orders" fill="#F4762D" radius={[6, 6, 0, 0]} />
                       <Bar dataKey="refunds" fill="#E8B4B8" radius={[6, 6, 0, 0]} />
                     </BarChart>
                   </ResponsiveContainer>

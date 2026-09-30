@@ -79,7 +79,7 @@ export default function CategoriesSection() {
         <div className="text-center mt-8">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 text-[#D4AF37] font-medium hover:text-[#C5A035] transition-colors"
+            className="inline-flex items-center gap-2 text-[#F4762D] font-medium hover:text-[#D45A15] transition-colors"
           >
             <span>View All Categories</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

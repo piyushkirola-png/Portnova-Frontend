@@ -96,7 +96,7 @@ const ProductDetailsInteractive = () => {
           alt: foundProduct.description || foundProduct.name,
         }));
         setCurrentImages(productImages);
-        
+
         // Create variants from database variants data
         let dbVariants = [];
         if (Array.isArray(foundProduct.variants)) {
@@ -109,7 +109,7 @@ const ProductDetailsInteractive = () => {
             dbVariants = [];
           }
         }
-        
+
         const variants = dbVariants.map((dbVariant: any) => ({
           id: dbVariant.variantId,
           size: dbVariant.size,
@@ -121,7 +121,7 @@ const ProductDetailsInteractive = () => {
           stock: dbVariant.stock,
           minOrderQty: 1,
         }));
-        
+
         setProductVariants(variants);
         if (variants.length > 0) {
           setSelectedVariant(variants[0]);
@@ -138,13 +138,15 @@ const ProductDetailsInteractive = () => {
     { label: 'Weight', value: product.weight ? `${product.weight}kg` : 'N/A' },
     { label: 'Warranty', value: product.warranty || 'N/A' },
     { label: 'Category', value: product.category || 'N/A' },
-    { label: 'Sizes', value: (() => {
-      try {
-        return JSON.parse(product.sizes || '[]').join(', ') || 'N/A';
-      } catch (e) {
-        return 'N/A';
-      }
-    })() },
+    {
+      label: 'Sizes', value: (() => {
+        try {
+          return JSON.parse(product.sizes || '[]').join(', ') || 'N/A';
+        } catch (e) {
+          return 'N/A';
+        }
+      })()
+    },
     { label: 'Care Instructions', value: product.care_instructions || 'N/A' },
     { label: 'Additional Info', value: product.additional_info || 'N/A' },
     { label: 'Stock Quantity', value: product.stock_quantity?.toString() || 'N/A' },
@@ -171,7 +173,7 @@ const ProductDetailsInteractive = () => {
       userName: 'Rajesh Kumar',
       rating: 4,
       date: '10 August 2026',
-      comment: `Beautiful product! The design is elegant and the finish is premium. Great value for money. Will definitely purchase more from DecorVault.`,
+      comment: `Beautiful product! The design is elegant and the finish is premium. Great value for money. Will definitely purchase more from Portnova.`,
       verified: true,
     },
     {
@@ -187,7 +189,7 @@ const ProductDetailsInteractive = () => {
       userName: 'Vikram Singh',
       rating: 5,
       date: '28 July 2026',
-      comment: `Outstanding quality! I've been ordering from DecorVault for months now and the quality never disappoints. This is now my go-to for home decor.`,
+      comment: `Outstanding quality! I've been ordering from Portnova for months now and the quality never disappoints. This is now my go-to for home decor.`,
       verified: true,
     },
   ];
@@ -248,7 +250,7 @@ const ProductDetailsInteractive = () => {
       if (firstVariant) {
         setSelectedVariant(firstVariant);
       }
-      
+
       // Get all variant images
       let dbVariants = [];
       if (Array.isArray(product?.variants)) {
@@ -262,7 +264,7 @@ const ProductDetailsInteractive = () => {
         }
       }
       const allImages: ProductImage[] = [];
-      
+
       dbVariants.forEach((v: any, variantIndex: number) => {
         if (v.images && v.images.length > 0) {
           v.images.forEach((url: string, imageIndex: number) => {
@@ -275,7 +277,7 @@ const ProductDetailsInteractive = () => {
           });
         }
       });
-      
+
       if (allImages.length === 0) {
         let images = [];
         if (Array.isArray(product?.product_images)) {
@@ -306,7 +308,7 @@ const ProductDetailsInteractive = () => {
 
   const handleVariantChange = (variant: ProductVariant) => {
     setSelectedVariant(variant);
-    
+
     // Find variant-specific images from the product's variants data
     let productVariants: Array<{ size?: string; color?: { code?: string }; images?: unknown[] }> = [];
     if (Array.isArray(product.variants)) {
@@ -320,7 +322,7 @@ const ProductDetailsInteractive = () => {
         productVariants = [];
       }
     }
-    const matchingVariant = productVariants.find((v: any) => 
+    const matchingVariant = productVariants.find((v: any) =>
       v.color?.code === variant.colorHex && v.size === variant.size
     );
 
@@ -353,10 +355,10 @@ const ProductDetailsInteractive = () => {
       const defaultImages = images
         .filter((url): url is string => typeof url === 'string')
         .map((url: string, index: number) => ({
-        id: (index + 1).toString(),
-        url,
-        alt: product.description || product.name,
-      }));
+          id: (index + 1).toString(),
+          url,
+          alt: product.description || product.name,
+        }));
       setCurrentImages(defaultImages);
     }
   };
@@ -436,7 +438,7 @@ const ProductDetailsInteractive = () => {
         </div>
 
         {/* Bulk Pricing Calculator */}
-        <div className="rounded-xl bg-gradient-to-r from-[#F5F0EB] to-[#FAFAFA] p-8 border border-[#E8E4E0]">
+        <div className="rounded-xl bg-gradient-to-r from-[#F7F3F0] to-[#FAFAFA] p-8 border border-[#E8E4E0]">
           <BulkPricingCalculator
             pricingTiers={pricingTiers}
             basePrice={selectedVariant.price}

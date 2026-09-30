@@ -130,7 +130,7 @@ const HeroCarousel = ({
                   {/* CTA */}
                   <Link
                     href={slide.ctaLink}
-                    className="inline-flex items-center gap-2 px-6 md:px-8 py-2.5 md:py-3.5 bg-[#D4AF37] text-[#1A1A2E] font-semibold rounded-full hover:bg-[#C5A035] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-sm md:text-base"
+                    className="inline-flex items-center gap-2 px-6 md:px-8 py-2.5 md:py-3.5 bg-[#F4762D] text-[#1A1A2E] font-semibold rounded-full hover:bg-[#D45A15] transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-sm md:text-base"
                   >
                     <span>{slide.ctaText}</span>
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -152,7 +152,7 @@ const HeroCarousel = ({
             onClick={() => goToSlide(index)}
             className={`transition-all duration-300 ${
               index === currentSlide
-                ? 'w-8 h-2 bg-[#D4AF37] rounded-full'
+                ? 'w-8 h-2 bg-[#F4762D] rounded-full'
                 : 'w-2 h-2 bg-white/50 rounded-full hover:bg-white/80'
             }`}
             aria-label={`Go to slide ${index + 1}`}

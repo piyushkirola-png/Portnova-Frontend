@@ -22,7 +22,7 @@ const HeroBanner = () => {
       </div>
 
       {/* Decorative Gold Line */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D4AF37] via-[#F7C948] to-[#D4AF37] z-20"></div>
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#F4762D] via-[#FFD78A] to-[#F4762D] z-20"></div>
 
       {/* Main Content Container - Shifted further from left edge */}
       <div className="container mx-auto px-4 pl-10 md:pl-20 lg:pl-32 py-12 md:py-16 relative z-10">
@@ -32,7 +32,7 @@ const HeroBanner = () => {
           <div className="flex-1 text-center md:text-left max-w-2xl">
             
             {/* Badge - Bright Gold with white text */}
-            <div className="inline-block bg-[#D4AF37] text-white text-xs font-bold tracking-wider px-4 py-1.5 rounded-full mb-4 shadow-lg">
+            <div className="inline-block bg-[#F4762D] text-white text-xs font-bold tracking-wider px-4 py-1.5 rounded-full mb-4 shadow-lg">
               MONSOON MADNESS SALE
             </div>
 
@@ -61,7 +61,7 @@ const HeroBanner = () => {
             <div className="mt-8">
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#D4AF37] text-white font-bold rounded-full hover:bg-[#C5A035] transition-all duration-300 shadow-2xl hover:shadow-[0_10px_40px_rgba(212,175,55,0.4)] hover:scale-105"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#F4762D] text-white font-bold rounded-full hover:bg-[#D45A15] transition-all duration-300 shadow-2xl hover:shadow-[0_10px_40px_rgba(212,175,55,0.4)] hover:scale-105"
               >
                 <span>Shop Now →</span>
               </Link>

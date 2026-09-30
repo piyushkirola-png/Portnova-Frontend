@@ -21,9 +21,9 @@ export default function PrivacyPolicyPage() {
         {/* Main Content */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 md:p-8 lg:p-10" data-aos="fade-up">
           <div className="prose prose-lg max-w-none text-[#374151]">
-            
+
             <p className="text-base">
-              At <strong className="text-[#D4AF37]">DecorVault</strong>, we are committed to protecting your privacy and ensuring the security of your personal information. 
+              At <strong className="text-[#F4762D]">Portnova</strong>, we are committed to protecting your privacy and ensuring the security of your personal information.
               This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and make purchases from us.
             </p>
 
@@ -71,14 +71,14 @@ export default function PrivacyPolicyPage() {
             {/* Section 4 */}
             <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">4. Cookies and Tracking</h2>
             <p className="text-base">
-              We use cookies and similar tracking technologies to enhance your browsing experience, analyze site traffic, and personalize content. 
+              We use cookies and similar tracking technologies to enhance your browsing experience, analyze site traffic, and personalize content.
               You can control cookie preferences through your browser settings.
             </p>
 
             {/* Section 5 */}
             <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">5. Data Security</h2>
             <p className="text-base">
-              We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. 
+              We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.
               All payment transactions are encrypted using SSL technology.
             </p>
 
@@ -95,14 +95,14 @@ export default function PrivacyPolicyPage() {
             {/* Section 7 */}
             <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">7. Third-Party Links</h2>
             <p className="text-base">
-              Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of such external sites. 
+              Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of such external sites.
               We encourage you to review their privacy policies before providing any personal information.
             </p>
 
             {/* Section 8 */}
             <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">8. Children's Privacy</h2>
             <p className="text-base">
-              Our services are not intended for children under 18 years of age. We do not knowingly collect personal information from children. 
+              Our services are not intended for children under 18 years of age. We do not knowingly collect personal information from children.
               If you believe we have collected information from a child, please contact us immediately.
             </p>
 
@@ -119,14 +119,14 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="mt-3 p-4 bg-[#F5F5F7] rounded-lg">
               <p className="text-base">
-                <strong>Email:</strong> <a href="mailto:contact@decorvault.online" className="text-[#D4AF37] hover:underline">contact@decorvault.online</a>
+                <strong>Email:</strong> <a href="mailto:contact@portnovaio.com" className="text-[#F4762D] hover:underline">contact@portnovaio.com</a>
               </p>
               <p className="text-base">
                 <strong>Phone:</strong> +91 98765 43210
               </p>
               <p className="text-base">
                 <strong>Address:</strong> H No. 9/149, Shyam Block, Kailash Nagar
-Gandhi Nagar, New Delhi – 110031
+                Gandhi Nagar, New Delhi – 110031
               </p>
             </div>
 

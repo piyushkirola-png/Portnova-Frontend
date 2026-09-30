@@ -36,7 +36,7 @@ function PaymentContent() {
         return (
             <div className="flex min-h-screen items-center justify-center">
                 <div className="text-center">
-                    <Icon name="ArrowPathIcon" size={48} className="animate-spin text-[#FF6B8A]" />
+                    <Icon name="ArrowPathIcon" size={48} className="animate-spin text-[#317CA2]" />
                     <p className="mt-4 text-[#6B7280]">Loading payment...</p>
                 </div>
             </div>
@@ -57,7 +57,7 @@ function PaymentContent() {
                 <div className="mb-6">
                     <button
                         onClick={() => router.push('/checkout-process')}
-                        className="flex items-center gap-2 text-sm text-[#6B7280] transition-colors hover:text-[#FF6B8A]"
+                        className="flex items-center gap-2 text-sm text-[#6B7280] transition-colors hover:text-[#317CA2]"
                     >
                         <Icon name="ArrowLeftIcon" size={16} />
                         Back to Checkout
@@ -100,7 +100,7 @@ export default function PaymentPage() {
         <Suspense fallback={
             <div className="flex min-h-screen items-center justify-center">
                 <div className="text-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#FF6B8A] mx-auto"></div>
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#317CA2] mx-auto"></div>
                     <p className="mt-4 text-[#6B7280]">Loading payment...</p>
                 </div>
             </div>

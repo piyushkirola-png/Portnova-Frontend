@@ -69,7 +69,7 @@ const ProductSection = ({
           </div>
           <Link
             href={viewAllLink}
-            className="group flex items-center gap-1 text-sm font-medium text-[#D4AF37] hover:text-[#C5A035] transition-colors"
+            className="group flex items-center gap-1 text-sm font-medium text-[#F4762D] hover:text-[#D45A15] transition-colors"
           >
             <span>View All</span>
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,14 +116,14 @@ const ProductSection = ({
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   {discount > 0 && (
-                    <div className="absolute top-2 left-2 bg-[#D4AF37] text-[#1A1A2E] text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                    <div className="absolute top-2 left-2 bg-[#F4762D] text-[#1A1A2E] text-[10px] font-semibold px-2 py-0.5 rounded-full">
                       {discount}% OFF
                     </div>
                   )}
                 </div>
                 <div className="mt-2">
                   <p className="text-xs text-[#7A7A7A] truncate">{product.category}</p>
-                  <h3 className="font-medium text-sm text-[#1A1A2E] truncate hover:text-[#D4AF37] transition-colors">
+                  <h3 className="font-medium text-sm text-[#1A1A2E] truncate hover:text-[#F4762D] transition-colors">
                     {product.name}
                   </h3>
                   <div className="flex items-center gap-2 mt-0.5">

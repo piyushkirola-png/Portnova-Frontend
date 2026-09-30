@@ -24,7 +24,7 @@ const ContactInteractive = () => {
     e.preventDefault();
     setSubmitStatus('idle');
     setErrorMessage('');
-    
+
     try {
       await submitContact(formData).unwrap();
       setSubmitStatus('success');
@@ -40,7 +40,7 @@ const ContactInteractive = () => {
   return (
     <div className="w-full bg-[#FAFAFA]">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-[#1A1A2E]/5 via-[#D4AF37]/10 to-[#FAFAFA] py-8 sm:py-10">
+      <div className="bg-gradient-to-r from-[#1A1A2E]/5 via-[#F4762D]/10 to-[#FAFAFA] py-8 sm:py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="text-center">
             <h1 className="font-heading text-3xl font-bold text-[#1A1A2E] sm:text-4xl lg:text-5xl">
@@ -50,7 +50,7 @@ const ContactInteractive = () => {
               Premium Home Decor & Gifting
             </p>
             <p className="mt-2 text-base text-[#7A7A7A] max-w-2xl mx-auto">
-              Have a question about our products, need help with an order, or looking for 
+              Have a question about our products, need help with an order, or looking for
               something special? We'd love to hear from you.
             </p>
           </div>
@@ -64,36 +64,36 @@ const ContactInteractive = () => {
           <div className="space-y-4 lg:col-span-1">
             {/* Phone */}
             <div className="rounded-lg border border-[#E8E4E0] bg-white p-4 shadow-sm transition-smooth hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#D4AF37]/10">
-                <Icon name="PhoneIcon" size={24} className="text-[#D4AF37]" />
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#F4762D]/10">
+                <Icon name="PhoneIcon" size={24} className="text-[#F4762D]" />
               </div>
               <h3 className="mb-2 font-semibold text-[#1A1A2E]">Call Us</h3>
               <p className="text-sm text-[#7A7A7A] mb-2">Mon-Sat: 10 AM - 7 PM</p>
-              <a href="tel:+919582791995" className="text-[#D4AF37] hover:underline font-medium">
+              <a href="tel:+919582791995" className="text-[#F4762D] hover:underline font-medium">
                 +91 95827 91995
               </a>
             </div>
 
             {/* Email */}
             <div className="rounded-lg border border-[#E8E4E0] bg-white p-4 shadow-sm transition-smooth hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#D4AF37]/10">
-                <Icon name="EnvelopeIcon" size={24} className="text-[#D4AF37]" />
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#F4762D]/10">
+                <Icon name="EnvelopeIcon" size={24} className="text-[#F4762D]" />
               </div>
               <h3 className="mb-2 font-semibold text-[#1A1A2E]">Email Us</h3>
               <p className="text-sm text-[#7A7A7A] mb-2">We'll respond within 24 hours</p>
-              <a href="mailto:info@decorvault.online" className="text-[#D4AF37] hover:underline font-medium">
-                info@decorvault.online
+              <a href="mailto:info@portnovaio.com" className="text-[#F4762D] hover:underline font-medium">
+                info@portnovaio.com
               </a>
             </div>
 
             {/* Location */}
             <div className="rounded-lg border border-[#E8E4E0] bg-white p-4 shadow-sm transition-smooth hover:shadow-md">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#D4AF37]/10">
-                <Icon name="MapPinIcon" size={24} className="text-[#D4AF37]" />
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#F4762D]/10">
+                <Icon name="MapPinIcon" size={24} className="text-[#F4762D]" />
               </div>
               <h3 className="mb-2 font-semibold text-[#1A1A2E]">Visit Us</h3>
               <p className="text-sm text-[#7A7A7A]">
-                DecorVault by Weftalix Pvt Ltd<br />
+                Portnova by Weftalix Pvt Ltd<br />
                 H No. 9/149, Shyam Block, Kailash Nagar<br />
                 Gandhi Nagar, New Delhi – 110031
               </p>
@@ -160,7 +160,7 @@ const ContactInteractive = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-md border border-[#E8E4E0] bg-[#FAFAFA] px-4 py-2.5 text-[#1A1A2E] placeholder:text-[#7A7A7A] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                      className="w-full rounded-md border border-[#E8E4E0] bg-[#FAFAFA] px-4 py-2.5 text-[#1A1A2E] placeholder:text-[#7A7A7A] focus:outline-none focus:ring-2 focus:ring-[#F4762D]"
                       placeholder="John Doe"
                     />
                   </div>
@@ -177,7 +177,7 @@ const ContactInteractive = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-md border border-[#E8E4E0] bg-[#FAFAFA] px-4 py-2.5 text-[#1A1A2E] placeholder:text-[#7A7A7A] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                      className="w-full rounded-md border border-[#E8E4E0] bg-[#FAFAFA] px-4 py-2.5 text-[#1A1A2E] placeholder:text-[#7A7A7A] focus:outline-none focus:ring-2 focus:ring-[#F4762D]"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -195,7 +195,7 @@ const ContactInteractive = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full rounded-md border border-[#E8E4E0] bg-[#FAFAFA] px-4 py-2.5 text-[#1A1A2E] placeholder:text-[#7A7A7A] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                      className="w-full rounded-md border border-[#E8E4E0] bg-[#FAFAFA] px-4 py-2.5 text-[#1A1A2E] placeholder:text-[#7A7A7A] focus:outline-none focus:ring-2 focus:ring-[#F4762D]"
                       placeholder="+91 98765 43210"
                     />
                   </div>
@@ -211,7 +211,7 @@ const ContactInteractive = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full rounded-md border border-[#E8E4E0] bg-[#FAFAFA] px-4 py-2.5 text-[#1A1A2E] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                      className="w-full rounded-md border border-[#E8E4E0] bg-[#FAFAFA] px-4 py-2.5 text-[#1A1A2E] focus:outline-none focus:ring-2 focus:ring-[#F4762D]"
                     >
                       <option value="">Select a subject</option>
                       <option value="general">General Inquiry</option>
@@ -235,7 +235,7 @@ const ContactInteractive = () => {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full rounded-md border border-[#E8E4E0] bg-[#FAFAFA] px-4 py-2.5 text-[#1A1A2E] placeholder:text-[#7A7A7A] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                    className="w-full rounded-md border border-[#E8E4E0] bg-[#FAFAFA] px-4 py-2.5 text-[#1A1A2E] placeholder:text-[#7A7A7A] focus:outline-none focus:ring-2 focus:ring-[#F4762D]"
                     placeholder="Tell us about your decor needs, questions, or feedback..."
                   />
                 </div>
@@ -244,7 +244,7 @@ const ContactInteractive = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="flex w-full items-center justify-center space-x-2 rounded-md bg-[#D4AF37] px-6 py-3 font-medium text-[#1A1A2E] transition-smooth hover:scale-[0.98] hover:bg-[#C5A035] disabled:opacity-50 disabled:cursor-not-allowed sm:w-auto"
+                  className="flex w-full items-center justify-center space-x-2 rounded-md bg-[#F4762D] px-6 py-3 font-medium text-[#1A1A2E] transition-smooth hover:scale-[0.98] hover:bg-[#D45A15] disabled:opacity-50 disabled:cursor-not-allowed sm:w-auto"
                 >
                   {isLoading ? (
                     <>
@@ -266,28 +266,28 @@ const ContactInteractive = () => {
               <h3 className="mb-4 font-semibold text-[#1A1A2E]">Quick Answers</h3>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start space-x-2">
-                  <Icon name="QuestionMarkCircleIcon" size={16} className="mt-0.5 text-[#D4AF37] flex-shrink-0" />
+                  <Icon name="QuestionMarkCircleIcon" size={16} className="mt-0.5 text-[#F4762D] flex-shrink-0" />
                   <div>
                     <p className="font-medium text-[#1A1A2E]">What are your business hours?</p>
                     <p className="text-[#7A7A7A]">We're available Monday to Saturday, 10 AM - 7 PM IST.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <Icon name="QuestionMarkCircleIcon" size={16} className="mt-0.5 text-[#D4AF37] flex-shrink-0" />
+                  <Icon name="QuestionMarkCircleIcon" size={16} className="mt-0.5 text-[#F4762D] flex-shrink-0" />
                   <div>
                     <p className="font-medium text-[#1A1A2E]">Do you offer bulk discounts?</p>
                     <p className="text-[#7A7A7A]">Yes! Contact us for special pricing on bulk and wholesale orders.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <Icon name="QuestionMarkCircleIcon" size={16} className="mt-0.5 text-[#D4AF37] flex-shrink-0" />
+                  <Icon name="QuestionMarkCircleIcon" size={16} className="mt-0.5 text-[#F4762D] flex-shrink-0" />
                   <div>
                     <p className="font-medium text-[#1A1A2E]">How long does shipping take?</p>
                     <p className="text-[#7A7A7A]">Standard delivery takes 3-7 business days across India.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-2">
-                  <Icon name="QuestionMarkCircleIcon" size={16} className="mt-0.5 text-[#D4AF37] flex-shrink-0" />
+                  <Icon name="QuestionMarkCircleIcon" size={16} className="mt-0.5 text-[#F4762D] flex-shrink-0" />
                   <div>
                     <p className="font-medium text-[#1A1A2E]">Do you offer gift wrapping?</p>
                     <p className="text-[#7A7A7A]">Yes! We offer premium gift wrapping for all gift items and hampers.</p>

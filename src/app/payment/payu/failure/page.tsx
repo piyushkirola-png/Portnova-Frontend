@@ -48,7 +48,7 @@ function PayUFailureContent() {
         <div className="space-y-3">
           <button
             onClick={() => router.push('/checkout-process')}
-            className="block w-full py-3 bg-[#D4AF37] text-white font-medium rounded-lg hover:bg-[#C5A035] transition-colors"
+            className="block w-full py-3 bg-[#F4762D] text-white font-medium rounded-lg hover:bg-[#D45A15] transition-colors"
           >
             Try Again
           </button>
@@ -69,7 +69,7 @@ export default function PayUFailurePage() {
     <Suspense
       fallback={
         <div className="min-h-screen flex items-center justify-center bg-gray-50">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#D4AF37] mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#F4762D] mx-auto"></div>
         </div>
       }
     >

@@ -3,16 +3,12 @@
 import Link from 'next/link';
 
 const CATEGORIES = [
-  { id: 1, name: 'Candles', slug: 'candles', image: '/assets/images/categories/candles.jpg' },
-  { id: 2, name: 'Clocks', slug: 'clocks', image: '/assets/images/categories/clocks.jpg' },
-  { id: 3, name: 'Photo Frames', slug: 'photo-frames', image: '/assets/images/categories/photo-frames.jpg' },
-  { id: 4, name: 'Vases', slug: 'vases', image: '/assets/images/categories/vases.jpg' },
-  { id: 5, name: 'Wall Decor', slug: 'wall-decor', image: '/assets/images/categories/wall-decor.jpg' },
-  { id: 6, name: 'Gift Items', slug: 'gift-items', image: '/assets/images/categories/gift-items.jpg' },
-  { id: 7, name: 'Table Decor', slug: 'table-decor', image: '/assets/images/categories/table-decor.jpg' },
-  { id: 8, name: 'Mirrors', slug: 'mirrors', image: '/assets/images/categories/mirrors.jpg' },
-  { id: 9, name: 'Indoor Plants', slug: 'indoor-plants', image: '/assets/images/categories/indoor-plants.jpg' },
-  { id: 10, name: 'Festival Decor', slug: 'festival-decor', image: '/assets/images/categories/festival-decor.jpg' },
+  { id: 1, name: 'Men Accessories', slug: 'men-accessories', image: '/assets/images/categories/men-accessories.png' },
+  { id: 2, name: 'Men Apparel', slug: 'men-apparel', image: '/assets/images/categories/men-apparel.png' },
+  { id: 3, name: 'Men Footwear', slug: 'men-footwear', image: '/assets/images/categories/men-footwear.png' },
+  { id: 4, name: 'Women Accessories', slug: 'women-accessories', image: '/assets/images/categories/women-accessories.png' },
+  { id: 5, name: 'Women Apparel', slug: 'women-apparel', image: '/assets/images/categories/women-apparel.png' },
+  { id: 6, name: 'Women Footwear', slug: 'women-footwear', image: '/assets/images/categories/women-footwear.png' },
 ];
 
 const CategoryGrid = () => {
@@ -25,7 +21,7 @@ const CategoryGrid = () => {
           </h2>
           <Link
             href="/products"
-            className="text-sm font-medium text-[#D4AF37] hover:text-[#C5A035] transition-colors"
+            className="text-sm font-medium text-[#F4762D] hover:text-[#D45A15] transition-colors"
           >
             View All →
           </Link>
@@ -39,13 +35,11 @@ const CategoryGrid = () => {
               className="group flex flex-col items-center cursor-pointer"
             >
               <div className="w-full aspect-square rounded-xl overflow-hidden bg-[#F0EDEA] transition-all duration-300 group-hover:shadow-lg group-hover:scale-105 relative">
-                {/* ✅ Using img tag instead of Next.js Image for reliability */}
                 <img
                   src={category.image}
                   alt={category.name}
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    // If image fails, show category name with background
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                     const parent = target.parentElement;
@@ -62,23 +56,23 @@ const CategoryGrid = () => {
                   }}
                 />
               </div>
-              <h3 className="mt-2 text-xs md:text-sm font-medium text-center text-[#1A1A2E] group-hover:text-[#D4AF37] transition-colors">
+              <h3 className="mt-2 text-xs md:text-sm font-medium text-center text-[#1A1A2E] group-hover:text-[#F4762D] transition-colors">
                 {category.name}
               </h3>
             </Link>
           ))}
         </div>
 
-        {/* Buy on Phone CTA */}
+        {/* Buy on Email CTA */}
         <div className="mt-6 text-center">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 text-sm font-medium text-[#D4AF37] hover:text-[#C5A035] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium text-[#F4762D] hover:text-[#D45A15] transition-colors"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            <span>Buy on Phone</span>
+            <span>Buy on Email</span>
           </Link>
         </div>
       </div>

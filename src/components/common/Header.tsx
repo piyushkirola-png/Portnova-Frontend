@@ -16,7 +16,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
-  
+
   const userMenuRef = useRef<HTMLDivElement>(null);
 
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
@@ -60,7 +60,6 @@ const Header = () => {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/products', label: 'Shop' },
-    //`{ href: '/categories', label: 'Shop by Categories' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
   ];
@@ -81,17 +80,17 @@ const Header = () => {
       <header className="sticky top-0 z-50 bg-white border-b border-border h-16">
         <div className="container mx-auto px-4 flex items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-full overflow-hidden border border-[#D4AF37]">
+            <div className="h-8 w-8 rounded-full overflow-hidden border border-[#F4762D]">
               <Image
                 src="/assets/images/logo.png"
-                alt="DecorVault"
+                alt="Portnova"
                 width={32}
                 height={32}
                 className="object-cover w-full h-full"
               />
             </div>
             <span className="font-heading text-lg font-bold text-[#1A1A2E]">
-              Decor<span className="text-[#D4AF37]">Vault</span>
+              Portnova<span className="text-[#F4762D]"></span>
             </span>
           </Link>
         </div>
@@ -105,17 +104,17 @@ const Header = () => {
       <header className="sticky top-0 z-50 bg-white border-b border-border h-16">
         <div className="container mx-auto px-4 flex items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-full overflow-hidden border border-[#D4AF37]">
+            <div className="h-8 w-8 rounded-full overflow-hidden border border-[#F4762D]">
               <Image
                 src="/assets/images/logo.png"
-                alt="DecorVault"
+                alt="Portnova"
                 width={32}
                 height={32}
                 className="object-cover w-full h-full"
               />
             </div>
             <span className="font-heading text-lg font-bold text-[#1A1A2E]">
-              Decor<span className="text-[#D4AF37]">Vault</span>
+              Portnova<span className="text-[#F4762D]"></span>
             </span>
           </Link>
         </div>
@@ -125,18 +124,17 @@ const Header = () => {
 
   // Normal Pages
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-sm' 
-        : 'bg-white'
-    }`}>
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
+      ? 'bg-white/95 backdrop-blur-md shadow-sm'
+      : 'bg-white'
+      }`}>
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between gap-4">
           <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
-            <div className="h-10 w-10 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-sm flex-shrink-0 bg-white">
+            <div className="h-10 w-10 rounded-full overflow-hidden border-2 border-[#F4762D] shadow-sm flex-shrink-0 bg-white">
               <Image
                 src="/assets/images/logo.png"
-                alt="DecorVault"
+                alt="Portnova"
                 width={40}
                 height={40}
                 className="object-cover w-full h-full"
@@ -144,7 +142,7 @@ const Header = () => {
               />
             </div>
             <span className="font-heading text-lg font-bold text-[#1A1A2E] md:text-xl hidden sm:block">
-              Decor<span className="text-[#D4AF37]">Vault</span>
+              Portnova<span className="text-[#F4762D]"></span>
             </span>
           </Link>
 
@@ -153,9 +151,8 @@ const Header = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-smooth hover:text-[#D4AF37] ${
-                  isActiveLink(link.href) ? 'text-[#D4AF37]' : 'text-[#1A1A2E]'
-                }`}
+                className={`text-sm font-medium transition-smooth hover:text-[#F4762D] ${isActiveLink(link.href) ? 'text-[#F4762D]' : 'text-[#1A1A2E]'
+                  }`}
               >
                 {link.label}
               </Link>
@@ -167,26 +164,26 @@ const Header = () => {
               <input
                 type="text"
                 placeholder="Search products..."
-                className="px-3 py-1.5 text-sm border border-[#E8E4E0] rounded-full focus:outline-none focus:border-[#D4AF37] transition-colors w-40 lg:w-56"
+                className="px-3 py-1.5 text-sm border border-[#E8E4E0] rounded-full focus:outline-none focus:border-[#F4762D] transition-colors w-40 lg:w-56"
               />
             </div>
 
-            <Link 
-              href="/wishlist" 
+            <Link
+              href="/wishlist"
               className="p-2 rounded-full hover:bg-[#F0EDEA] transition-smooth"
               aria-label="Wishlist"
             >
               <Icon name="HeartIcon" size={20} className="text-[#1A1A2E]" />
             </Link>
 
-            <Link 
-              href="/cart" 
+            <Link
+              href="/cart"
               className="relative p-2 rounded-full hover:bg-[#F0EDEA] transition-smooth"
               aria-label="Cart"
             >
               <Icon name="ShoppingBagIcon" size={20} className="text-[#1A1A2E]" />
               {isMounted && totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#D4AF37] text-[#1A1A2E] text-xs font-bold">
+                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#F4762D] text-[#1A1A2E] text-xs font-bold">
                   {totalItems > 9 ? '9+' : totalItems}
                 </span>
               )}
@@ -199,21 +196,21 @@ const Header = () => {
                     onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                     className="flex items-center gap-2 p-2 rounded-full hover:bg-[#F0EDEA] transition-smooth"
                   >
-                    <div className="h-8 w-8 rounded-full bg-[#D4AF37] flex items-center justify-center text-[#1A1A2E] font-semibold text-sm">
+                    <div className="h-8 w-8 rounded-full bg-[#F4762D] flex items-center justify-center text-[#1A1A2E] font-semibold text-sm">
                       {userName.charAt(0).toUpperCase()}
                     </div>
                   </button>
                   {isUserMenuOpen && (
                     <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-[#E8E4E0] py-1 z-50">
-                      <Link 
-                        href={user?.role === 'admin' ? '/admin-dashboard/profile' : '/user-dashboard/profile'}
+                      <Link
+                        href={user?.role === 'admin' ? '/admin-dashboard' : '/user-dashboard'}
                         className="block px-4 py-2 text-sm text-[#1A1A2E] hover:bg-[#F0EDEA] transition-smooth"
                         onClick={() => setIsUserMenuOpen(false)}
                       >
-                        My Profile
+                        Dashboard
                       </Link>
-                      <Link 
-                        href="/user-dashboard/orders" 
+                      <Link
+                        href={user?.role === 'admin' ? '/admin-dashboard/orders' : '/user-dashboard/orders'}
                         className="block px-4 py-2 text-sm text-[#1A1A2E] hover:bg-[#F0EDEA] transition-smooth"
                         onClick={() => setIsUserMenuOpen(false)}
                       >
@@ -262,9 +259,8 @@ const Header = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block text-sm font-medium transition-smooth ${
-                  isActiveLink(link.href) ? 'text-[#D4AF37]' : 'text-[#1A1A2E]'
-                }`}
+                className={`block text-sm font-medium transition-smooth ${isActiveLink(link.href) ? 'text-[#F4762D]' : 'text-[#1A1A2E]'
+                  }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
@@ -284,7 +280,7 @@ const Header = () => {
               ) : (
                 <Link
                   href="/login"
-                  className="block text-sm font-medium text-[#D4AF37] transition-smooth"
+                  className="block text-sm font-medium text-[#F4762D] transition-smooth"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Sign In

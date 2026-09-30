@@ -65,7 +65,7 @@ export default function AdminProfilePage() {
         <div className="flex items-center gap-3">
           <button
             onClick={() => setIsEditing(!isEditing)}
-            className="px-5 py-2.5 bg-[#D4AF37] text-[#1A1A2E] rounded-lg hover:bg-[#C5A035] transition flex items-center gap-2 font-medium"
+            className="px-5 py-2.5 bg-[#F4762D] text-[#1A1A2E] rounded-lg hover:bg-[#D45A15] transition flex items-center gap-2 font-medium"
           >
             <Icon name={isEditing ? 'XMarkIcon' : 'PencilIcon'} size={18} />
             {isEditing ? 'Cancel' : 'Edit Profile'}
@@ -77,7 +77,7 @@ export default function AdminProfilePage() {
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col items-center mb-8">
             <div className="relative">
-              <div className="w-32 h-32 rounded-full overflow-hidden bg-gray-100 border-4 border-[#D4AF37]">
+              <div className="w-32 h-32 rounded-full overflow-hidden bg-gray-100 border-4 border-[#F4762D]">
                 {imagePreview ? (
                   <Image
                     src={imagePreview}
@@ -87,13 +87,13 @@ export default function AdminProfilePage() {
                     className="object-cover w-full h-full"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-[#D4AF37] text-white text-4xl font-bold">
+                  <div className="w-full h-full flex items-center justify-center bg-[#F4762D] text-white text-4xl font-bold">
                     {userInitial}
                   </div>
                 )}
               </div>
               {isEditing && (
-                <label className="absolute bottom-1 right-1 bg-[#D4AF37] text-[#1A1A2E] p-2.5 rounded-full cursor-pointer hover:bg-[#C5A035] transition shadow-lg">
+                <label className="absolute bottom-1 right-1 bg-[#F4762D] text-[#1A1A2E] p-2.5 rounded-full cursor-pointer hover:bg-[#D45A15] transition shadow-lg">
                   <Icon name="CameraIcon" size={18} />
                   <input type="file" accept="image/*" onChange={handleImageChange} className="hidden" />
                 </label>
@@ -111,7 +111,7 @@ export default function AdminProfilePage() {
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                 disabled={!isEditing}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent disabled:bg-gray-50 disabled:text-gray-600 transition"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F4762D] focus:border-transparent disabled:bg-gray-50 disabled:text-gray-600 transition"
               />
             </div>
 
@@ -122,7 +122,7 @@ export default function AdminProfilePage() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 disabled={!isEditing}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent disabled:bg-gray-50 disabled:text-gray-600 transition"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F4762D] focus:border-transparent disabled:bg-gray-50 disabled:text-gray-600 transition"
               />
             </div>
 
@@ -133,7 +133,7 @@ export default function AdminProfilePage() {
                 value={formData.mobile}
                 onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                 disabled={!isEditing}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#D4AF37] focus:border-transparent disabled:bg-gray-50 disabled:text-gray-600 transition"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F4762D] focus:border-transparent disabled:bg-gray-50 disabled:text-gray-600 transition"
               />
             </div>
 
@@ -152,7 +152,7 @@ export default function AdminProfilePage() {
             <div className="mt-8 flex gap-3">
               <button
                 type="submit"
-                className="px-8 py-3 bg-[#D4AF37] text-[#1A1A2E] rounded-lg hover:bg-[#C5A035] transition font-medium"
+                className="px-8 py-3 bg-[#F4762D] text-[#1A1A2E] rounded-lg hover:bg-[#D45A15] transition font-medium"
               >
                 Save Changes
               </button>

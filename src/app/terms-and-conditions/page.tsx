@@ -22,10 +22,10 @@ export default function TermsAndConditionsPage() {
         {/* Main Content */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 md:p-8 lg:p-10" data-aos="fade-up">
           <div className="prose prose-lg max-w-none text-[#374151]">
-            
+
             <p className="text-base">
-              Welcome to <strong className="text-[#D4AF37]">DecorVault</strong>. By using our website and purchasing our products, 
-              you agree to comply with and be bound by the following terms and conditions. Please read them carefully before 
+              Welcome to <strong className="text-[#F4762D]">Portnova</strong>. By using our website and purchasing our products,
+              you agree to comply with and be bound by the following terms and conditions. Please read them carefully before
               placing any order.
             </p>
 
@@ -115,14 +115,14 @@ export default function TermsAndConditionsPage() {
             {/* Section 10 */}
             <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">10. Governing Law</h2>
             <p className="text-base">
-              These terms and conditions are governed by and construed in accordance with the laws of India. 
+              These terms and conditions are governed by and construed in accordance with the laws of India.
               Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts in [Your City].
             </p>
 
             {/* Section 11 */}
             <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">11. Changes to Terms</h2>
             <p className="text-base">
-              We reserve the right to modify these terms and conditions at any time. Changes will be effective immediately 
+              We reserve the right to modify these terms and conditions at any time. Changes will be effective immediately
               upon posting on this page. Your continued use of the website constitutes acceptance of the updated terms.
             </p>
 
@@ -133,14 +133,14 @@ export default function TermsAndConditionsPage() {
             </p>
             <div className="mt-3 p-4 bg-[#F5F5F7] rounded-lg">
               <p className="text-base">
-                <strong>Email:</strong> <a href="mailto:contact@decorvault.online" className="text-[#D4AF37] hover:underline">contact@decorvault.online</a>
+                <strong>Email:</strong> <a href="mailto:contact@portnovaio.com" className="text-[#F4762D] hover:underline">contact@portnovaio.com</a>
               </p>
               <p className="text-base">
                 <strong>Phone:</strong> +91 98765 43210
               </p>
               <p className="text-base">
                 <strong>Address:</strong> H No. 9/149, Shyam Block, Kailash Nagar
-Gandhi Nagar, New Delhi – 110031
+                Gandhi Nagar, New Delhi – 110031
               </p>
             </div>
 

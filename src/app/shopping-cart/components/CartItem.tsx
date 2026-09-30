@@ -75,7 +75,7 @@ export default function CartItem({ item, onQuantityChange, onRemove, onSaveForLa
                 <p className="mt-1 text-sm text-[#7A7A7A]">{item.variant}</p>
               )}
               {item.packingStandard && (
-                <p className="mt-1 text-xs font-medium text-[#D4AF37]">
+                <p className="mt-1 text-xs font-medium text-[#F4762D]">
                   Pack of {item.packingStandard}
                 </p>
               )}
@@ -133,7 +133,7 @@ export default function CartItem({ item, onQuantityChange, onRemove, onSaveForLa
         {/* Save for Later */}
         <button
           onClick={() => onSaveForLater(item.id)}
-          className="mt-3 flex w-fit items-center gap-2 text-sm text-[#D4AF37] transition-smooth hover:underline"
+          className="mt-3 flex w-fit items-center gap-2 text-sm text-[#F4762D] transition-smooth hover:underline"
         >
           <Icon name="BookmarkIcon" size={16} />
           Save for Later

@@ -58,7 +58,7 @@ export default function RelatedProducts({ products }: RelatedProductsProps) {
                 }}
               />
               {(product.discount ?? 0) > 0 && (
-                <span className="absolute top-2 left-2 bg-[#D4AF37] text-[#1A1A2E] text-xs font-semibold px-2 py-0.5 rounded-full">
+                <span className="absolute top-2 left-2 bg-[#F4762D] text-[#1A1A2E] text-xs font-semibold px-2 py-0.5 rounded-full">
                   {product.discount}% OFF
                 </span>
               )}
@@ -67,7 +67,7 @@ export default function RelatedProducts({ products }: RelatedProductsProps) {
               {product.category && (
                 <p className="text-xs text-[#7A7A7A] truncate">{product.category}</p>
               )}
-              <h3 className="font-medium text-sm text-[#1A1A2E] truncate group-hover:text-[#D4AF37] transition-colors">
+              <h3 className="font-medium text-sm text-[#1A1A2E] truncate group-hover:text-[#F4762D] transition-colors">
                 {product.name}
               </h3>
               <div className="flex items-center gap-2 mt-0.5">
@@ -90,7 +90,7 @@ export default function RelatedProducts({ products }: RelatedProductsProps) {
                       variant={i < Math.floor(product.rating) ? 'solid' : 'outline'}
                       className={
                         i < Math.floor(product.rating)
-                          ? 'text-[#D4AF37]'
+                          ? 'text-[#F4762D]'
                           : 'text-[#E8E4E0]'
                       }
                     />

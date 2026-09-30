@@ -66,13 +66,13 @@ const Header = () => {
             {/* Admin Logo */}
             <Image
               src="/assets/images/logo-icon.png"
-              alt="DecorVault"
+              alt="Portnova"
               width={32}
               height={32}
               className="w-8 h-8 object-contain"
             />
             <span className="font-heading text-lg font-bold text-[#1A1A2E]">
-              Decor<span className="text-[#D4AF37]">Vault</span>
+              Portnova<span className="text-[#F4762D]"></span>
             </span>
             <span className="ml-2 text-xs bg-primary/10 text-primary px-2 py-1 rounded-full font-medium">
               Admin
@@ -84,25 +84,24 @@ const Header = () => {
   }
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-sm' 
-        : 'bg-white'
-    }`}>
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
+      ? 'bg-white/95 backdrop-blur-md shadow-sm'
+      : 'bg-white'
+      }`}>
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo*/}
           <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
             <Image
               src="/assets/images/logo.png"
-              alt="DecorVault"
+              alt="Portnova"
               width={120}
               height={40}
               className="h-8 md:h-10 w-auto object-contain"
               priority
             />
             <span className="font-heading text-lg font-bold text-[#1A1A2E] md:text-xl hidden sm:block">
-              Decor<span className="text-[#D4AF37]">Vault</span>
+              Portnova<span className="text-[#F4762D]"></span>
             </span>
           </Link>
 
@@ -114,9 +113,8 @@ const Header = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-smooth hover:text-[#D4AF37] ${
-                    isActive ? 'text-[#D4AF37]' : 'text-[#1A1A2E]'
-                  }`}
+                  className={`text-sm font-medium transition-smooth hover:text-[#F4762D] ${isActive ? 'text-[#F4762D]' : 'text-[#1A1A2E]'
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -131,26 +129,26 @@ const Header = () => {
               <input
                 type="text"
                 placeholder="Search products..."
-                className="px-3 py-1.5 text-sm border border-[#E8E4E0] rounded-full focus:outline-none focus:border-[#D4AF37] transition-colors w-40 lg:w-56"
+                className="px-3 py-1.5 text-sm border border-[#E8E4E0] rounded-full focus:outline-none focus:border-[#F4762D] transition-colors w-40 lg:w-56"
               />
             </div>
 
-            <Link 
-              href="/wishlist" 
+            <Link
+              href="/wishlist"
               className="p-2 rounded-full hover:bg-[#F0EDEA] transition-smooth"
               aria-label="Wishlist"
             >
               <Icon name="HeartIcon" size={20} className="text-[#1A1A2E]" />
             </Link>
 
-            <Link 
-              href="/cart" 
+            <Link
+              href="/cart"
               className="relative p-2 rounded-full hover:bg-[#F0EDEA] transition-smooth"
               aria-label="Cart"
             >
               <Icon name="ShoppingBagIcon" size={20} className="text-[#1A1A2E]" />
               {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#D4AF37] text-[#1A1A2E] text-xs font-bold">
+                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#F4762D] text-[#1A1A2E] text-xs font-bold">
                   {totalItems > 9 ? '9+' : totalItems}
                 </span>
               )}
@@ -162,7 +160,7 @@ const Header = () => {
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                   className="flex items-center gap-2 p-2 rounded-full hover:bg-[#F0EDEA] transition-smooth"
                 >
-                  <div className="h-8 w-8 rounded-full bg-[#D4AF37] flex items-center justify-center text-[#1A1A2E] font-semibold text-sm">
+                  <div className="h-8 w-8 rounded-full bg-[#F4762D] flex items-center justify-center text-[#1A1A2E] font-semibold text-sm">
                     {userName.charAt(0).toUpperCase()}
                   </div>
                 </button>
@@ -215,9 +213,8 @@ const Header = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`block text-sm font-medium transition-smooth ${
-                    isActive ? 'text-[#D4AF37]' : 'text-[#1A1A2E]'
-                  }`}
+                  className={`block text-sm font-medium transition-smooth ${isActive ? 'text-[#F4762D]' : 'text-[#1A1A2E]'
+                    }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -235,7 +232,7 @@ const Header = () => {
               ) : (
                 <Link
                   href="/login"
-                  className="block text-sm font-medium text-[#D4AF37] transition-smooth"
+                  className="block text-sm font-medium text-[#F4762D] transition-smooth"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Sign In

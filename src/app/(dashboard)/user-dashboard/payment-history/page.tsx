@@ -30,7 +30,7 @@ export default function PaymentHistoryPage() {
 
       {isLoading ? (
         <div className="flex justify-center py-12">
-          <Icon name="ArrowPathIcon" size={32} className="animate-spin text-[#FF6B8A]" />
+          <Icon name="ArrowPathIcon" size={32} className="animate-spin text-[#317CA2]" />
         </div>
       ) : error ? (
         <div className="rounded-lg border border-red-200 bg-red-50 p-4 text-red-600">
@@ -43,7 +43,7 @@ export default function PaymentHistoryPage() {
           <p className="mt-2 text-sm text-[#6B7280]">Your payment history will appear here</p>
           <Link
             href="/products"
-            className="mt-4 inline-block rounded-lg bg-[#FF6B8A] px-6 py-2 text-white transition-all hover:scale-[0.98]"
+            className="mt-4 inline-block rounded-lg bg-[#317CA2] px-6 py-2 text-white transition-all hover:scale-[0.98]"
           >
             Start Shopping
           </Link>
@@ -86,7 +86,7 @@ export default function PaymentHistoryPage() {
                     <td className="px-4 py-3 text-sm">
                       <Link
                         href={`/user-dashboard/orders`}
-                        className="text-[#FF6B8A] transition-colors hover:underline"
+                        className="text-[#317CA2] transition-colors hover:underline"
                       >
                         View Order
                       </Link>

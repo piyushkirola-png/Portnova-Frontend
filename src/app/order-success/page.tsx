@@ -89,7 +89,7 @@ function OrderSuccessContent() {
               Order Placed Successfully! 🎉
             </h1>
             <p className="text-green-100 mt-2">
-              Thank you for shopping with DecorVault
+              Thank you for shopping with Portnova
             </p>
           </div>
 

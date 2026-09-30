@@ -64,7 +64,7 @@ const faqCategories = [
       },
       {
         question: 'How do I initiate a return?',
-        answer: 'To initiate a return, contact us at info@decorvault.online with your order ID and reason for return. You will receive a Return Authorization (RA) number and further instructions.'
+        answer: 'To initiate a return, contact us at info@portnovaio.com with your order ID and reason for return. You will receive a Return Authorization (RA) number and further instructions.'
       },
       {
         question: 'How long does it take to receive a refund?',
@@ -95,7 +95,7 @@ const faqCategories = [
       },
       {
         question: 'What is your bulk order policy?',
-        answer: 'We offer special pricing for bulk orders. Please contact our team at contact@decorvault.online with your requirements and we will provide you with a quote.'
+        answer: 'We offer special pricing for bulk orders. Please contact our team at contact@portnovaio.com with your requirements and we will provide you with a quote.'
       }
     ]
   },
@@ -129,7 +129,7 @@ const faqCategories = [
     faqs: [
       {
         question: 'How can I contact customer support?',
-        answer: 'You can reach us via email at contact@decorvault.online or call us at +91 98765 43210. Our support team is available Monday to Saturday, 10 AM to 7 PM (IST).'
+        answer: 'You can reach us via email at contact@portnovaio.com or call us at +91 98765 43210. Our support team is available Monday to Saturday, 10 AM to 7 PM (IST).'
       },
       {
         question: 'Do you have a physical store?',
@@ -181,7 +181,7 @@ export default function FAQsPage() {
             <input
               type="text"
               placeholder="Search for answers..."
-              className="w-full px-4 py-3 pl-12 border border-gray-200 rounded-lg bg-white text-[#1A2A3A] placeholder:text-[#6B7280] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+              className="w-full px-4 py-3 pl-12 border border-gray-200 rounded-lg bg-white text-[#1A2A3A] placeholder:text-[#6B7280] focus:outline-none focus:ring-2 focus:ring-[#F4762D]"
             />
             <Icon name="MagnifyingGlassIcon" size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#6B7280]" />
           </div>
@@ -189,7 +189,7 @@ export default function FAQsPage() {
 
         {/* Categories & FAQs */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8" data-aos="fade-up">
-          
+
           {/* Sidebar - Categories */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 sticky top-24">
@@ -202,11 +202,10 @@ export default function FAQsPage() {
                         setActiveCategory(category.id);
                         setOpenFaq(null);
                       }}
-                      className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-smooth ${
-                        activeCategory === category.id
-                          ? 'bg-[#D4AF37] text-white'
+                      className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-smooth ${activeCategory === category.id
+                          ? 'bg-[#F4762D] text-white'
                           : 'text-[#6B7280] hover:bg-[#F5F5F7] hover:text-[#1A2A3A]'
-                      }`}
+                        }`}
                     >
                       <Icon name={category.icon as any} size={18} />
                       <span>{category.name}</span>
@@ -225,8 +224,8 @@ export default function FAQsPage() {
             <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 md:p-8">
               {/* Category Title */}
               <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-200">
-                <div className="p-2 bg-[#FDF8F0] rounded-lg">
-                  <Icon name={currentCategory?.icon as any} size={24} className="text-[#D4AF37]" />
+                <div className="p-2 bg-[#FFF4E5] rounded-lg">
+                  <Icon name={currentCategory?.icon as any} size={24} className="text-[#F4762D]" />
                 </div>
                 <div>
                   <h2 className="text-xl font-semibold text-[#1A2A3A]">{currentCategory?.name}</h2>
@@ -255,15 +254,13 @@ export default function FAQsPage() {
                         <Icon
                           name={isOpen ? 'ChevronUpIcon' : 'ChevronDownIcon'}
                           size={20}
-                          className={`flex-shrink-0 text-[#6B7280] transition-transform duration-300 ${
-                            isOpen ? 'text-[#D4AF37]' : ''
-                          }`}
+                          className={`flex-shrink-0 text-[#6B7280] transition-transform duration-300 ${isOpen ? 'text-[#F4762D]' : ''
+                            }`}
                         />
                       </button>
                       <div
-                        className={`overflow-hidden transition-all duration-300 ${
-                          isOpen ? 'max-h-96' : 'max-h-0'
-                        }`}
+                        className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0'
+                          }`}
                       >
                         <div className="p-4 pt-0 text-[#374151] border-t border-gray-100">
                           {faq.answer}
@@ -276,7 +273,7 @@ export default function FAQsPage() {
 
               {/* Still Have Questions */}
               <div className="mt-8 p-6 bg-[#F5F5F7] rounded-lg text-center">
-                <Icon name="ChatBubbleLeftRightIcon" size={28} className="mx-auto text-[#D4AF37] mb-3" />
+                <Icon name="ChatBubbleLeftRightIcon" size={28} className="mx-auto text-[#F4762D] mb-3" />
                 <h3 className="font-semibold text-[#1A2A3A] mb-2">Still Have Questions?</h3>
                 <p className="text-sm text-[#6B7280] mb-4">
                   Can't find what you're looking for? Our team is here to help.
@@ -284,13 +281,13 @@ export default function FAQsPage() {
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Link
                     href="/contact"
-                    className="px-6 py-2 bg-[#D4AF37] text-[#1A2A3A] text-sm font-medium rounded-lg hover:scale-[0.97] transition-smooth"
+                    className="px-6 py-2 bg-[#F4762D] text-[#1A2A3A] text-sm font-medium rounded-lg hover:scale-[0.97] transition-smooth"
                   >
                     Contact Us
                   </Link>
                   <a
-                    href="mailto:contact@decorvault.online"
-                    className="px-6 py-2 border border-[#D4AF37] text-[#D4AF37] text-sm font-medium rounded-lg hover:bg-[#FDF8F0] transition-smooth"
+                    href="mailto:contact@portnovaio.com"
+                    className="px-6 py-2 border border-[#F4762D] text-[#F4762D] text-sm font-medium rounded-lg hover:bg-[#FFF4E5] transition-smooth"
                   >
                     Email Us
                   </a>

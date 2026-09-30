@@ -3,7 +3,7 @@ import Breadcrumb from '@/components/common/Breadcrumb';
 import CheckoutInteractive from './components/CheckoutInteractive';
 
 export const metadata: Metadata = {
-  title: 'Checkout - DecorVault',
+  title: 'Checkout - Portnova',
   description: 'Complete your purchase securely with Razorpay. Review your order, select payment method, and place your order.',
 };
 
