@@ -26,6 +26,7 @@ import type { RootState } from '@/store/store';
 
 interface RelatedProduct {
   id: string;
+  slug: string;
   name: string;
   image: string;
   alt: string;
@@ -37,6 +38,7 @@ interface RelatedProduct {
 
 interface RecentProduct {
   id: string;
+  slug: string;
   name: string;
   image: string;
   alt: string;
@@ -61,6 +63,19 @@ function extractFirstImage(product: any): string {
     return raw;
   }
   return '';
+}
+
+function getRandomRating(seed: number): number {
+  const hash = (seed * 9301 + 49297) % 233280;
+  const normalized = hash / 233280;
+  const rating = 4 + normalized * 1;
+  return Number(rating.toFixed(1));
+}
+
+function getRandomReviews(seed: number): number {
+  const hash = (seed * 7919 + 104729) % 99991;
+  const normalized = hash / 99991;
+  return Math.floor(20 + normalized * 480);
 }
 
 export default function ShoppingCartInteractive() {
@@ -131,16 +146,30 @@ export default function ShoppingCartInteractive() {
     return raw.slice(0, 4).map((p: any) => {
       const price = Number(p.discount_price ?? p.price) || 0;
       const originalPrice = Number(p.original_price ?? p.price) || price;
+      const pid = Number(p.id ?? p.product_id ?? 0);
+
+      const realRating = Number(p.rating);
+      const realReviews = Number(p.reviews ?? p.reviews_count);
 
       return {
         id: String(p.id ?? p.product_id ?? ''),
+        slug:
+          p.slug && String(p.slug).trim() !== ''
+            ? String(p.slug)
+            : String(p.name || '')
+              .toLowerCase()
+              .trim()
+              .replace(/[^a-z0-9\s-]/g, '')
+              .replace(/\s+/g, '-')
+              .replace(/-+/g, '-')
+              .replace(/^-|-$/g, ''),
         name: p.name || '',
         image: extractFirstImage(p),
         alt: p.name || 'Product',
         price,
         originalPrice,
-        rating: Number(p.rating) || 0,
-        reviews: Number(p.reviews ?? p.reviews_count) || 0,
+        rating: realRating > 0 ? realRating : getRandomRating(pid),
+        reviews: realReviews > 0 ? realReviews : getRandomReviews(pid),
       };
     });
   }, [productsData]);
@@ -151,6 +180,16 @@ export default function ShoppingCartInteractive() {
 
     return raw.slice(0, 2).map((p: any) => ({
       id: String(p.id ?? p.product_id ?? ''),
+      slug:
+        p.slug && String(p.slug).trim() !== ''
+          ? String(p.slug)
+          : String(p.name || '')
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, ''),
       name: p.name || '',
       image: extractFirstImage(p),
       alt: p.name || 'Product',

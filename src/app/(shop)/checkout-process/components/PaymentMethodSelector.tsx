@@ -23,20 +23,6 @@ const paymentMethods: PaymentMethod[] = [
     isAvailable: true,
   },
   {
-    id: 'setu',
-    name: 'Setu (UPI / QR)',
-    icon: 'QrCodeIcon',
-    description: 'Pay instantly via UPI / QR code using Setu',
-    isAvailable: true,
-  },
-  {
-    id: 'payu',
-    name: 'PayU',
-    icon: 'CreditCardIcon',   // reuse the icon component
-    description: 'Pay via Cards, UPI, Net Banking & Wallets through PayU',
-    isAvailable: true,
-  },
-  {
     id: 'cod',
     name: 'Cash on Delivery',
     icon: 'WalletIcon',
@@ -103,38 +89,6 @@ const PaymentMethodSelector: React.FC<PaymentMethodSelectorProps> = ({
               <p className="font-medium">Secure Payment</p>
               <p className="text-blue-600">
                 Your payment is encrypted and secure. Powered by Razorpay.
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Setu Info */}
-      {selectedMethodId === 'setu' && (
-        <div className="mt-4 rounded-lg bg-purple-50 p-3 text-sm text-purple-700">
-          <div className="flex items-start gap-2">
-            <Icon name="QrCodeIcon" size={20} className="mt-0.5" />
-            <div>
-              <p className="font-medium">Pay via UPI / QR</p>
-              <p className="text-purple-600">
-                You will be redirected to Setu to complete your payment
-                securely.
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* PayU Info */}
-      {selectedMethodId === 'payu' && (
-        <div className="mt-4 rounded-lg bg-amber-50 p-3 text-sm text-amber-800">
-          <div className="flex items-start gap-2">
-            <Icon name="ShieldCheckIcon" size={20} className="mt-0.5" />
-            <div>
-              <p className="font-medium">Pay via PayU</p>
-              <p className="text-amber-700">
-                You will be redirected to PayU to complete your payment
-                securely using Cards, UPI, Net Banking or Wallets.
               </p>
             </div>
           </div>

@@ -44,7 +44,6 @@ export default function CouponValidator({
     setError('');
 
     try {
-      // ✅ Fixed URL — hits the backend, not the frontend
       const response = await fetch(`${API_URL}/coupon/validate`, {
         method: 'POST',
         headers: {

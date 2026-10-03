@@ -83,28 +83,28 @@ const ProductCard = ({
 
   return (
     <Link href={`/product/${slug}`} className="block">
-      <div className="group relative overflow-hidden rounded-xl border border-border bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+      <div className="group relative overflow-hidden rounded-none border border-border bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
         
         {/* Top Left: Discount */}
         {discount > 0 && (
-          <span className="absolute left-3 top-3 z-20 rounded-full bg-[#F4762D] px-2.5 py-0.5 text-[10px] font-semibold text-[#1A1A2E]">
+          <span className="absolute left-3 top-3 z-20 rounded-none bg-[#F4762D] px-2.5 py-0.5 text-[10px] font-semibold text-[#1A1A2E]">
             {discount}% OFF
           </span>
         )}
 
         {/* Image - Full width with fixed aspect ratio 1:1 */}
-        <div className="relative w-full overflow-hidden rounded-t-xl bg-gray-100" style={{ aspectRatio: '1/1' }}>
+        <div className="relative w-full overflow-hidden rounded-none bg-gray-100" style={{ aspectRatio: '4/5' }}>
           <AppImage
             src={productImage}
             alt={alt || name}
-            className="h-full w-full rounded-t-xl object-cover transition-transform duration-300 group-hover:scale-105"
+            className="h-full w-full rounded-none object-cover transition-transform duration-300 group-hover:scale-105"
           />
           
-          {/* ✅ Wishlist Icon - Shows on Hover only */}
+          {/* Wishlist Icon - Shows on Hover only */}
           <button
             type="button"
             onClick={handleWishlistToggle}
-            className="absolute top-3 right-3 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-md transition-all duration-300 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 hover:bg-gray-100"
+            className="absolute top-3 right-3 z-20 flex h-8 w-8 items-center justify-center rounded-none bg-white shadow-md transition-all duration-300 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 hover:bg-gray-100"
           >
             <Icon 
               name="HeartIcon" 

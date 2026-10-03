@@ -8,6 +8,7 @@ import { syncCart, clearAppliedCoupon } from '@/store/slices/cart';
 import { useCreateOrderMutation, useGetUserAddressesQuery } from '@/store/api/orderApi';
 import { useInitiatePaymentMutation } from '@/store/api/paymentApi';
 import { useInitiateSetuPaymentMutation } from '@/store/api/setuApi';
+import { useClearCartMutation } from '@/store/api/cartApi';
 import Icon from '@/components/ui/AppIcon';
 import DeliveryAddressForm from './DeliveryAddressForm';
 import PaymentMethodSelector from './PaymentMethodSelector';
@@ -39,6 +40,7 @@ const CheckoutInteractive = () => {
     const [termsAccepted, setTermsAccepted] = useState(false);
     const [showOrderSummary, setShowOrderSummary] = useState(false);
     const [isProcessingPayment, setIsProcessingPayment] = useState(false);
+    const [hasRedirected, setHasRedirected] = useState(false);
 
     const cartItems = useSelector((state: RootState) => state.cart.items);
     const { isAuthenticated } = useSelector((state: RootState) => state.auth);
@@ -48,7 +50,7 @@ const CheckoutInteractive = () => {
     const [createOrder, { isLoading: isPlacingOrder }] = useCreateOrderMutation();
     const [initiatePayment] = useInitiatePaymentMutation();
     const [initiateSetuPayment] = useInitiateSetuPaymentMutation();
-
+    const [clearCartBackend] = useClearCartMutation();
     const [initiatePayUPayment] = useInitiatePayUPaymentMutation();
     const [payuForm, setPayuForm] = useState<{
         action: string;
@@ -64,11 +66,15 @@ const CheckoutInteractive = () => {
     }, [isAuthenticated, router]);
 
     useEffect(() => {
-        if (isHydrated && isAuthenticated && cartItems.length === 0) {
+        if (!isHydrated || !isAuthenticated) return;
+        if (hasRedirected) return;
+        if (isPlacingOrder || isProcessingPayment) return;
+        if (cartItems.length === 0) {
+            setHasRedirected(true);
             toast.error('Your cart is empty');
             router.push('/products');
         }
-    }, [isHydrated, isAuthenticated, cartItems, router]);
+    }, [isHydrated, isAuthenticated, cartItems, router, hasRedirected, isPlacingOrder, isProcessingPayment]);
 
     const subtotal = cartItems.reduce((sum, item) => sum + Number(item.price) * item.quantity, 0);
     const discount = appliedCoupon?.discount || 0;
@@ -197,6 +203,11 @@ const CheckoutInteractive = () => {
                 }
             }
             else {
+                try {
+                    await clearCartBackend(undefined).unwrap();
+                } catch (err) {
+                    console.error('Failed to clear cart on backend:', err);
+                }
                 dispatch(syncCart([]));
                 dispatch(clearAppliedCoupon());
                 toast.success(`Order #${orderNumber} placed successfully!`);

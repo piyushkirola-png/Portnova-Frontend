@@ -6,6 +6,7 @@ import Icon from '@/components/ui/AppIcon';
 
 interface RecentProduct {
   id: string;
+  slug: string;
   name: string;
   image: string;
   alt: string;
@@ -80,7 +81,7 @@ export default function EmptyCart({ recentProducts }: EmptyCartProps) {
             {recentProducts.map((product) => (
               <Link
                 key={product.id}
-                href={`/product-details?id=${product.id}`}
+                href={`/product/${product.slug}`}
                 className="group rounded-lg border border-border bg-card transition-smooth hover:shadow-elevation-2"
               >
                 <div className="aspect-square overflow-hidden rounded-t-lg bg-muted">

@@ -4,11 +4,16 @@ import { Suspense } from 'react';
 import { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useVerifyPaymentMutation } from '@/store/api/paymentApi';
+import { useClearCartMutation } from '@/store/api/cartApi';
+import { useDispatch } from 'react-redux';
+import { syncCart } from '@/store/slices/cart';
 
 function RazorpaySuccessContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const dispatch = useDispatch();
   const [verifyPayment] = useVerifyPaymentMutation();
+  const [clearCartBackend] = useClearCartMutation();
   const [status, setStatus] = useState<'loading' | 'success' | 'failed'>('loading');
   const [message, setMessage] = useState('');
 
@@ -36,11 +41,16 @@ function RazorpaySuccessContent() {
       ...(orderId && { orderId }),
     })
       .unwrap()
-      .then((result) => {
+      .then(async (result) => {
         if (result.success) {
           setStatus('success');
           setMessage('Payment verified successfully!');
-          // Redirect to order success page after 2 seconds
+          try {
+            await clearCartBackend(undefined).unwrap();
+          } catch (err) {
+            console.error('Failed to clear cart on backend:', err);
+          }
+          dispatch(syncCart([]));
           setTimeout(() => {
             router.push(`/order-success?orderId=${orderId}`);
           }, 2000);

@@ -16,11 +16,9 @@ const HeroBanner2 = () => {
             src="/assets/images/hero/hero-1.png"
             alt="Casual Collection"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 70vw"
           />
-
-          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300" />
 
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/70 to-transparent" />
 
@@ -43,11 +41,9 @@ const HeroBanner2 = () => {
             src="/assets/images/hero/hero-2.png"
             alt="Fall Tops Collection"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 30vw"
           />
-
-          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300" />
 
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/70 to-transparent" />
 

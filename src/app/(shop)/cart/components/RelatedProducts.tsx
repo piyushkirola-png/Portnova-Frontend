@@ -50,7 +50,8 @@ export default function RelatedProducts({ products }: RelatedProductsProps) {
                   const parent = target.parentElement;
                   if (parent) {
                     const fallback = document.createElement('div');
-                    fallback.className = 'flex items-center justify-center w-full h-full bg-[#F0EDEA] text-[#7A7A7A] text-sm font-medium text-center p-2';
+                    fallback.className =
+                      'flex items-center justify-center w-full h-full bg-[#F0EDEA] text-[#7A7A7A] text-sm font-medium text-center p-2';
                     fallback.textContent = product.name;
                     parent.appendChild(fallback);
                   }
@@ -79,21 +80,33 @@ export default function RelatedProducts({ products }: RelatedProductsProps) {
                   </span>
                 )}
               </div>
+
+              {/* ✅ Stars with half-star support + rating number */}
               <div className="flex items-center gap-1 mt-0.5">
                 <div className="flex items-center">
-                  {[...Array(5)].map((_, i) => (
-                    <Icon
-                      key={i}
-                      name="StarIcon"
-                      size={12}
-                      variant={i < Math.floor(product.rating) ? 'solid' : 'outline'}
-                      className={i < Math.floor(product.rating) ? 'text-[#F4762D]' : 'text-[#E8E4E0]'}
-                    />
-                  ))}
+                  {[0, 1, 2, 3, 4].map((i) => {
+                    const filled = i < Math.floor(product.rating);
+                    const half = !filled && i < product.rating;
+                    return (
+                      <Icon
+                        key={i}
+                        name="StarIcon"
+                        size={12}
+                        variant={filled || half ? 'solid' : 'outline'}
+                        className={
+                          filled
+                            ? 'text-[#F4762D]'
+                            : half
+                              ? 'text-[#F4762D] opacity-50'
+                              : 'text-[#E8E4E0]'
+                        }
+                      />
+                    );
+                  })}
                 </div>
-                {product.reviews && (
-                  <span className="text-xs text-[#7A7A7A]">({product.reviews})</span>
-                )}
+                <span className="text-xs text-[#7A7A7A]">
+                  ({product.rating.toFixed(1)})
+                </span>
               </div>
             </div>
           </Link>
