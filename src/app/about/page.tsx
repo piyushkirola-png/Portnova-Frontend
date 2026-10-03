@@ -4,13 +4,13 @@ import Image from 'next/image';
 import Icon from '@/components/ui/AppIcon';
 
 export const metadata: Metadata = {
-  title: 'About Us - Portnova | Premium Home Decor & Gifts',
+  title: 'About Us - Portnova | Premium Fashion Clothing',
   description:
-    'Discover Portnova — your destination for premium home decor, candles, clocks, photo frames, gift items, and curated home accessories. Managed by Weftalix Private Limited.',
+    'Discover Portnova — your destination for premium fashion clothing, casual wear, ethnic wear, jeans, shirts, kurtas, and curated style essentials. Managed by PORTNOVA TRADE PRIVATE LIMITED.',
 };
 
 const stats = [
-  { label: 'Products in Range', value: '500+' },
+  { label: 'Styles in Range', value: '500+' },
   { label: 'Happy Customers', value: '25,000+' },
   { label: 'Cities Delivered', value: '75+' },
   { label: 'Curated Categories', value: '8+' },
@@ -20,22 +20,22 @@ const values = [
   {
     icon: 'SparklesIcon',
     title: 'Curated Quality',
-    desc: 'Every product in our collection is handpicked for quality, design, and craftsmanship. We believe your home deserves the best.',
+    desc: 'Every piece in our collection is handpicked for quality, design, and craftsmanship. We believe your wardrobe deserves the best.',
   },
   {
     icon: 'HeartIcon',
     title: 'Made with Love',
-    desc: 'From candles to photo frames, each piece is created with care and attention to detail. We pour our heart into everything we make.',
+    desc: 'From casual shirts to ethnic kurtas, each garment is crafted with care and attention to detail. We pour our heart into everything we make.',
   },
   {
     icon: 'ShieldCheckIcon',
     title: 'Trusted & Reliable',
-    desc: 'Thousands of customers trust Portnova for their home decor needs. We stand behind every product we sell.',
+    desc: 'Thousands of customers trust Portnova for their fashion needs. We stand behind every product we sell.',
   },
   {
     icon: 'GiftIcon',
     title: 'Perfect for Gifting',
-    desc: 'Our curated collections make gifting easy and memorable. Find the perfect present for every occasion.',
+    desc: 'Our curated collections make gifting easy and memorable. Find the perfect outfit for every occasion.',
   },
 ];
 
@@ -43,34 +43,34 @@ const timeline = [
   {
     year: '2025',
     title: 'The Beginning',
-    desc: 'Portnova was founded on 23 December 2025 under Weftalix Private Limited with a simple vision — to make beautiful home decor accessible to everyone.',
+    desc: 'Portnova was founded on 23 December 2025 under PORTNOVA TRADE PRIVATE LIMITED with a simple vision — to make trendy fashion clothing accessible to everyone.',
   },
   {
     year: '2026',
     title: 'Expanded Collections',
-    desc: 'Grew our product range to include candles, clocks, photo frames, vases, wall decor, and gift items. Became a one-stop destination for home decor lovers.',
+    desc: 'Grew our product range to include casual wear, ethnic wear, jeans, shirts, kurtas, and style essentials. Became a one-stop destination for fashion lovers.',
   },
   {
     year: '2026+',
     title: 'Pan-India Reach',
-    desc: 'Partnered with trusted logistics partners to deliver across 75+ cities. Thousands of homes now enjoy our curated collections.',
+    desc: 'Partnered with trusted logistics partners to deliver across 75+ cities. Thousands of wardrobes now enjoy our curated collections.',
   },
   {
     year: 'Future',
     title: 'Premium Collections',
-    desc: 'Launching luxury collections including premium candles, designer photo frames, and exclusive gift hampers to elevate the home decor experience.',
+    desc: 'Launching luxury collections including designer ethnic wear, premium denim, and exclusive fashion capsules to elevate the style experience.',
   },
 ];
 
 const categories = [
-  { name: 'Candles', icon: 'FireIcon' },
-  { name: 'Clocks', icon: 'ClockIcon' },
-  { name: 'Photo Frames', icon: 'PhotoIcon' },
-  { name: 'Vases', icon: 'BeakerIcon' },
-  { name: 'Wall Decor', icon: 'HomeIcon' },
-  { name: 'Gift Items', icon: 'GiftIcon' },
-  { name: 'Mirrors', icon: 'ViewfinderCircleIcon' },
-  { name: 'Indoor Plants', icon: 'SparklesIcon' },
+  { name: 'Men\'s Shirts', icon: 'FireIcon' },
+  { name: 'Men\'s Kurtas', icon: 'ClockIcon' },
+  { name: 'Men\'s Jeans', icon: 'PhotoIcon' },
+  { name: 'Women\'s Shirts', icon: 'BeakerIcon' },
+  { name: 'Women\'s Kurtas', icon: 'HomeIcon' },
+  { name: 'Women\'s Jeans', icon: 'GiftIcon' },
+  { name: 'Casual Wear', icon: 'ViewfinderCircleIcon' },
+  { name: 'Ethnic Wear', icon: 'SparklesIcon' },
 ];
 
 export default function AboutPage() {
@@ -98,12 +98,12 @@ export default function AboutPage() {
             Our Story
           </h1>
           <p className="mt-5 text-lg text-[#7A7A7A] leading-relaxed max-w-2xl mx-auto">
-            From a small passion project to thousands of beautiful homes across India —
-            Portnova is your destination for premium home decor, candles, clocks,
-            photo frames, and curated gift items.
+            From a small passion project to thousands of stylish wardrobes across India —
+            Portnova is your destination for premium fashion clothing, casual wear,
+            ethnic wear, jeans, and curated style essentials.
           </p>
           <p className="mt-3 text-base font-semibold text-[#F4762D]">
-            ✦ Curated with love for your home ✦
+            ✦ Curated with love for your style ✦
           </p>
         </div>
       </div>
@@ -130,21 +130,21 @@ export default function AboutPage() {
               Who We Are
             </h2>
             <p className="mt-4 text-[#7A7A7A] leading-relaxed">
-              Portnova is a premium home decor brand dedicated to curating the finest
-              collection of decorative items for your home. From elegant candles and
-              stylish clocks to beautiful photo frames and thoughtful gift items —
-              we bring you quality products that make your space truly special.
+              Portnova is a premium fashion clothing brand dedicated to curating the finest
+              collection of stylish garments for your wardrobe. From elegant shirts and
+              trendy jeans to beautiful ethnic wear and thoughtful style essentials —
+              we bring you quality clothing that makes you look and feel special.
             </p>
             <p className="mt-4 text-[#7A7A7A] leading-relaxed">
-              <strong className="text-[#1A1A2E]">Portnova is managed and handled by Weftalix Private Limited</strong>,
+              <strong className="text-[#1A1A2E]">Portnova is managed and handled by PORTNOVA TRADE PRIVATE LIMITED</strong>,
               a Private Limited Company incorporated on <strong className="text-[#1A1A2E]">23 December 2025</strong>.
-              We believe that every home tells a story, and our carefully curated
+              We believe that every outfit tells a story, and our carefully curated
               collections help you tell yours — with pieces that reflect your
-              personality, style, and the love you pour into your living space.
+              personality, style, and the confidence you carry.
             </p>
             <p className="mt-4 text-[#7A7A7A] leading-relaxed">
-              Whether you're looking to refresh your decor, find the perfect gift, or
-              discover something unique for your home — Portnova is here to inspire you.
+              Whether you're looking to refresh your wardrobe, find the perfect outfit, or
+              discover something unique for your style — Portnova is here to inspire you.
             </p>
           </div>
 
@@ -158,11 +158,11 @@ export default function AboutPage() {
               </div>
               <div>
                 <p className="text-[#7A7A7A]">Type</p>
-                <p className="font-semibold text-[#1A1A2E]">Premium Home Decor</p>
+                <p className="font-semibold text-[#1A1A2E]">Premium Fashion Clothing</p>
               </div>
               <div>
                 <p className="text-[#7A7A7A]">Managed By</p>
-                <p className="font-semibold text-[#1A1A2E]">Weftalix Pvt Ltd</p>
+                <p className="font-semibold text-[#1A1A2E]">PORTNOVA TRADE PRIVATE LIMITED</p>
               </div>
               <div>
                 <p className="text-[#7A7A7A]">Constitution</p>
@@ -170,17 +170,17 @@ export default function AboutPage() {
               </div>
               <div>
                 <p className="text-[#7A7A7A]">Industry</p>
-                <p className="font-semibold text-[#1A1A2E]">Home Decor & Gifting</p>
+                <p className="font-semibold text-[#1A1A2E]">Fashion & Apparel</p>
               </div>
               <div>
                 <p className="text-[#7A7A7A]">Products</p>
-                <p className="font-semibold text-[#1A1A2E]">500+ Curated Items</p>
+                <p className="font-semibold text-[#1A1A2E]">500+ Curated Styles</p>
               </div>
               <div className="col-span-2">
                 <p className="text-[#7A7A7A]">Registered Address</p>
                 <p className="font-semibold text-[#1A1A2E] leading-snug">
-                  H No. 9/149, Shyam Block, Kailash Nagar,<br />
-                  Gandhi Nagar, New Delhi – 110031
+                  Shop no. 3 DDA MARKET CSC,<br />
+                  JAGRITI ENCLAVE SHAHDARA DELHI 110092
                 </p>
               </div>
               <div>
@@ -189,12 +189,12 @@ export default function AboutPage() {
               </div>
               <div>
                 <p className="text-[#7A7A7A]">Speciality</p>
-                <p className="font-semibold text-[#1A1A2E]">Candles, Clocks, Frames</p>
+                <p className="font-semibold text-[#1A1A2E]">Casual, Ethnic & Denim</p>
               </div>
               <div>
                 <p className="text-[#7A7A7A]">Phone</p>
-                <a href="tel:+919582791995" className="font-semibold text-[#F4762D] hover:underline">
-                  +91 95827 91995
+                <a href="tel:+917217890016" className="font-semibold text-[#F4762D] hover:underline">
+                  +91-7217890016, 9217765016
                 </a>
               </div>
               <div>
@@ -252,7 +252,7 @@ export default function AboutPage() {
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:py-16">
         <div className="mb-10 text-center">
           <h2 className="font-heading text-2xl font-bold text-[#1A1A2E] sm:text-3xl">Our Journey</h2>
-          <p className="mt-2 text-[#7A7A7A]">Growing with you, one beautiful piece at a time.</p>
+          <p className="mt-2 text-[#7A7A7A]">Growing with you, one stylish piece at a time.</p>
         </div>
         <div className="relative space-y-8 before:absolute before:left-5 before:top-2 before:h-full before:w-0.5 before:bg-[#E8E4E0] sm:before:left-[calc(50%-1px)]">
           {timeline.map((item, i) => (
@@ -281,7 +281,7 @@ export default function AboutPage() {
               What We Offer
             </h2>
             <p className="mt-2 text-[#7A7A7A]">
-              500+ curated products across 8 categories — all carefully selected for your home.
+              500+ curated styles across 8 categories — all carefully selected for your wardrobe.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -312,11 +312,11 @@ export default function AboutPage() {
       <div className="bg-[#1A1A2E] py-12 text-center">
         <div className="mx-auto max-w-2xl px-4">
           <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl">
-            Find Your Perfect Decor
+            Find Your Perfect Style
           </h2>
           <p className="mt-3 text-white/70 leading-relaxed">
-            Looking for something special? Browse our curated collection of premium home decor,
-            candles, clocks, photo frames, and gift items.
+            Looking for something special? Browse our curated collection of premium fashion clothing,
+            casual wear, ethnic wear, jeans, and style essentials.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link

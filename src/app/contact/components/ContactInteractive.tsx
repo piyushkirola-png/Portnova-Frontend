@@ -47,10 +47,10 @@ const ContactInteractive = () => {
               Get in Touch
             </h1>
             <p className="mt-4 text-lg text-[#7A7A7A]">
-              Premium Home Decor & Gifting
+              Premium Fashion Clothing
             </p>
             <p className="mt-2 text-base text-[#7A7A7A] max-w-2xl mx-auto">
-              Have a question about our products, need help with an order, or looking for
+              Have a question about our clothing collection, need help with an order, or looking for
               something special? We'd love to hear from you.
             </p>
           </div>
@@ -69,8 +69,8 @@ const ContactInteractive = () => {
               </div>
               <h3 className="mb-2 font-semibold text-[#1A1A2E]">Call Us</h3>
               <p className="text-sm text-[#7A7A7A] mb-2">Mon-Sat: 10 AM - 7 PM</p>
-              <a href="tel:+919582791995" className="text-[#F4762D] hover:underline font-medium">
-                +91 95827 91995
+              <a href="tel:+917217890016" className="text-[#F4762D] hover:underline font-medium">
+                +91-7217890016, 9217765016
               </a>
             </div>
 
@@ -81,8 +81,8 @@ const ContactInteractive = () => {
               </div>
               <h3 className="mb-2 font-semibold text-[#1A1A2E]">Email Us</h3>
               <p className="text-sm text-[#7A7A7A] mb-2">We'll respond within 24 hours</p>
-              <a href="mailto:info@portnovaio.com" className="text-[#F4762D] hover:underline font-medium">
-                info@portnovaio.com
+              <a href="mailto:Info@portnovaio.com" className="text-[#F4762D] hover:underline font-medium">
+                Info@portnovaio.com
               </a>
             </div>
 
@@ -93,19 +93,19 @@ const ContactInteractive = () => {
               </div>
               <h3 className="mb-2 font-semibold text-[#1A1A2E]">Visit Us</h3>
               <p className="text-sm text-[#7A7A7A]">
-                Portnova by Weftalix Pvt Ltd<br />
-                H No. 9/149, Shyam Block, Kailash Nagar<br />
-                Gandhi Nagar, New Delhi – 110031
+                PORTNOVA TRADE PRIVATE LIMITED<br />
+                Shop no. 3 DDA MARKET CSC<br />
+                JAGRITI ENCLAVE SHAHDARA DELHI 110092
               </p>
             </div>
 
-            {/* Company Info Card (replaces Follow Us) */}
+            {/* Company Info Card */}
             <div className="rounded-lg border border-[#E8E4E0] bg-white p-4 shadow-sm">
               <h3 className="mb-4 font-semibold text-[#1A1A2E]">Company Info</h3>
               <div className="space-y-3 text-sm">
                 <div>
                   <p className="text-[#7A7A7A]">Managed By</p>
-                  <p className="font-semibold text-[#1A1A2E]">Weftalix Private Limited</p>
+                  <p className="font-semibold text-[#1A1A2E]">PORTNOVA TRADE PRIVATE LIMITED</p>
                 </div>
                 <div>
                   <p className="text-[#7A7A7A]">Founded</p>
@@ -187,7 +187,7 @@ const ContactInteractive = () => {
                   {/* Phone */}
                   <div>
                     <label htmlFor="phone" className="mb-2 block text-sm font-medium text-[#1A1A2E]">
-                      Phone Number
+                      Phone Number <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="tel"
@@ -195,8 +195,9 @@ const ContactInteractive = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
+                      required
                       className="w-full rounded-md border border-[#E8E4E0] bg-[#FAFAFA] px-4 py-2.5 text-[#1A1A2E] placeholder:text-[#7A7A7A] focus:outline-none focus:ring-2 focus:ring-[#F4762D]"
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 9876543210"
                     />
                   </div>
 
@@ -236,7 +237,7 @@ const ContactInteractive = () => {
                     required
                     rows={6}
                     className="w-full rounded-md border border-[#E8E4E0] bg-[#FAFAFA] px-4 py-2.5 text-[#1A1A2E] placeholder:text-[#7A7A7A] focus:outline-none focus:ring-2 focus:ring-[#F4762D]"
-                    placeholder="Tell us about your decor needs, questions, or feedback..."
+                    placeholder="Tell us about your fashion needs, questions, or feedback..."
                   />
                 </div>
 
@@ -290,7 +291,7 @@ const ContactInteractive = () => {
                   <Icon name="QuestionMarkCircleIcon" size={16} className="mt-0.5 text-[#F4762D] flex-shrink-0" />
                   <div>
                     <p className="font-medium text-[#1A1A2E]">Do you offer gift wrapping?</p>
-                    <p className="text-[#7A7A7A]">Yes! We offer premium gift wrapping for all gift items and hampers.</p>
+                    <p className="text-[#7A7A7A]">Yes! We offer premium gift wrapping for all clothing orders.</p>
                   </div>
                 </div>
               </div>

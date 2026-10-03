@@ -19,7 +19,7 @@ export default function ProductCatalogPage() {
             Product Catalog
           </h1>
           <p className="text-[#7A7A7A]">
-            Discover our premium collection of home decor, candles, clocks, photo frames, and curated gift items
+            Discover our premium collection of fashion clothing, casual wear, ethnic wear, jeans, and curated style essentials
           </p>
         </div>
 

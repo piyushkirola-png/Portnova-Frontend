@@ -24,7 +24,7 @@ const EnhancedHeader = () => {
   const navigationItems: NavigationItem[] = [
     { label: 'Home', path: '/', icon: 'HomeIcon' },
     { label: 'Products', path: '/products', icon: 'ShoppingBagIcon' },
-    { label: 'Cart', path: '/shopping-cart', icon: 'ShoppingCartIcon' },
+    { label: 'Cart', path: '/cart', icon: 'ShoppingCartIcon' },
     { label: 'Checkout', path: '/checkout-process', icon: 'CreditCardIcon' },
   ];
 

@@ -38,7 +38,7 @@ const Footer = () => {
               <span className="font-heading text-xl font-bold text-[#1A1A2E]">Portnova</span>
             </div>
             <p className="text-sm text-[#7A7A7A] mb-4">
-              Premium home decor, candles, clocks, photo frames, and curated gift items for every occasion.
+              Premium fashion clothing, casual wear, ethnic wear, jeans, and curated style essentials for every occasion.
             </p>
             <p className="text-sm font-medium text-[#F4762D] mb-6">
               ✦ Curated with love for your home ✦
@@ -167,7 +167,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-[#1A1A2E] mb-4">Contact & Follow</h4>
             <div className="space-y-2 text-sm text-[#7A7A7A]">
-              <p className="flex items-center gap-2"><Icon name="PhoneIcon" size={16} />+91 95827 91995</p>
+              <p className="flex items-center gap-2"><Icon name="PhoneIcon" size={16} />+91 9217765016</p>
               <p className="flex items-center gap-2"><Icon name="EnvelopeIcon" size={16} />contact@portnovaio.com</p>
               <p className="flex items-center gap-2"><Icon name="ClockIcon" size={16} />Mon-Sat: 10 AM - 7 PM</p>
             </div>

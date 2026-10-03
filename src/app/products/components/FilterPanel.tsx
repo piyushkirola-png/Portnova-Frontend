@@ -143,8 +143,6 @@ const FilterPanel = ({ onFilterChange, productCount, initialFilters }: FilterPan
                   onChange={() => toggleCategory(category.slug)}
                   className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
                 />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={category.image} alt={category.name} className="h-8 w-8 rounded object-cover" />
                 <span className="text-sm text-foreground">{category.name}</span>
               </label>
             ))}
@@ -175,8 +173,6 @@ const FilterPanel = ({ onFilterChange, productCount, initialFilters }: FilterPan
                   onChange={() => toggleCategory(brand.slug)}
                   className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
                 />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={brand.image} alt={brand.name} className="h-8 w-8 rounded object-cover" />
                 <span className="text-sm text-foreground">{brand.name}</span>
               </label>
             ))}

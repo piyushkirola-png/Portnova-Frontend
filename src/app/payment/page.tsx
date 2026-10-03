@@ -17,6 +17,8 @@ function PaymentContent() {
 
     const orderId = searchParams?.get('orderId');
     const amount = searchParams?.get('amount');
+    const subtotal = searchParams?.get('subtotal');
+    const discount = searchParams?.get('discount');
 
     const { isAuthenticated } = useSelector((state: RootState) => state.auth);
 
@@ -51,6 +53,10 @@ function PaymentContent() {
         router.push(`/payment/failure?orderId=${orderId}`);
     };
 
+    // Parse subtotal/discount if provided; undefined otherwise
+    const subtotalNum = subtotal ? parseFloat(subtotal) : undefined;
+    const discountNum = discount ? parseFloat(discount) : undefined;
+
     return (
         <main className="min-h-screen bg-[#FAFAFA] py-8">
             <div className="container mx-auto max-w-4xl px-4">
@@ -75,7 +81,11 @@ function PaymentContent() {
                     </div>
 
                     <div className="md:col-span-1">
-                        <PaymentSummary total={parseFloat(amount)} />
+                        <PaymentSummary
+                            {...(subtotalNum !== undefined ? { subtotal: subtotalNum } : {})}
+                            {...(discountNum !== undefined ? { discount: discountNum } : {})}
+                            total={parseFloat(amount)}
+                        />
                         <div className="mt-4 rounded-lg border border-gray-200 bg-white p-4">
                             <h4 className="mb-2 text-sm font-medium text-[#1A2A3A]">Secure Payment</h4>
                             <p className="text-xs text-[#6B7280]">

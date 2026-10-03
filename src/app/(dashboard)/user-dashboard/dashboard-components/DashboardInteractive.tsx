@@ -224,7 +224,7 @@ const DashboardInteractive = () => {
   };
 
   const handleAddToCart = (_productId: string) => {
-    router.push('/shopping-cart');
+    router.push('/cart');
   };
 
   const handleEditAddress = (_addressId: string) => {
@@ -313,10 +313,6 @@ const DashboardInteractive = () => {
                     <h2 className="font-heading text-xl font-semibold text-card-foreground">
                       Order History
                     </h2>
-                    <button className="flex items-center space-x-1 text-sm text-primary transition-smooth hover:text-primary/80">
-                      <Icon name="FunnelIcon" size={16} />
-                      <span>Filter</span>
-                    </button>
                   </div>
                   {orders.length > 0 ? (
                     orders.map(order => (
@@ -405,7 +401,7 @@ const DashboardInteractive = () => {
             </div>
           </div>
 
-          {/* Recommended Section - Only show if no error and data exists */}
+          {/* Recommended Section */}
           {!recommendedError && recommendedProducts.length > 0 && (
             <div className="rounded-lg border border-border bg-card p-4 shadow-elevation-1">
               <div className="mb-4 flex items-center justify-between">
@@ -427,7 +423,6 @@ const DashboardInteractive = () => {
             </div>
           )}
 
-          {/* If error, show a simple message instead of error */}
           {recommendedError && (
             <div className="rounded-lg border border-border bg-card p-4 shadow-elevation-1">
               <h3 className="mb-2 font-heading text-lg font-semibold text-card-foreground">

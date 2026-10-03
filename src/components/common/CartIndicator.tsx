@@ -114,7 +114,7 @@ const CartIndicator = () => {
                     </span>
                   </div>
                   <Link
-                    href="/shopping-cart"
+                    href="/cart"
                     onClick={() => setIsCartPreviewOpen(false)}
                     className="block w-full rounded-md bg-primary px-4 py-2 text-center text-sm font-medium text-primary-foreground transition-smooth hover:scale-[0.97]"
                   >

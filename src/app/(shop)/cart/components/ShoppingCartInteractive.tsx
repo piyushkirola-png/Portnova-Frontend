@@ -15,7 +15,13 @@ import {
   useUpdateCartMutation,
 } from '@/store/api/cartApi';
 import { useGetProductsQuery } from '@/store/api/productsApi';
-import { clearCart, removeItem, updateQuantity, syncCart } from '@/store/slices/cart';
+import {
+  clearCart,
+  removeItem,
+  updateQuantity,
+  syncCart,
+  setAppliedCoupon,
+} from '@/store/slices/cart';
 import type { RootState } from '@/store/store';
 
 interface RelatedProduct {
@@ -65,12 +71,12 @@ export default function ShoppingCartInteractive() {
   const { isAuthenticated } = useSelector((state: RootState) => state.auth);
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const totalItems = useSelector((state: RootState) => state.cart.itemCount);
+  const appliedCoupon = useSelector((state: RootState) => state.cart.appliedCoupon);
 
   const { data: cartData } = useGetCartQuery(undefined, {
     skip: !isAuthenticated,
   });
 
-  // Live products from API — no hardcoding
   const { data: productsData } = useGetProductsQuery({ limit: 8 });
 
   const [removeFromCart] = useRemoveFromCartMutation();
@@ -118,7 +124,6 @@ export default function ShoppingCartInteractive() {
     }
   }, [cartData, dispatch]);
 
-  // Map API products -> RelatedProduct shape (You May Also Like)
   const relatedProducts: RelatedProduct[] = useMemo(() => {
     const raw = productsData?.data ?? [];
     if (!Array.isArray(raw)) return [];
@@ -140,7 +145,6 @@ export default function ShoppingCartInteractive() {
     });
   }, [productsData]);
 
-  // Map API products -> RecentProduct shape (for EmptyCart)
   const recentProducts: RecentProduct[] = useMemo(() => {
     const raw = productsData?.data ?? [];
     if (!Array.isArray(raw)) return [];
@@ -200,8 +204,13 @@ export default function ShoppingCartInteractive() {
     }
   };
 
-  const handleApplyPromo = (_code: string) => {
-    // no-op
+  const handleApplyPromo = (code: string, discountAmount: number) => {
+    dispatch(
+      setAppliedCoupon({
+        code,
+        discount: discountAmount || 0,
+      })
+    );
   };
 
   if (!isHydrated) {
@@ -223,7 +232,7 @@ export default function ShoppingCartInteractive() {
   }
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const discount = subtotal > 2000 ? Math.floor(subtotal * 0.1) : 0;
+  const discount = appliedCoupon?.discount || 0;
   const deliveryCharges = subtotal > 1000 ? 0 : 50;
   const gstRate = 18;
   const gstAmount = Math.floor(((subtotal - discount + deliveryCharges) * gstRate) / 100);
@@ -264,8 +273,6 @@ export default function ShoppingCartInteractive() {
             <div className="grid gap-8 lg:grid-cols-3">
               <div className="space-y-4 lg:col-span-2">
                 {cartItems.map((item) => {
-                  // Build itemData so that undefined optional props are OMITTED,
-                  // not passed as `undefined` (required by exactOptionalPropertyTypes)
                   const itemData: {
                     id: string;
                     name: string;

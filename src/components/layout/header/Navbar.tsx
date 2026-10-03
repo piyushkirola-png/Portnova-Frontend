@@ -176,7 +176,7 @@ const Navbar = () => {
 
             {/* Cart */}
             <Link
-              href={isHydrated && user ? '/shopping-cart' : '/auth/login'}
+              href={isHydrated && user ? '/cart' : '/auth/login'}
               className="hidden md:flex relative h-10 w-10 items-center justify-center rounded-md text-foreground transition-smooth hover:bg-muted"
               aria-label="Shopping cart"
             >
@@ -314,7 +314,7 @@ const Navbar = () => {
                 <Icon name="PhoneIcon" size={20} />
                 <span>Contact Us</span>
               </Link>
-              <Link href="/shopping-cart" onClick={closeMobileMenu} className="flex items-center space-x-3 rounded-md px-4 py-3 text-sm font-medium text-foreground hover:bg-muted">
+              <Link href="/cart" onClick={closeMobileMenu} className="flex items-center space-x-3 rounded-md px-4 py-3 text-sm font-medium text-foreground hover:bg-muted">
                 <Icon name="ShoppingCartIcon" size={20} />
                 <span>Cart</span>
               </Link>

@@ -74,12 +74,11 @@ const OrderTrackingInteractive = () => {
                     <p className="text-sm font-medium text-foreground">
                       ORD-{String(order.id).padStart(3, '0')}
                     </p>
-                    <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-                      order.status === 'delivered' ? 'bg-green-100 text-green-700' :
-                      order.status === 'cancelled' ? 'bg-red-100 text-red-700' :
-                      order.status === 'pending' ? 'bg-yellow-100 text-yellow-700' :
-                      'bg-blue-100 text-blue-700'
-                    }`}>
+                    <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${order.status === 'delivered' ? 'bg-green-100 text-green-700' :
+                        order.status === 'cancelled' ? 'bg-red-100 text-red-700' :
+                          order.status === 'pending' ? 'bg-yellow-100 text-yellow-700' :
+                            'bg-blue-100 text-blue-700'
+                      }`}>
                       {order.status}
                     </span>
                   </div>
@@ -126,7 +125,7 @@ const OrderTrackingInteractive = () => {
     console.error('Failed to parse address:', e);
     address = {};
   }
-  
+
   // ✅ FIXED: getTrackingStages with proper dates from database
   const getTrackingStages = (status: string): TimelineStage[] => {
     const stages: TimelineStage[] = [];
@@ -145,7 +144,7 @@ const OrderTrackingInteractive = () => {
     const isCancelled = status === 'cancelled';
     const isDelivered = status === 'delivered';
 
-    // ✅ Get dates from database - ALAG-ALAG DATES
+    // Get dates from database
     const createdDate = formatDate(order.created_at);
     const confirmedDate = order.confirmed_at ? formatDate(order.confirmed_at) : 'N/A';
     const shippedDate = order.shipped_at ? formatDate(order.shipped_at) : 'N/A';
@@ -188,7 +187,7 @@ const OrderTrackingInteractive = () => {
       isCurrent: status === 'shipped' && !isCancelled,
     });
 
-    // Stage 4: Delivered - ONLY if order is delivered
+    // Stage 4: Delivered
     if (isDelivered) {
       stages.push({
         id: '4',
@@ -205,7 +204,7 @@ const OrderTrackingInteractive = () => {
     if (isCancelled && !isDelivered) {
       // Mark all previous stages as completed
       stages.forEach(s => s.isCompleted = true);
-      
+
       stages.push({
         id: '5',
         status: 'Cancelled',
@@ -257,15 +256,15 @@ const OrderTrackingInteractive = () => {
     <div className="space-y-6">
       <div className="grid gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2">
-          <TrackingTimeline 
-            orderId={`ORD${orderId}`} 
-            stages={getTrackingStages(order.status)} 
+          <TrackingTimeline
+            orderId={`ORD${orderId}`}
+            stages={getTrackingStages(order.status)}
           />
         </div>
         <div className="space-y-6">
           <DeliveryInfo
             deliveryPartner="Standard Delivery"
-            partnerContact="+91 98765 43210"
+            partnerContact="+91 9217765016"
             expectedDelivery="5-7 business days"
             deliveryAddress={`${address.addressLine1 || ''}, ${address.city || ''}, ${address.state || ''} - ${address.pincode || ''}`}
             customerName={order.full_name}

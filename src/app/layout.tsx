@@ -26,12 +26,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Portnova - Premium Home Decor & Gifts',
-  description: 'Discover premium home decor, candles, clocks, photo frames, gift items and more. Shop the finest collection for your home.',
+  title: 'Portnova - Premium Fashion Clothing & Apparel',
+  description: 'Discover premium fashion clothing, casual wear, ethnic wear, denim, and curated style essentials for men and women.',
   icons: {
     icon: [
       { url: '/assets/images/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: 'any' },
     ],
     shortcut: '/assets/images/favicon.svg',
     apple: '/assets/images/favicon.svg',

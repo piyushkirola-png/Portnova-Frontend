@@ -38,7 +38,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm text-[#7A7A7A] mb-4">
-              Premium home decor, candles, clocks, photo frames, and curated gift items for every occasion.
+              Premium fashion clothing, casual wear, ethnic wear, jeans, and curated style essentials for every occasion.
             </p>
             <p className="text-sm font-medium text-[#F4762D] mb-6">
               ✦ Curated with love for your home ✦

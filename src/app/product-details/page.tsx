@@ -69,7 +69,7 @@ export default function ProductDetailsPage() {
               </h3>
               <ul className="space-y-2 text-sm text-[#7A7A7A]">
                 <li>Email: contact@portnovaio.com</li>
-                <li>Phone: +91 98765 43210</li>
+                <li>Phone: +91 9217765016</li>
                 <li>Hours: Mon-Sat, 10AM-7PM</li>
               </ul>
             </div>

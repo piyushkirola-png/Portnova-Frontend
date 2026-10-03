@@ -30,7 +30,7 @@ const deals: Deal[] = [
 
 const DealsOfTheDay = () => {
   return (
-    <section className="py-8 md:py-12 bg-white">
+    <section className="py-10 md:py-14 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="font-heading text-2xl md:text-3xl font-bold text-[#1A1A2E] mb-6">
           Deals of the day
@@ -41,11 +41,11 @@ const DealsOfTheDay = () => {
             <Link
               key={deal.id}
               href={deal.link}
-              className="group relative overflow-hidden rounded-xl bg-[#F7F3F0] hover:shadow-lg transition-all duration-300"
+              className="group relative overflow-hidden bg-[#F7F3F0] hover:shadow-lg transition-all duration-300"
             >
               <div className="flex items-center p-4 md:p-6 gap-4 md:gap-6">
                 {/* Image */}
-                <div className="flex-shrink-0 w-20 h-20 md:w-28 md:h-28 relative rounded-lg overflow-hidden bg-[#F0EDEA]">
+                <div className="flex-shrink-0 w-20 h-20 md:w-28 md:h-28 relative overflow-hidden bg-[#F0EDEA]">
                   <Image
                     src={deal.image}
                     alt={deal.title}

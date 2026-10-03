@@ -54,14 +54,8 @@ const UserSidebar = () => {
     <aside className="w-64 bg-white border-r border-border h-screen sticky top-0 shadow-elevation-1 hidden lg:block flex-shrink-0">
       {/* Header */}
       <div className="p-4 border-b border-border bg-gradient-to-r from-primary/5 to-secondary/5">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <Icon name="UserCircleIcon" size={16} className="text-primary-foreground" />
-          </div>
-          <div>
-            <h2 className="text-sm font-bold text-espresso font-heading">My Account</h2>
-            <p className="text-xs text-mocha-grey font-medium">Portnova</p>
-          </div>
+        <div className="flex items-center">
+          <h2 className="text-sm font-bold text-espresso font-heading">My Account</h2>
         </div>
       </div>
 

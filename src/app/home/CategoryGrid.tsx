@@ -13,7 +13,7 @@ const CATEGORIES = [
 
 const CategoryGrid = () => {
   return (
-    <section className="py-8 md:py-12 bg-white">
+    <section className="py-10 md:py-14 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-6">
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-[#1A1A2E]">
@@ -27,18 +27,18 @@ const CategoryGrid = () => {
           </Link>
         </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
           {CATEGORIES.map((category) => (
             <Link
               key={category.id}
               href={`/products/${category.slug}`}
               className="group flex flex-col items-center cursor-pointer"
             >
-              <div className="w-full aspect-square rounded-xl overflow-hidden bg-[#F0EDEA] transition-all duration-300 group-hover:shadow-lg group-hover:scale-105 relative">
+              <div className="w-full aspect-[4/5] overflow-hidden bg-[#F0EDEA] transition-all duration-300 group-hover:shadow-lg relative">
                 <img
                   src={category.image}
                   alt={category.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';

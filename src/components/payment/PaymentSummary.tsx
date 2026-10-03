@@ -20,11 +20,25 @@ export const PaymentSummary: React.FC<PaymentSummaryProps> = ({
 }) => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
-  const subtotal = propSubtotal ?? cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const gst = propGst ?? Math.round(subtotal * 0.18);
-  const deliveryCharges = propDeliveryCharges ?? (subtotal > 1000 ? 0 : 50);
+  // Subtotal: use prop if provided, else compute from cart
+  const subtotal =
+    propSubtotal ??
+    cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  // Discount: use prop if provided, else 0
   const discount = propDiscount ?? 0;
-  const total = propTotal ?? subtotal + gst + deliveryCharges - discount;
+
+  // Delivery: use prop if provided, else free above ₹1000
+  const deliveryCharges =
+    propDeliveryCharges ?? (subtotal > 1000 ? 0 : 50);
+
+  // GST: computed on (subtotal - discount + deliveryCharges) — matches cart/checkout
+  const gst =
+    propGst ?? Math.round((subtotal - discount + deliveryCharges) * 0.18);
+
+  // Total: use prop if provided, else compute
+  const total =
+    propTotal ?? subtotal - discount + gst + deliveryCharges;
 
   return (
     <div className="rounded-lg bg-white p-6 shadow-sm">

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/store/store';
-import { syncCart } from '@/store/slices/cart';
+import { syncCart, clearAppliedCoupon } from '@/store/slices/cart';
 import { useCreateOrderMutation, useGetUserAddressesQuery } from '@/store/api/orderApi';
 import { useInitiatePaymentMutation } from '@/store/api/paymentApi';
 import { useInitiateSetuPaymentMutation } from '@/store/api/setuApi';
@@ -42,6 +42,7 @@ const CheckoutInteractive = () => {
 
     const cartItems = useSelector((state: RootState) => state.cart.items);
     const { isAuthenticated } = useSelector((state: RootState) => state.auth);
+    const appliedCoupon = useSelector((state: RootState) => state.cart.appliedCoupon);
 
     useGetUserAddressesQuery(undefined, { skip: !isAuthenticated });
     const [createOrder, { isLoading: isPlacingOrder }] = useCreateOrderMutation();
@@ -70,10 +71,10 @@ const CheckoutInteractive = () => {
     }, [isHydrated, isAuthenticated, cartItems, router]);
 
     const subtotal = cartItems.reduce((sum, item) => sum + Number(item.price) * item.quantity, 0);
-    const gst = Math.round(subtotal * 0.18);
+    const discount = appliedCoupon?.discount || 0;
     const deliveryCharges = subtotal > 1000 ? 0 : 50;
-    const discount = 0;
-    const total = subtotal + gst + deliveryCharges - discount;
+    const gst = Math.round((subtotal - discount + deliveryCharges) * 0.18);
+    const total = subtotal - discount + gst + deliveryCharges;
 
     const handleAddressSelect = (address: Address) => {
         setSelectedAddress(address);
@@ -97,8 +98,6 @@ const CheckoutInteractive = () => {
         }
     };
 
-    // ===================== handlePlaceOrder =====================
-    // ===================== handlePlaceOrder =====================
     const handlePlaceOrder = async () => {
         if (!termsAccepted) {
             toast.error('Please accept the terms and conditions');
@@ -106,7 +105,6 @@ const CheckoutInteractive = () => {
         }
 
         try {
-            // ✅ Map cart items to order items
             const orderItems = cartItems.map((item: any) => {
                 let productId = item.productId || item.id;
 
@@ -144,13 +142,10 @@ const CheckoutInteractive = () => {
                 total,
             };
 
-            // Create order
             const orderResult = await createOrder(orderData).unwrap();
             const orderId = orderResult.orderId;
             const orderNumber = orderResult.orderNumber || `ORD-${String(orderId).padStart(3, '0')}`;
 
-
-            // Route based on payment method
             if (selectedPaymentMethod === 'razorpay') {
                 setIsProcessingPayment(true);
                 const paymentResult = await initiatePayment({
@@ -161,8 +156,9 @@ const CheckoutInteractive = () => {
                 }).unwrap();
 
                 if (paymentResult.success && paymentResult.data) {
+                    // dispatch(clearAppliedCoupon());
                     router.push(
-                        `/payment?orderId=${orderId}&amount=${total}&razorpayOrderId=${paymentResult.data.razorpayOrder.id}`
+                        `/payment?orderId=${orderId}&amount=${total}&subtotal=${subtotal}&discount=${discount}&razorpayOrderId=${paymentResult.data.razorpayOrder.id}`
                     );
                 } else {
                     throw new Error(paymentResult.message || 'Razorpay initiation failed');
@@ -177,6 +173,7 @@ const CheckoutInteractive = () => {
                 }).unwrap();
 
                 if (result.success && result.data.paymentLink) {
+                    dispatch(clearAppliedCoupon());
                     window.location.href = result.data.paymentLink;
                 } else {
                     throw new Error(result.message || 'Setu payment initiation failed');
@@ -191,20 +188,17 @@ const CheckoutInteractive = () => {
                 }).unwrap();
 
                 if (result.success && result.data.payuForm) {
-                    // Store form data — PayUPaymentForm will auto-submit on mount
                     setPayuForm({
                         action: result.data.payuForm.action,
                         fields: result.data.payuForm.fields,
                     });
-                    // Note: do NOT reset isProcessingPayment here — the
-                    // redirect will unmount this component anyway.
                 } else {
                     throw new Error(result.message || 'PayU payment initiation failed');
                 }
             }
             else {
-                // ✅ Cash on Delivery - Clear cart and redirect
                 dispatch(syncCart([]));
+                dispatch(clearAppliedCoupon());
                 toast.success(`Order #${orderNumber} placed successfully!`);
                 router.push(`/order-success?orderId=${orderId}&orderNumber=${orderNumber}&total=${total}&paymentMethod=cod`);
             }
@@ -212,7 +206,6 @@ const CheckoutInteractive = () => {
             console.error('❌ Order error:', error);
             console.error('❌ Error details:', error?.data || error?.message || error);
 
-            // ✅ Show proper error message
             const errorMessage = error?.data?.message || error?.message || 'Failed to place order. Please try again.';
             toast.error(errorMessage);
             setIsProcessingPayment(false);
@@ -261,10 +254,8 @@ const CheckoutInteractive = () => {
                 <CheckoutProgress currentStep={currentStep} />
 
                 <div className="grid gap-6 lg:grid-cols-3">
-                    {/* Left Column - Forms */}
                     <div className="lg:col-span-2">
                         <div className="space-y-6">
-                            {/* Step 1: Address */}
                             {currentStep === 1 && (
                                 <div className="rounded-md bg-card p-6 shadow-elevation-2">
                                     <DeliveryAddressForm
@@ -273,7 +264,7 @@ const CheckoutInteractive = () => {
                                     />
                                     <div className="mt-6 flex items-center justify-between">
                                         <button
-                                            onClick={() => router.push('/shopping-cart')}
+                                            onClick={() => router.push('/cart')}
                                             className="flex items-center space-x-2 text-sm font-medium text-muted-foreground transition-smooth hover:text-foreground"
                                         >
                                             <Icon name="ArrowLeftIcon" size={16} />
@@ -291,7 +282,6 @@ const CheckoutInteractive = () => {
                                 </div>
                             )}
 
-                            {/* Step 2: Payment */}
                             {currentStep === 2 && (
                                 <div className="rounded-md bg-card p-6 shadow-elevation-2">
                                     <PaymentMethodSelector
@@ -318,7 +308,6 @@ const CheckoutInteractive = () => {
                                 </div>
                             )}
 
-                            {/* Step 3: Review */}
                             {currentStep === 3 && (
                                 <div className="space-y-6">
                                     <div className="rounded-md bg-card p-6 shadow-elevation-2">
@@ -419,7 +408,6 @@ const CheckoutInteractive = () => {
                         </div>
                     </div>
 
-                    {/* Right Column - Order Summary */}
                     {currentStep === 3 && (
                         <div className="lg:col-span-1">
                             <div className="sticky top-20 rounded-md bg-card p-6 shadow-elevation-2">
@@ -436,7 +424,6 @@ const CheckoutInteractive = () => {
                 </div>
             </div>
 
-            {/* Mobile Order Summary Button */}
             {currentStep === 3 && (
                 <div className="fixed bottom-0 left-0 right-0 z-50 bg-card p-4 shadow-elevation-4 lg:hidden">
                     <button
@@ -449,7 +436,6 @@ const CheckoutInteractive = () => {
                 </div>
             )}
 
-            {/* Mobile Order Summary Modal */}
             {showOrderSummary && currentStep === 3 && (
                 <>
                     <div
@@ -479,7 +465,6 @@ const CheckoutInteractive = () => {
                 </>
             )}
 
-            {/* Hidden PayU form — auto-submits when populated */}
             {payuForm && (
                 <PayUPaymentForm
                     action={payuForm.action}

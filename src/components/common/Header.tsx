@@ -80,15 +80,13 @@ const Header = () => {
       <header className="sticky top-0 z-50 bg-white border-b border-border h-16">
         <div className="container mx-auto px-4 flex items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-full overflow-hidden border border-[#F4762D]">
-              <Image
-                src="/assets/images/logo.png"
-                alt="Portnova"
-                width={32}
-                height={32}
-                className="object-cover w-full h-full"
-              />
-            </div>
+            <Image
+              src="/assets/images/logo.png"
+              alt="Portnova"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
             <span className="font-heading text-lg font-bold text-[#1A1A2E]">
               Portnova<span className="text-[#F4762D]"></span>
             </span>
@@ -104,15 +102,13 @@ const Header = () => {
       <header className="sticky top-0 z-50 bg-white border-b border-border h-16">
         <div className="container mx-auto px-4 flex items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-full overflow-hidden border border-[#F4762D]">
-              <Image
-                src="/assets/images/logo.png"
-                alt="Portnova"
-                width={32}
-                height={32}
-                className="object-cover w-full h-full"
-              />
-            </div>
+            <Image
+              src="/assets/images/logo.png"
+              alt="Portnova"
+              width={40}
+              height={40}
+              className="object-contain"
+            />
             <span className="font-heading text-lg font-bold text-[#1A1A2E]">
               Portnova<span className="text-[#F4762D]"></span>
             </span>
@@ -131,16 +127,14 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between gap-4">
           <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
-            <div className="h-10 w-10 rounded-full overflow-hidden border-2 border-[#F4762D] shadow-sm flex-shrink-0 bg-white">
-              <Image
-                src="/assets/images/logo.png"
-                alt="Portnova"
-                width={40}
-                height={40}
-                className="object-cover w-full h-full"
-                priority
-              />
-            </div>
+            <Image
+              src="/assets/images/logo.png"
+              alt="Portnova"
+              width={44}
+              height={44}
+              className="object-contain flex-shrink-0"
+              priority
+            />
             <span className="font-heading text-lg font-bold text-[#1A1A2E] md:text-xl hidden sm:block">
               Portnova<span className="text-[#F4762D]"></span>
             </span>

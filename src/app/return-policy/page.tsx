@@ -11,10 +11,13 @@ export default function ReturnPolicyPage() {
         {/* Page Header */}
         <div className="mb-8" data-aos="fade-up">
           <h1 className="text-3xl md:text-4xl font-bold text-[#1A2A3A] mb-2">
-            Return Policy
+            Return & Refund Policy
           </h1>
           <p className="text-[#6B7280] text-sm">
-            Last Updated: {new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}
+            Legal Entity: PORTNOVA TRADE PRIVATE LIMITED
+          </p>
+          <p className="text-[#6B7280] text-sm">
+            Last Updated: January 2026
           </p>
         </div>
 
@@ -33,112 +36,109 @@ export default function ReturnPolicyPage() {
             {/* Section 1 */}
             <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">1. Return Window</h2>
             <ul className="list-disc pl-6 space-y-1 text-base text-[#374151]">
-              <li>You have <strong>7 days</strong> from the date of delivery to initiate a return</li>
-              <li>Returns requested after 7 days will not be accepted</li>
-              <li>The return window is calculated from the delivery date shown on the tracking information</li>
+              <li>You may return most new, unopened items within <strong>7 days</strong> of delivery for a full refund</li>
+              <li>We also offer extended return periods during holiday seasons</li>
             </ul>
 
             {/* Section 2 */}
-            <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">2. Eligibility Criteria</h2>
-            <p className="text-base">To be eligible for a return, your item must meet the following conditions:</p>
+            <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">2. Eligible Items for Return</h2>
+            <p className="text-base">The following items can be returned:</p>
             <ul className="list-disc pl-6 space-y-1 text-base text-[#374151]">
-              <li>Item must be <strong>unused</strong> and in the same condition as received</li>
-              <li>Item must be in its <strong>original packaging</strong> with all tags attached</li>
-              <li>Item must not show any signs of wear, damage, or alteration</li>
-              <li>All accessories, manuals, and freebies must be included</li>
-              <li>Proof of purchase (order ID) must be provided</li>
+              <li>Unopened items in original packaging</li>
+              <li>Defective or damaged products</li>
+              <li>Wrong items delivered</li>
+              <li>Items significantly different from description</li>
             </ul>
 
             {/* Section 3 */}
             <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">3. Non-Returnable Items</h2>
-            <p className="text-base">The following items cannot be returned:</p>
+            <p className="text-base">Certain items cannot be returned:</p>
             <ul className="list-disc pl-6 space-y-1 text-base text-[#374151]">
-              <li><strong>Customized or Personalized Items:</strong> Products made to your specifications</li>
-              <li><strong>Clearance or Sale Items:</strong> Products purchased at discounted rates</li>
-              <li><strong>Used Items:</strong> Products that have been installed or used</li>
-              <li><strong>Damaged Items:</strong> Items damaged due to improper handling by the customer</li>
-              <li><strong>Perishable Items:</strong> Products with an expiration date</li>
+              <li>Personal care items and hygiene products</li>
+              <li>Perishable goods</li>
+              <li>Intimate or sanitary goods</li>
+              <li>Customized or personalized items</li>
+              <li>Digital products or software</li>
+              <li>Items marked as non-returnable at the time of purchase</li>
             </ul>
 
             {/* Section 4 */}
-            <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">4. Return Process</h2>
-            <p className="text-base">To initiate a return, please follow these steps:</p>
+            <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">4. How to Return</h2>
+            <p className="text-base">To initiate a return:</p>
             <ol className="list-decimal pl-6 space-y-2 text-base text-[#374151]">
-              <li><strong>Contact Us:</strong> Email us at <a href="mailto:contact@portnovaio.com" className="text-[#F4762D] hover:underline">contact@portnovaio.com</a> with your order ID and reason for return</li>
-              <li><strong>Return Authorization:</strong> You will receive a Return Authorization (RA) number and instructions</li>
-              <li><strong>Packaging:</strong> Securely pack the item in its original packaging</li>
-              <li><strong>Shipping:</strong> Ship the item to our return address using a trackable shipping method</li>
-              <li><strong>Confirmation:</strong> We will notify you once the return is received and inspected</li>
+              <li>Log in to your Portnova account</li>
+              <li>Go to <strong>"My Orders"</strong> and select the order containing the item you wish to return</li>
+              <li>Click <strong>"Return Item"</strong> and select your reason for return</li>
+              <li>Choose your preferred return method (pickup or drop-off)</li>
+              <li>Pack the item securely in its original packaging</li>
+              <li>Ship or schedule pickup as instructed</li>
             </ol>
 
             {/* Section 5 */}
-            <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">5. Return Shipping Costs</h2>
+            <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">5. Return Shipping</h2>
             <ul className="list-disc pl-6 space-y-1 text-base text-[#374151]">
-              <li><strong>Returns due to our error:</strong> We will cover the return shipping costs</li>
-              <li><strong>Returns for other reasons:</strong> You are responsible for the return shipping costs</li>
-              <li>Original shipping charges are non-refundable</li>
+              <li><strong>Free returns:</strong> Defective, damaged, or wrong items</li>
+              <li><strong>Customer responsibility:</strong> Change of mind or other personal reasons</li>
               <li>We recommend using a trackable shipping service for returns</li>
             </ul>
 
             {/* Section 6 */}
             <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">6. Refund Processing</h2>
+            <p className="text-base">Once we receive and inspect your return:</p>
             <ul className="list-disc pl-6 space-y-1 text-base text-[#374151]">
-              <li>Refunds will be processed within <strong>7-10 business days</strong> after receiving the return</li>
-              <li>Refunds will be issued to the original payment method used for the purchase</li>
-              <li>You will receive an email confirmation once the refund is processed</li>
-              <li>Processing times may vary depending on your bank or payment provider</li>
+              <li>We will send you an email to notify you of the approval or rejection of your refund</li>
+              <li>If approved, refunds will be processed within <strong>3-5 business days</strong></li>
+              <li>Refunds will be credited to your original payment method</li>
+              <li>Shipping charges are non-refundable (except in cases of defective or wrong items)</li>
             </ul>
 
             {/* Section 7 */}
-            <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">7. Exchange Policy</h2>
+            <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">7. Exchanges</h2>
+            <p className="text-base">We offer exchanges for:</p>
             <ul className="list-disc pl-6 space-y-1 text-base text-[#374151]">
-              <li>We offer exchanges for items that are damaged, defective, or incorrect</li>
-              <li>Exchanges are subject to product availability</li>
-              <li>Please contact us for exchange requests</li>
-              <li>Exchange shipping is free for items damaged or incorrect due to our error</li>
+              <li>Defective or damaged items</li>
+              <li>Size or color exchanges (subject to availability)</li>
             </ul>
+            <p className="text-base mt-2">
+              To exchange an item, please follow the return process and place a new order for the desired item.
+            </p>
 
             {/* Section 8 */}
-            <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">8. Damaged or Defective Items</h2>
+            <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">8. Late or Missing Refunds</h2>
+            <p className="text-base">If you haven't received your refund:</p>
             <ul className="list-disc pl-6 space-y-1 text-base text-[#374151]">
-              <li>If you receive a damaged or defective item, please contact us immediately</li>
-              <li>We may request photos of the damage to process your claim</li>
-              <li>We will arrange for a replacement or full refund at no additional cost</li>
-              <li>Claims for damage must be reported within <strong>48 hours</strong> of delivery</li>
+              <li>Check your bank account again</li>
+              <li>Contact your credit card company (processing may take time)</li>
+              <li>Contact your bank (processing delays may occur)</li>
+              <li>If you've done all of this and still haven't received your refund, contact us</li>
             </ul>
 
             {/* Section 9 */}
-            <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">9. Cancellation Policy</h2>
+            <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">9. Damaged or Defective Items</h2>
+            <p className="text-base">If you receive a damaged or defective item:</p>
             <ul className="list-disc pl-6 space-y-1 text-base text-[#374151]">
-              <li>Orders can be canceled within <strong>12 hours</strong> of placement</li>
-              <li>Full refund will be issued for canceled orders</li>
-              <li>Orders already processed or shipped cannot be canceled</li>
-              <li>Please contact us immediately for cancellation requests</li>
+              <li>Contact us immediately with photos of the damage</li>
+              <li>We will arrange for a replacement or full refund</li>
+              <li>Return shipping will be free in these cases</li>
             </ul>
 
             {/* Section 10 */}
-            <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">10. Return Address</h2>
-            <div className="mt-3 p-4 bg-[#F5F5F7] rounded-lg">
-              <p className="text-base font-medium text-[#1A2A3A]">Portnova Returns</p>
-              <p className="text-base text-[#374151]">[Your Return Address]</p>
-              <p className="text-base text-[#374151]">[City], [State] - [PIN Code]</p>
-              <p className="text-base text-[#374151]">India</p>
-            </div>
-
-            {/* Section 11 */}
-            <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">11. Contact Us</h2>
+            <h2 className="text-xl font-semibold text-[#1A2A3A] mt-8 mb-3">10. Contact Us</h2>
             <p className="text-base">
-              If you have any questions about our Return Policy, please reach out to us:
+              For questions about returns and refunds, please contact us at:
             </p>
             <div className="mt-3 p-4 bg-[#F5F5F7] rounded-lg">
               <p className="text-base">
-                <strong>Email:</strong> <a href="mailto:contact@portnovaio.com" className="text-[#F4762D] hover:underline">contact@portnovaio.com</a>
+                <strong>Email:</strong> <a href="mailto:Info@portnovaio.com" className="text-[#F4762D] hover:underline">Info@portnovaio.com</a>
               </p>
               <p className="text-base">
-                <strong>Phone:</strong> +91 98765 43210
+                <strong>Phone:</strong> +91-7217890016, 9217765016
               </p>
               <p className="text-base">
-                <strong>Working Hours:</strong> Mon-Sat: 10 AM - 7 PM (IST)
+                <strong>Customer Support:</strong> Available 9 AM - 6 PM (Mon-Sat)
+              </p>
+              <p className="text-base">
+                <strong>Address:</strong> Shop no. 3 DDA MARKET CSC, JAGRITI ENCLAVE SHAHDARA DELHI 110092
               </p>
             </div>
 
@@ -153,7 +153,7 @@ export default function ReturnPolicyPage() {
             </div>
 
             <p className="text-sm text-[#6B7280] text-center mt-4">
-              By placing an order with Portnova, you agree to our Return Policy.
+              By placing an order with Portnova, you agree to our Return & Refund Policy.
             </p>
           </div>
         </div>

@@ -182,7 +182,7 @@ export default function ShippingDeliveryPage() {
                 <strong>Email:</strong> <a href="mailto:contact@portnovaio.com" className="text-[#F4762D] hover:underline">contact@portnovaio.com</a>
               </p>
               <p className="text-base">
-                <strong>Phone:</strong> +91 98765 43210
+                <strong>Phone:</strong> +91 9217765016
               </p>
               <p className="text-base">
                 <strong>Working Hours:</strong> Mon-Sat: 10 AM - 7 PM (IST)

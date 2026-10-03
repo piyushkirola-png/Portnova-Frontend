@@ -14,14 +14,14 @@ interface OrderActionsProps {
   orderStatus?: string;
 }
 
-// Company Details
+// Company Details — matches Portnova-Backend/.env
 const COMPANY_DETAILS = {
-  name: 'Portnova',
-
-  address: 'H No. 9/149, Shyam Block, Kailash Nagar, Gandhi Nagar, New Delhi - 110031',
+  name: 'PORTNOVA',
+  tagline: 'Premium Fashion & Lifestyle Products',
+  address: 'Shop no. 3 DDA MARKET CSC JAGRITI ENCLAVE SHAHDARA DELHI 110092',
   email: 'support@portnovaio.com',
-  phone: '++91 95827 91995',
-  gstin: '27AABCZ1234D1ZP',
+  phone: '+91-7217890016, 9217765016',
+  gstin: 'GSTINF239230',
   cin: 'U74999MH2020PTC345678',
   logoUrl: '/assets/images/logo.png',
 };
@@ -266,7 +266,7 @@ const OrderActions = ({
                 <img class="company-logo" src="${COMPANY_DETAILS.logoUrl}" alt="${COMPANY_DETAILS.name}" onerror="this.style.display='none'" />
                 <div>
                   <div class="company-name">${COMPANY_DETAILS.name}</div>
-                  <div class="company-tagline">Premium Home Decor & Furniture</div>
+                  <div class="company-tagline">${COMPANY_DETAILS.tagline}</div>
                 </div>
               </div>
               <div class="header-right">
@@ -609,11 +609,10 @@ const OrderActions = ({
         </div>
       </div>
 
-      {/* ==================== CANCEL ORDER MODAL - CLEAN E-COMMERCE STYLE ==================== */}
+      {/* ==================== CANCEL ORDER MODAL ==================== */}
       {showCancelModal && (
         <div className="fixed inset-0 z-[500] flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm">
           <div className="bg-white rounded-2xl max-w-md w-full shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
-            {/* Modal Header */}
             <div className="border-b px-6 py-4 flex items-center justify-between">
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">Cancel Order</h3>
@@ -627,9 +626,7 @@ const OrderActions = ({
               </button>
             </div>
 
-            {/* Modal Body */}
             <div className="p-6 space-y-5">
-              {/* Order Summary Card */}
               <div className="bg-gray-50 rounded-xl p-4 space-y-2">
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-500">Order Total</span>
@@ -647,7 +644,6 @@ const OrderActions = ({
                 )}
               </div>
 
-              {/* Reason Selection */}
               <div>
                 <label className="text-sm font-medium text-gray-700 block mb-1.5">
                   Why are you cancelling? <span className="text-red-500">*</span>
@@ -666,7 +662,6 @@ const OrderActions = ({
                 </select>
               </div>
 
-              {/* Additional Note */}
               <div>
                 <label className="text-sm font-medium text-gray-700 block mb-1.5">
                   Additional Note <span className="text-gray-400">(Optional)</span>
@@ -680,7 +675,6 @@ const OrderActions = ({
                 />
               </div>
 
-              {/* Refund Timeline */}
               {paymentMethod === 'Prepaid' && (
                 <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
                   <div className="flex items-start gap-3">
@@ -706,7 +700,6 @@ const OrderActions = ({
                 </div>
               )}
 
-              {/* Warning */}
               <div className="bg-red-50 border border-red-200 rounded-xl p-3">
                 <p className="text-xs text-red-600 flex items-start gap-2">
                   <span className="text-red-500 text-lg">⚠️</span>
@@ -715,7 +708,6 @@ const OrderActions = ({
               </div>
             </div>
 
-            {/* Modal Footer */}
             <div className="border-t px-6 py-4 flex gap-3 justify-end bg-gray-50">
               <button
                 onClick={() => setShowCancelModal(false)}
@@ -757,7 +749,6 @@ const OrderActions = ({
             </div>
 
             <div className="p-6 space-y-5">
-              {/* Issue Type */}
               <div>
                 <label className="text-sm font-medium text-gray-700 block mb-1.5">
                   What's the issue? <span className="text-red-500">*</span>
@@ -776,7 +767,6 @@ const OrderActions = ({
                 </select>
               </div>
 
-              {/* Description */}
               <div>
                 <label className="text-sm font-medium text-gray-700 block mb-1.5">
                   Description <span className="text-red-500">*</span>
@@ -793,7 +783,6 @@ const OrderActions = ({
                 </p>
               </div>
 
-              {/* Photo Upload */}
               <div>
                 <FileUpload
                   onFileSelect={setReportFile}
@@ -806,7 +795,6 @@ const OrderActions = ({
                 </p>
               </div>
 
-              {/* Help Text */}
               <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
                 <p className="text-xs text-blue-700 flex items-start gap-2">
                   <span className="text-blue-500 text-lg">💬</span>

@@ -95,7 +95,7 @@ export default function CouponsPage() {
       }
 
       const response = await fetch(`${config.apiUrl}/admin/coupons`, {
-        headers: { 
+        headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
         }
@@ -112,7 +112,7 @@ export default function CouponsPage() {
       }
 
       const data = await response.json();
-      
+
       if (data.success) {
         setCoupons(data.data || []);
         setError(null);
@@ -133,7 +133,7 @@ export default function CouponsPage() {
       if (!token) return;
 
       const response = await fetch(`${config.apiUrl}/admin/coupon/stats`, {
-        headers: { 
+        headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
         }
@@ -165,8 +165,8 @@ export default function CouponsPage() {
         return;
       }
 
-      const url = editingCoupon 
-        ? `${config.apiUrl}/admin/coupon/${editingCoupon.id}` 
+      const url = editingCoupon
+        ? `${config.apiUrl}/admin/coupon/${editingCoupon.id}`
         : `${config.apiUrl}/admin/coupon`;
       const method = editingCoupon ? 'PUT' : 'POST';
 
@@ -180,7 +180,7 @@ export default function CouponsPage() {
       });
 
       const data = await response.json();
-      
+
       if (data.success) {
         toast.success(editingCoupon ? 'Coupon updated successfully!' : 'Coupon created successfully!');
         fetchCoupons();
@@ -202,14 +202,14 @@ export default function CouponsPage() {
       const token = localStorage.getItem('auth_token');
       const response = await fetch(`${config.apiUrl}/admin/coupon/${id}`, {
         method: 'DELETE',
-        headers: { 
+        headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
         }
       });
 
       const data = await response.json();
-      
+
       if (data.success) {
         toast.success('Coupon deleted successfully!');
         fetchCoupons();
@@ -287,7 +287,7 @@ export default function CouponsPage() {
       <div className="flex-1 p-6">
         <Breadcrumb />
         <div className="flex items-center justify-center h-64">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary"></div>
+          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#F4762D]"></div>
         </div>
       </div>
     );
@@ -308,7 +308,7 @@ export default function CouponsPage() {
               fetchCoupons();
               fetchStats();
             }}
-            className="bg-espresso text-white px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all"
+            className="bg-[#F4762D] text-white px-6 py-2 rounded-lg hover:bg-[#D45A15] transition-all"
           >
             Retry
           </button>
@@ -322,10 +322,10 @@ export default function CouponsPage() {
       <Breadcrumb />
       <div className="space-y-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-espresso">Coupons Management</h1>
+          <h1 className="text-3xl font-bold text-[#1A1A2E]">Coupons Management</h1>
           <button
             onClick={() => setShowForm(true)}
-            className="bg-espresso text-white px-4 py-2 rounded-lg hover:bg-espresso/90 flex items-center gap-2"
+            className="bg-[#F4762D] text-white px-4 py-2 rounded-lg hover:bg-[#D45A15] flex items-center gap-2"
           >
             <Plus className="w-4 h-4" />
             Add Coupon
@@ -336,7 +336,7 @@ export default function CouponsPage() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           <div className="bg-white p-4 rounded-lg shadow-sm border">
             <h3 className="text-sm font-medium text-gray-500">Total Coupons</h3>
-            <p className="text-2xl font-bold text-espresso">{stats.totalCoupons}</p>
+            <p className="text-2xl font-bold text-[#1A1A2E]">{stats.totalCoupons}</p>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-sm border">
             <h3 className="text-sm font-medium text-gray-500">Active</h3>
@@ -509,7 +509,7 @@ export default function CouponsPage() {
                     </button>
                     <button
                       type="submit"
-                      className="px-3 py-1.5 bg-espresso text-white rounded-lg hover:bg-espresso/90 text-sm"
+                      className="px-3 py-1.5 bg-[#F4762D] text-white rounded-lg hover:bg-[#D45A15] text-sm"
                     >
                       {editingCoupon ? 'Update' : 'Create'}
                     </button>

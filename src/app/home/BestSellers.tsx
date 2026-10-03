@@ -65,7 +65,7 @@ const bestSellers: BestSeller[] = [
 
 const BestSellers = () => {
   return (
-    <section className="py-8 md:py-12 bg-[#FAFAFA]">
+    <section className="py-10 md:py-14 bg-[#FAFAFA]">
       <div className="container mx-auto px-4">
         <h2 className="font-heading text-2xl md:text-3xl font-bold text-[#1A1A2E] mb-6">
           Shop Best Sellers
@@ -78,17 +78,16 @@ const BestSellers = () => {
               href={item.link}
               className="group flex flex-col items-center text-center"
             >
-              <div className="w-full aspect-square rounded-xl overflow-hidden bg-[#F0EDEA] transition-all duration-300 group-hover:shadow-lg group-hover:scale-105">
+              <div className="w-full aspect-[4/5] overflow-hidden bg-[#F0EDEA] transition-all duration-300 group-hover:shadow-lg relative">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 16vw"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src =
-                      '/assets/images/placeholder-product.jpg';
+                    target.src = '/assets/images/placeholder-product.jpg';
                   }}
                 />
               </div>
@@ -124,7 +123,7 @@ const BestSellers = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a2 2 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
               />
             </svg>
             <span>Buy on Email</span>

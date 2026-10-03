@@ -88,10 +88,6 @@ const OrderHistoryItem = ({
             <Icon name="EyeIcon" size={16} />
             <span>View Details</span>
           </Link>
-          <button className="flex items-center space-x-1 rounded-md border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-smooth hover:bg-muted">
-            <Icon name="ArrowDownTrayIcon" size={16} />
-            <span>Invoice</span>
-          </button>
         </div>
       </div>
     </div>

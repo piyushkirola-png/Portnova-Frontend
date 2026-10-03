@@ -16,36 +16,78 @@ interface OrderSummaryData {
 interface OrderSummaryProps {
   summary: OrderSummaryData;
   itemCount: number;
-  onApplyPromo: (code: string) => void;
+  onApplyPromo: (code: string, discount: number, data?: any) => void;
 }
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:2000/api';
 
 export default function OrderSummary({ summary, itemCount, onApplyPromo }: OrderSummaryProps) {
   const [promoCode, setPromoCode] = useState('');
   const [promoStatus, setPromoStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [promoMessage, setPromoMessage] = useState('');
+  const [isApplying, setIsApplying] = useState(false);
 
-  const handleApplyPromo = () => {
+  const getUserId = (): number | null => {
+    try {
+      const raw = localStorage.getItem('user_data');
+      if (!raw) return null;
+      const user = JSON.parse(raw);
+      return user?.id ?? null;
+    } catch {
+      return null;
+    }
+  };
+
+  const handleApplyPromo = async () => {
     if (!promoCode.trim()) {
       setPromoStatus('error');
       setPromoMessage('Please enter a promo code');
       return;
     }
 
-    // Mock promo validation
-    const validCodes = ['SAVE10', 'WELCOME20', 'BULK15'];
-    if (validCodes.includes(promoCode.toUpperCase())) {
-      setPromoStatus('success');
-      setPromoMessage('Promo code applied successfully!');
-      onApplyPromo(promoCode);
-    } else {
-      setPromoStatus('error');
-      setPromoMessage('Invalid promo code');
-    }
+    setIsApplying(true);
+    setPromoStatus('idle');
+    setPromoMessage('');
 
-    setTimeout(() => {
-      setPromoStatus('idle');
-      setPromoMessage('');
-    }, 3000);
+    try {
+      const response = await fetch(`${API_URL}/coupon/validate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          code: promoCode.toUpperCase(),
+          cart_total: summary.subtotal,
+          user_id: getUserId(),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success && data.data) {
+        setPromoStatus('success');
+        setPromoMessage(
+          `Promo code applied! You saved ₹${data.data.discount_amount}`
+        );
+        onApplyPromo(
+          data.data.code,
+          Number(data.data.discount_amount) || 0,
+          data.data
+        );
+
+        setTimeout(() => {
+          setPromoStatus('idle');
+          setPromoMessage('');
+        }, 3000);
+      } else {
+        setPromoStatus('error');
+        setPromoMessage(data.message || 'Invalid promo code');
+      }
+    } catch (err) {
+      console.error('Promo validation error:', err);
+      setPromoStatus('error');
+      setPromoMessage('Failed to validate coupon. Please try again.');
+    } finally {
+      setIsApplying(false);
+    }
   };
 
   return (
@@ -66,20 +108,21 @@ export default function OrderSummary({ summary, itemCount, onApplyPromo }: Order
             value={promoCode}
             onChange={(e) => setPromoCode(e.target.value.toUpperCase())}
             placeholder="Enter code"
-            className="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+            disabled={isApplying}
+            className="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50"
           />
           <button
             onClick={handleApplyPromo}
-            className="rounded-md bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground transition-smooth hover:scale-[0.97]"
+            disabled={isApplying}
+            className="rounded-md bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground transition-smooth hover:scale-[0.97] disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Apply
+            {isApplying ? 'Checking...' : 'Apply'}
           </button>
         </div>
         {promoMessage && (
           <p
-            className={`caption mt-2 flex items-center gap-1 ${
-              promoStatus === 'success' ? 'text-success' : 'text-error'
-            }`}
+            className={`caption mt-2 flex items-center gap-1 ${promoStatus === 'success' ? 'text-success' : 'text-error'
+              }`}
           >
             <Icon
               name={promoStatus === 'success' ? 'CheckCircleIcon' : 'XCircleIcon'}
@@ -178,6 +221,3 @@ export default function OrderSummary({ summary, itemCount, onApplyPromo }: Order
     </div>
   );
 }
-
-
-

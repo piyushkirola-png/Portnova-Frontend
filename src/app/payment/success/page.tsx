@@ -21,7 +21,6 @@ function SetuReturnContent() {
     const orderId = searchParams.get('orderId') ? Number(searchParams.get('orderId')) : undefined;
     const statusParam = searchParams.get('status');
 
-    // If Setu returned an error status, handle it quickly
     if (statusParam === 'FAILED') {
       setStatus('failed');
       setMessage('Payment was cancelled or failed at Setu.');

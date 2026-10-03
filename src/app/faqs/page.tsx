@@ -14,7 +14,7 @@ const faqCategories = [
     faqs: [
       {
         question: 'How do I place an order?',
-        answer: 'To place an order, simply browse our products, add items to your cart, and proceed to checkout. You will need to provide your shipping details and payment information. You will receive an order confirmation email after placing your order.'
+        answer: 'To place an order, simply browse our fashion collection, add items to your cart, and proceed to checkout. You will need to provide your shipping details and payment information. You will receive an order confirmation email after placing your order.'
       },
       {
         question: 'What payment methods do you accept?',
@@ -60,7 +60,7 @@ const faqCategories = [
     faqs: [
       {
         question: 'What is your return policy?',
-        answer: 'We accept returns within 7 days of delivery for unused items in their original packaging. Please visit our Return Policy page for complete details.'
+        answer: 'We accept returns within 7 days of delivery for unused clothing items in their original packaging with tags intact. Please visit our Return Policy page for complete details.'
       },
       {
         question: 'How do I initiate a return?',
@@ -78,20 +78,20 @@ const faqCategories = [
   },
   {
     id: 'products',
-    name: 'Products & Customization',
+    name: 'Products & Sizing',
     icon: 'TagIcon',
     faqs: [
       {
-        question: 'Are your products handmade?',
-        answer: 'Many of our products are handcrafted by skilled artisans. Each piece may have slight variations, making it unique and special.'
+        question: 'Are your clothes true to size?',
+        answer: 'Yes, our garments follow standard Indian sizing. Each product page includes a detailed size chart to help you find your perfect fit.'
       },
       {
         question: 'Do you offer customization?',
-        answer: 'Yes, we offer customization on select products. Please contact us with your requirements and we will let you know if we can accommodate your request.'
+        answer: 'Yes, we offer customization on select clothing items. Please contact us with your requirements and we will let you know if we can accommodate your request.'
       },
       {
         question: 'Can I get a product catalog?',
-        answer: 'You can browse all our products on our website. We update our collection regularly with new arrivals. You can also subscribe to our newsletter for updates on new products.'
+        answer: 'You can browse all our clothing collections on our website. We update our collection regularly with new arrivals. You can also subscribe to our newsletter for updates on new styles.'
       },
       {
         question: 'What is your bulk order policy?',
@@ -129,7 +129,7 @@ const faqCategories = [
     faqs: [
       {
         question: 'How can I contact customer support?',
-        answer: 'You can reach us via email at contact@portnovaio.com or call us at +91 98765 43210. Our support team is available Monday to Saturday, 10 AM to 7 PM (IST).'
+        answer: 'You can reach us via email at contact@portnovaio.com or call us at +91 9217765016. Our support team is available Monday to Saturday, 10 AM to 7 PM (IST).'
       },
       {
         question: 'Do you have a physical store?',
@@ -137,7 +137,7 @@ const faqCategories = [
       },
       {
         question: 'Do you offer gift wrapping?',
-        answer: 'Yes, we offer gift wrapping services for select items. You can select the gift wrapping option during checkout for a small additional fee.'
+        answer: 'Yes, we offer gift wrapping services for select clothing items. You can select the gift wrapping option during checkout for a small additional fee.'
       },
       {
         question: 'How do I apply a coupon code?',
@@ -171,7 +171,7 @@ export default function FAQsPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-[#6B7280] max-w-2xl mx-auto">
-            Find answers to the most common questions about our products, ordering, shipping, and more.
+            Find answers to the most common questions about our fashion collection, ordering, shipping, and more.
           </p>
         </div>
 
@@ -203,8 +203,8 @@ export default function FAQsPage() {
                         setOpenFaq(null);
                       }}
                       className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-smooth ${activeCategory === category.id
-                          ? 'bg-[#F4762D] text-white'
-                          : 'text-[#6B7280] hover:bg-[#F5F5F7] hover:text-[#1A2A3A]'
+                        ? 'bg-[#F4762D] text-white'
+                        : 'text-[#6B7280] hover:bg-[#F5F5F7] hover:text-[#1A2A3A]'
                         }`}
                     >
                       <Icon name={category.icon as any} size={18} />

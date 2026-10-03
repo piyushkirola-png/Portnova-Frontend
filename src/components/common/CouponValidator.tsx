@@ -10,15 +10,29 @@ interface CouponValidatorProps {
   appliedCoupon?: any;
 }
 
-export default function CouponValidator({ 
-  cartTotal, 
-  onCouponApplied, 
-  onCouponRemoved, 
-  appliedCoupon 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:2000/api';
+
+export default function CouponValidator({
+  cartTotal,
+  onCouponApplied,
+  onCouponRemoved,
+  appliedCoupon
 }: CouponValidatorProps) {
   const [couponCode, setCouponCode] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+  // Get user id from the stored user_data object
+  const getUserId = (): number | null => {
+    try {
+      const raw = localStorage.getItem('user_data');
+      if (!raw) return null;
+      const user = JSON.parse(raw);
+      return user?.id ?? null;
+    } catch {
+      return null;
+    }
+  };
 
   const validateCoupon = async () => {
     if (!couponCode.trim()) {
@@ -30,7 +44,8 @@ export default function CouponValidator({
     setError('');
 
     try {
-      const response = await fetch('/api/public/coupon/validate', {
+      // ✅ Fixed URL — hits the backend, not the frontend
+      const response = await fetch(`${API_URL}/coupon/validate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -38,8 +53,8 @@ export default function CouponValidator({
         body: JSON.stringify({
           code: couponCode.toUpperCase(),
           cart_total: cartTotal,
-          user_id: localStorage.getItem('userId') || null
-        })
+          user_id: getUserId(),
+        }),
       });
 
       const data = await response.json();
@@ -101,19 +116,19 @@ export default function CouponValidator({
             value={couponCode}
             onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
             placeholder="Enter coupon code"
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-espresso focus:border-transparent"
+            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F4762D] focus:border-transparent outline-none"
             onKeyPress={(e) => e.key === 'Enter' && validateCoupon()}
           />
         </div>
         <button
           onClick={validateCoupon}
           disabled={loading || !couponCode.trim()}
-          className="px-4 py-2 bg-espresso text-white rounded-lg hover:bg-espresso/90 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-4 py-2 bg-[#F4762D] text-white rounded-lg hover:bg-[#D45A15] disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {loading ? 'Validating...' : 'Apply'}
         </button>
       </div>
-      
+
       {error && (
         <p className="text-sm text-red-600 flex items-center gap-1">
           <X className="w-4 h-4" />
