@@ -74,15 +74,7 @@ const AdminSidebar = () => {
     <aside className="w-64 bg-white border-r border-border h-[calc(100vh-64px)] sticky top-16 shadow-elevation-1 hidden lg:block flex-shrink-0">
       {/* Header */}
       <div className="p-4 border-b border-border bg-gradient-to-r from-primary/5 to-secondary/5">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <Icon name="BuildingStorefrontIcon" size={16} className="text-primary-foreground" />
-          </div>
-          <div>
-            <h2 className="text-sm font-bold text-espresso font-heading">Admin Panel</h2>
-            <p className="text-xs text-mocha-grey font-medium">Portnova</p>
-          </div>
-        </div>
+        <h2 className="text-sm font-bold text-espresso font-heading">Admin Panel</h2>
       </div>
 
       {/* Navigation */}

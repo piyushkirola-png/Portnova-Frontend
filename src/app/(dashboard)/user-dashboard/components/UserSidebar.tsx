@@ -55,7 +55,7 @@ const UserSidebar = () => {
       {/* Header */}
       <div className="p-4 border-b border-border bg-gradient-to-r from-primary/5 to-secondary/5">
         <div className="flex items-center">
-          <h2 className="text-sm font-bold text-espresso font-heading">My Account</h2>
+          <h2 className="text-sm font-bold text-espresso font-heading">User Panel</h2>
         </div>
       </div>
 
