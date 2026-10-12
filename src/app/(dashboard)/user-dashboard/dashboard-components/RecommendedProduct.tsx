@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 interface RecommendedProductProps {
   id: string;
+  slug: string;
   name: string;
   price: number;
   originalPrice?: number;
@@ -15,6 +16,7 @@ interface RecommendedProductProps {
 
 const RecommendedProduct = ({
   id,
+  slug,
   name,
   price,
   originalPrice,
@@ -25,7 +27,7 @@ const RecommendedProduct = ({
 }: RecommendedProductProps) => {
   return (
     <Link
-      href={`/product-details?id=${id}`}
+      href={`/product/${slug}`}
       className="group block rounded-lg border border-border bg-card p-3 shadow-elevation-1 transition-smooth hover:shadow-elevation-2"
     >
       <div className="relative mb-2 overflow-hidden rounded-md bg-muted">

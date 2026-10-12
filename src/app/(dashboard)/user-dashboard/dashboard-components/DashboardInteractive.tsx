@@ -156,6 +156,16 @@ const DashboardInteractive = () => {
   const recommendedProducts = (!recommendedError && recommendedData?.products)
     ? (recommendedData.products || []).map((product: any) => ({
       id: String(product.id),
+      slug:
+        product.slug && String(product.slug).trim() !== ''
+          ? String(product.slug)
+          : String(product.name || '')
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, ''),
       name: product.name,
       price: product.price,
       originalPrice: product.original_price,

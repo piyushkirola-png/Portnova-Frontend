@@ -51,11 +51,10 @@ const PaymentMethodSelector: React.FC<PaymentMethodSelectorProps> = ({
             key={method.id}
             onClick={() => handleSelect(method.id)}
             disabled={!method.isAvailable}
-            className={`flex w-full items-center gap-4 rounded-lg border-2 p-4 transition-all duration-200 ${
-              selectedMethodId === method.id
+            className={`flex w-full items-center gap-4 rounded-lg border-2 p-4 transition-all duration-200 ${selectedMethodId === method.id
                 ? 'border-[#317CA2] bg-[#D6E8F2] shadow-sm'
                 : 'border-gray-200 bg-white hover:border-[#317CA2] hover:bg-[#FFF4E5]'
-            } ${!method.isAvailable && 'cursor-not-allowed opacity-50'}`}
+              } ${!method.isAvailable && 'cursor-not-allowed opacity-50'}`}
           >
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gray-100">
               <Icon name={method.icon} size={24} className="text-[#317CA2]" />
