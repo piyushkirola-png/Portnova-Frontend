@@ -399,7 +399,6 @@ export default function OrdersPage() {
                               width={80}
                               height={80}
                               className="w-20 h-20 object-cover rounded"
-                              fallbackSrc="/assets/images/no_image.svg"
                             />
                           ) : (
                             <div className="w-20 h-20 bg-gray-200 rounded flex items-center justify-center text-xs">No image</div>

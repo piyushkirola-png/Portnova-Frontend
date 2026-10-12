@@ -75,11 +75,14 @@ const ProductCatalogInteractive = () => {
     }
 
     if (filters.categories.length > 0) {
-      result = result.filter((p) =>
-        filters.categories.some((cat) =>
-          p.category.toLowerCase().includes(cat.replace('-', ' '))
-        )
-      );
+      result = result.filter((p) => {
+        const productCategorySlug = p.category
+          .toLowerCase()
+          .trim()
+          .replace(/\s+/g, '-');
+
+        return filters.categories.some((cat) => productCategorySlug === cat);
+      });
     }
 
     if (filters.sizes.length > 0) {

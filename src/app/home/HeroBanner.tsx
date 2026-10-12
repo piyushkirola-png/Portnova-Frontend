@@ -46,7 +46,7 @@ const HeroBanner = () => {
               href="/products"
               className="inline-flex items-center justify-center px-10 py-3.5 bg-[#F4762D] text-white font-bold text-sm md:text-base tracking-wider uppercase rounded-full hover:bg-[#D45A15] transition-all duration-300 shadow-2xl hover:scale-105"
             >
-              Shop Now
+              Discover Now
             </Link>
           </div>
 

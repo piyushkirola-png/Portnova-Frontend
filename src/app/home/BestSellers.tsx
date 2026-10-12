@@ -19,7 +19,7 @@ const bestSellers: BestSeller[] = [
     options: '10+ Options',
     price: 'Starting at Just Rs. 499',
     image: '/assets/images/bestsellers/men-shirt.webp',
-    link: '/products/men-casual',
+    link: '/products/men-apparel',
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const bestSellers: BestSeller[] = [
     options: '10+ Options',
     price: 'Starting at Just Rs. 699',
     image: '/assets/images/bestsellers/men-kurta.png',
-    link: '/products/men-ethnic',
+    link: '/products/men-apparel',
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const bestSellers: BestSeller[] = [
     options: '10+ Options',
     price: 'Starting at Just Rs. 799',
     image: '/assets/images/bestsellers/men-jeans.png',
-    link: '/products/men-jeans',
+    link: '/products/men-apparel',
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const bestSellers: BestSeller[] = [
     options: '10+ Options',
     price: 'Starting at Just Rs. 499',
     image: '/assets/images/bestsellers/women-shirt.png',
-    link: '/products/women-casual',
+    link: '/products/women-apparel',
   },
   {
     id: 5,
@@ -51,7 +51,7 @@ const bestSellers: BestSeller[] = [
     options: '10+ Options',
     price: 'Starting at Just Rs. 699',
     image: '/assets/images/bestsellers/women-kurta.png',
-    link: '/products/women-ethnic',
+    link: '/products/women-apparel',
   },
   {
     id: 6,
@@ -59,7 +59,7 @@ const bestSellers: BestSeller[] = [
     options: '10+ Options',
     price: 'Starting at Just Rs. 799',
     image: '/assets/images/bestsellers/women-jeans.png',
-    link: '/products/women-jeans',
+    link: '/products/women-apparel',
   },
 ];
 

@@ -131,7 +131,6 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><Link href="/" className="text-[#7A7A7A] hover:text-[#F4762D] transition-smooth">Home</Link></li>
               <li><Link href="/products" className="text-[#7A7A7A] hover:text-[#F4762D] transition-smooth">Shop</Link></li>
-              {/* <li><Link href="/products" className="text-[#7A7A7A] hover:text-[#F4762D] transition-smooth">Categories</Link></li> */}
               <li><Link href="/about" className="text-[#7A7A7A] hover:text-[#F4762D] transition-smooth">About Us</Link></li>
               <li><Link href="/contact" className="text-[#7A7A7A] hover:text-[#F4762D] transition-smooth">Contact Us</Link></li>
             </ul>
@@ -142,8 +141,10 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><Link href="/products/men-apparel" className="text-[#7A7A7A] hover:text-[#F4762D] transition-smooth">Men Apparel</Link></li>
               <li><Link href="/products/men-footwear" className="text-[#7A7A7A] hover:text-[#F4762D] transition-smooth">Men Footwear</Link></li>
+              <li><Link href="/products/men-accessories" className="text-[#7A7A7A] hover:text-[#F4762D] transition-smooth">Men Accessories</Link></li>
               <li><Link href="/products/women-apparel" className="text-[#7A7A7A] hover:text-[#F4762D] transition-smooth">Women Apparel</Link></li>
               <li><Link href="/products/women-footwear" className="text-[#7A7A7A] hover:text-[#F4762D] transition-smooth">Women Footwear</Link></li>
+              <li><Link href="/products/women-accessories" className="text-[#7A7A7A] hover:text-[#F4762D] transition-smooth">Women Accessories</Link></li>
             </ul>
           </div>
 

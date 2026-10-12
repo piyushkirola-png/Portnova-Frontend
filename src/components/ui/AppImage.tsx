@@ -36,7 +36,6 @@ function AppImage({
     fallbackSrc = '/assets/images/no_image.svg',
     ...props
 }: AppImageProps) {
-    // ✅ Fix: If src is empty/null/undefined, use fallback immediately
     const initialSrc = (src && src !== '' && src !== 'null' && src !== 'undefined') ? src : fallbackSrc;
     
     const [imageSrc, setImageSrc] = useState(initialSrc);
