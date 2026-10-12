@@ -8,7 +8,6 @@ export interface Product {
   inStock: boolean;
 }
 
-// Static data removed - use API endpoints instead
 export const products: Product[] = [];
 
 export const categories = [
@@ -28,6 +27,3 @@ export const categories = [
   "Bottles",
   "Laundry"
 ];
-
-
-

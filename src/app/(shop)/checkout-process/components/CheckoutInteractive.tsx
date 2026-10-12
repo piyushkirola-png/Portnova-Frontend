@@ -7,7 +7,6 @@ import { RootState } from '@/store/store';
 import { syncCart, clearAppliedCoupon } from '@/store/slices/cart';
 import { useCreateOrderMutation, useGetUserAddressesQuery } from '@/store/api/orderApi';
 import { useInitiatePaymentMutation } from '@/store/api/paymentApi';
-import { useInitiateSetuPaymentMutation } from '@/store/api/setuApi';
 import { useClearCartMutation } from '@/store/api/cartApi';
 import Icon from '@/components/ui/AppIcon';
 import DeliveryAddressForm from './DeliveryAddressForm';
@@ -15,8 +14,6 @@ import PaymentMethodSelector from './PaymentMethodSelector';
 import OrderReviewSection from './OrderReviewSection';
 import CheckoutProgress from './CheckoutProgress';
 import { toast } from 'react-toastify';
-import { useInitiatePayUPaymentMutation } from '@/store/api/payuApi';
-import PayUPaymentForm from '@/components/payment/PayUPaymentForm';
 
 interface Address {
     id: string;
@@ -49,13 +46,7 @@ const CheckoutInteractive = () => {
     useGetUserAddressesQuery(undefined, { skip: !isAuthenticated });
     const [createOrder, { isLoading: isPlacingOrder }] = useCreateOrderMutation();
     const [initiatePayment] = useInitiatePaymentMutation();
-    const [initiateSetuPayment] = useInitiateSetuPaymentMutation();
     const [clearCartBackend] = useClearCartMutation();
-    const [initiatePayUPayment] = useInitiatePayUPaymentMutation();
-    const [payuForm, setPayuForm] = useState<{
-        action: string;
-        fields: any;
-    } | null>(null);
 
     useEffect(() => {
         setIsHydrated(true);
@@ -162,7 +153,6 @@ const CheckoutInteractive = () => {
                 }).unwrap();
 
                 if (paymentResult.success && paymentResult.data) {
-                    // dispatch(clearAppliedCoupon());
                     router.push(
                         `/payment?orderId=${orderId}&amount=${total}&subtotal=${subtotal}&discount=${discount}&razorpayOrderId=${paymentResult.data.razorpayOrder.id}`
                     );
@@ -170,39 +160,8 @@ const CheckoutInteractive = () => {
                     throw new Error(paymentResult.message || 'Razorpay initiation failed');
                 }
             }
-            else if (selectedPaymentMethod === 'setu') {
-                setIsProcessingPayment(true);
-                const result = await initiateSetuPayment({
-                    orderId,
-                    amount: total,
-                    currency: 'INR',
-                }).unwrap();
-
-                if (result.success && result.data.paymentLink) {
-                    dispatch(clearAppliedCoupon());
-                    window.location.href = result.data.paymentLink;
-                } else {
-                    throw new Error(result.message || 'Setu payment initiation failed');
-                }
-            }
-            else if (selectedPaymentMethod === 'payu') {
-                setIsProcessingPayment(true);
-                const result = await initiatePayUPayment({
-                    orderId,
-                    amount: total,
-                    currency: 'INR',
-                }).unwrap();
-
-                if (result.success && result.data.payuForm) {
-                    setPayuForm({
-                        action: result.data.payuForm.action,
-                        fields: result.data.payuForm.fields,
-                    });
-                } else {
-                    throw new Error(result.message || 'PayU payment initiation failed');
-                }
-            }
             else {
+                // Cash on Delivery
                 try {
                     await clearCartBackend(undefined).unwrap();
                 } catch (err) {
@@ -353,8 +312,6 @@ const CheckoutInteractive = () => {
                                         <div className="rounded-md bg-muted p-4">
                                             <p className="font-medium text-foreground">
                                                 {selectedPaymentMethod === 'razorpay' && 'Razorpay (Card/UPI/Net Banking)'}
-                                                {selectedPaymentMethod === 'setu' && 'Setu (UPI / QR)'}
-                                                {selectedPaymentMethod === 'payu' && 'PayU (Cards / UPI / Net Banking / Wallet)'}
                                                 {selectedPaymentMethod === 'cod' && 'Cash on Delivery'}
                                             </p>
                                             <button
@@ -407,8 +364,6 @@ const CheckoutInteractive = () => {
                                                     <span>
                                                         {selectedPaymentMethod === 'cod' && 'Place Order'}
                                                         {selectedPaymentMethod === 'razorpay' && 'Pay & Place Order'}
-                                                        {selectedPaymentMethod === 'setu' && 'Pay with Setu'}
-                                                        {selectedPaymentMethod === 'payu' && 'Pay with PayU'}
                                                     </span>
                                                 </>
                                             )}
@@ -474,13 +429,6 @@ const CheckoutInteractive = () => {
                         />
                     </div>
                 </>
-            )}
-
-            {payuForm && (
-                <PayUPaymentForm
-                    action={payuForm.action}
-                    fields={payuForm.fields}
-                />
             )}
         </div>
     );

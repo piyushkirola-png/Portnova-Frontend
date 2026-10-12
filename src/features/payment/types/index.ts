@@ -23,13 +23,3 @@ export interface PaymentResult {
   transactionId?: string;
   message?: string;
 }
-
-// PayU types (re-exported from global types)
-export type {
-  PayUFormFields,
-  PayUInitiateRequest,
-  PayUInitiateResponse,
-  PayUVerifyRequest,
-  PayUVerifyResponse,
-  PayUStatusResponse,
-} from '@/types/payment';

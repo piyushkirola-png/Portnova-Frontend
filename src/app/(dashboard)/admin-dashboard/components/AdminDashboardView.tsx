@@ -20,7 +20,19 @@ const AdminDashboardView = () => {
 
   const totalSales = orders.reduce((sum: number, order: any) => sum + Number(order.total || 0), 0);
   const pendingOrders = orders.filter((order: any) => order.status === 'pending').length;
-  const recentOrders = orders.slice(0, 4);
+  const now = new Date();
+  const istNow = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+  const istStartOfDay = new Date(istNow);
+  istStartOfDay.setHours(0, 0, 0, 0);
+
+  const recentOrders = orders
+    .filter((o: any) => {
+      const created = new Date(o.created_at);
+      const istCreated = new Date(created.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+      return istCreated >= istStartOfDay;
+    })
+    .sort((a: any, b: any) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
+    .slice(0, 5);
   const inventoryItems = lowStockProducts.slice(0, 3);
 
   const stats = [
@@ -86,7 +98,7 @@ const AdminDashboardView = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
         <div className="bg-white p-8 rounded-2xl shadow-elevation-1 border border-border hover:shadow-elevation-2 transition-all duration-200">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-xl font-bold text-espresso font-heading">Recent Orders</h3>
+            <h3 className="text-xl font-bold text-espresso font-heading">Recent Orders (Today)</h3>
             <button className="text-primary font-medium hover:underline text-sm hover:text-secondary transition-colors">
               View All
             </button>

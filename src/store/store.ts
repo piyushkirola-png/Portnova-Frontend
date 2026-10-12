@@ -5,9 +5,6 @@ import authSlice from './slices/auth'
 import bulkOrderSlice from './slices/bulkOrder'
 import wishlistSlice from './slices/wishlist'
 import paymentSlice from './slices/payment'
-import setuPaymentSlice from './slices/setuPayment'
-import payuPaymentSlice from './slices/payuPayment'
-
 import { baseApi } from './api/baseApi'
 import { blogApi } from './api/blogApi'
 import { orderApi } from './api/orderApi'
@@ -21,8 +18,6 @@ export const store = configureStore({
     bulkOrder: bulkOrderSlice,
     wishlist: wishlistSlice,
     payment: paymentSlice,
-    setuPayment: setuPaymentSlice,
-    payuPayment: payuPaymentSlice,
     [baseApi.reducerPath]: baseApi.reducer,
     [blogApi.reducerPath]: blogApi.reducer,
     [orderApi.reducerPath]: orderApi.reducer,
@@ -35,12 +30,11 @@ export const store = configureStore({
         ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
       },
     }).concat(
-      baseApi.middleware,        // includes setuApi endpoints
+      baseApi.middleware,
       blogApi.middleware,
       orderApi.middleware,
       reviewsApi.middleware,
       bulkProductApi.middleware,
-      // ❌ No setuApi.middleware here
     ),
 })
 

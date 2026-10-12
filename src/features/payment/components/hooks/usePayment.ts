@@ -18,7 +18,6 @@ import {
   getRazorpayInstance,
 } from '../../utils/razorpayLoader';
 import { validateAmount, validateOrderId } from '../../utils/paymentValidator';
-import { config } from '@/config/env';
 
 interface UsePaymentOptions {
   onSuccess?: (orderId: number) => void;
@@ -169,7 +168,7 @@ export const usePayment = (options: UsePaymentOptions = {}) => {
         options.onSuccess?.(data.orderId);
 
         // Redirect to success page
-        router.push(`${config.payment.successUrl}?orderId=${data.orderId}`);
+        router.push(`/payment/success?orderId=${data.orderId}`);
       } else {
         throw new Error(result.message || 'Payment verification failed');
       }
@@ -183,7 +182,7 @@ export const usePayment = (options: UsePaymentOptions = {}) => {
 
       // Redirect to failure page
       router.push(
-        `${config.payment.failureUrl}?orderId=${data.orderId}&error=${encodeURIComponent(errorMessage)}`
+        `/payment/failure?orderId=${data.orderId}&error=${encodeURIComponent(errorMessage)}`
       );
     }
   };
